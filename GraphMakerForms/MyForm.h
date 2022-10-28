@@ -993,17 +993,21 @@ private: System::ComponentModel::IContainer^ components;
 				// табулюємо функцію із записом результатів у масиви			
 				double* pXe = Xe1;
 				double* pYe = Ye1;
-				System::String^ riv = textBox1->Text;
+				System::String^ rivf = textBox1->Text;
 
-				std::string strriv = msclr::interop::marshal_as<std::string>(riv);
+				std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
+				
 
-				TabulF(al, bl, pXe, pYe, strriv);
-				/*if (is2F)
+				TabulF(al, bl, pXe, pYe, strrivf);
+				if (is2F)
 				{
+					System::String^ rivs = textBox2->Text;
+
+					std::string strrivs = msclr::interop::marshal_as<std::string>(rivs);
 					pXe = Xe2;
 					pYe = Ye2;
-					TabulF(al, bl, pXe, pYe, strtiv);
-				}*/
+					TabulF(al, bl, pXe, pYe, strrivs);
+				}
 			}
 			catch (FormatException^)
 			{
