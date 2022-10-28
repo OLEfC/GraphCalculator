@@ -107,11 +107,11 @@ namespace GraphMakerForms {
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::PictureBox^ pictureBox;
 	private: System::Windows::Forms::Button^ Clear_B;
-	private: System::Windows::Forms::ComboBox^ f1_CB;
+
 
 
 	private: System::Windows::Forms::Label^ label15;
-	private: System::Windows::Forms::ComboBox^ f2_CB;
+
 	private: System::Windows::Forms::Label^ f2_L;
 
 
@@ -196,9 +196,7 @@ private: System::ComponentModel::IContainer^ components;
 			this->graphStyle_CB = (gcnew System::Windows::Forms::ComboBox());
 			this->pictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->Clear_B = (gcnew System::Windows::Forms::Button());
-			this->f1_CB = (gcnew System::Windows::Forms::ComboBox());
 			this->label15 = (gcnew System::Windows::Forms::Label());
-			this->f2_CB = (gcnew System::Windows::Forms::ComboBox());
 			this->f2_L = (gcnew System::Windows::Forms::Label());
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->graph2Style_L = (gcnew System::Windows::Forms::Label());
@@ -660,20 +658,6 @@ private: System::ComponentModel::IContainer^ components;
 			this->Clear_B->UseVisualStyleBackColor = true;
 			this->Clear_B->Click += gcnew System::EventHandler(this, &MyForm::Clear_B_Click);
 			// 
-			// f1_CB
-			// 
-			this->f1_CB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->f1_CB->FormattingEnabled = true;
-			this->f1_CB->Items->AddRange(gcnew cli::array< System::Object^  >(6) {
-				L"x * sin(x)", L"x * cos(x)", L"| sin(x) |", L"| cos(x) |",
-					L"| x * sin(x) |", L"| x * cos(x) |"
-			});
-			this->f1_CB->Location = System::Drawing::Point(1224, 233);
-			this->f1_CB->Name = L"f1_CB";
-			this->f1_CB->Size = System::Drawing::Size(206, 28);
-			this->f1_CB->TabIndex = 23;
-			// 
 			// label15
 			// 
 			this->label15->AutoSize = true;
@@ -684,20 +668,6 @@ private: System::ComponentModel::IContainer^ components;
 			this->label15->Size = System::Drawing::Size(198, 24);
 			this->label15->TabIndex = 24;
 			this->label15->Text = L"ќбер≥ть функц≥ю 1:";
-			// 
-			// f2_CB
-			// 
-			this->f2_CB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->f2_CB->FormattingEnabled = true;
-			this->f2_CB->Items->AddRange(gcnew cli::array< System::Object^  >(6) {
-				L"x * sin(x)", L"x * cos(x)", L"| sin(x) |", L"| cos(x) |",
-					L"| x * sin(x) |", L"| x * cos(x) |"
-			});
-			this->f2_CB->Location = System::Drawing::Point(1224, 292);
-			this->f2_CB->Name = L"f2_CB";
-			this->f2_CB->Size = System::Drawing::Size(206, 28);
-			this->f2_CB->TabIndex = 25;
 			// 
 			// f2_L
 			// 
@@ -812,7 +782,7 @@ private: System::ComponentModel::IContainer^ components;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1585, 24);
+			this->menuStrip1->Size = System::Drawing::Size(1585, 30);
 			this->menuStrip1->TabIndex = 33;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -824,17 +794,25 @@ private: System::ComponentModel::IContainer^ components;
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(1316, 345);
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->textBox1->Location = System::Drawing::Point(1233, 233);
+			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 22);
+			this->textBox1->Size = System::Drawing::Size(170, 32);
 			this->textBox1->TabIndex = 35;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(1316, 373);
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->textBox2->Location = System::Drawing::Point(1233, 292);
+			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 22);
+			this->textBox2->Size = System::Drawing::Size(170, 33);
 			this->textBox2->TabIndex = 36;
+			this->textBox2->Visible = false;
+			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
 			// 
 			// button1
 			// 
@@ -862,9 +840,7 @@ private: System::ComponentModel::IContainer^ components;
 			this->Controls->Add(this->graph2Style_L);
 			this->Controls->Add(this->graph2Style_CB);
 			this->Controls->Add(this->label17);
-			this->Controls->Add(this->f2_CB);
 			this->Controls->Add(this->f2_L);
-			this->Controls->Add(this->f1_CB);
 			this->Controls->Add(this->label15);
 			this->Controls->Add(this->Clear_B);
 			this->Controls->Add(this->pictureBox);
@@ -1142,8 +1118,8 @@ private: System::ComponentModel::IContainer^ components;
 		graph1Color = graph_ColorD->Color;
 		graph2Width = Convert::ToInt32(graph2Width_NUD->Value);
 		graph2Color = graph2_ColorD->Color;
-		fIndex1 = Convert::ToInt16(f1_CB->SelectedIndex);
-		fIndex2 = Convert::ToInt16(f2_CB->SelectedIndex);
+		//fIndex1 = Convert::ToInt16(f1_CB->SelectedIndex);
+		//fIndex2 = Convert::ToInt16(f2_CB->SelectedIndex);
 		// малюЇмо граф≥к, ос≥ та гратку
 		Draw();
 	}
@@ -1166,10 +1142,10 @@ private: System::ComponentModel::IContainer^ components;
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		graphStyle_CB->SelectedIndex = 0;
 		graph2Style_CB->SelectedIndex = 0;
-		f1_CB->SelectedIndex = 0;
-		f2_CB->SelectedIndex = 0;
+		//f1_CB->SelectedIndex = 0;
+		//f2_CB->SelectedIndex = 0;
 		is2F = false;
-		f2_CB->Visible = false;
+		//f2_CB->Visible = false;
 		f2_L->Visible = false;
 		graph2_L->Visible = false;
 		graph2Width_NUD->Visible = false;
@@ -1180,7 +1156,7 @@ private: System::ComponentModel::IContainer^ components;
 	}
 	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		is2F = !is2F;
-		f2_CB->Visible = !f2_CB->Visible;
+		textBox2->Visible = !textBox2->Visible;
 		f2_L->Visible = !f2_L->Visible;
 		graph2_L->Visible = !graph2_L->Visible;
 		graph2Width_NUD->Visible = !graph2Width_NUD->Visible;
@@ -1216,6 +1192,8 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	
 
 
+}
+private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
