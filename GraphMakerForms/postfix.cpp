@@ -30,43 +30,6 @@ int getPriority(char C)
         return 3;
     return 0;
 }
-double synus(double a) {
-    return sin(a);
-}
-double cosys(double a) {
-    return cos(a);
-}
-double modul(double a) {
-    return abs(a);
-}
-double corin(double a) {
-    return sqrt(a);
-}
-
-
-
-double plus(double a, double b) {
-    return (a + b);
-}
-double minus(double a, double b) {
-    return (a - b);
-}
-double dobutok(double a, double b) {
-    return (a * b);
-}
-double chastka(double a, double b) {
-    return (a / b);
-}
-double stepin(double a, double b) {
-    return pow(a, b);
-}
-
-
-
-
-
-
-
 
 bool isOperator(char x) {
     if (x == '+') {
@@ -117,6 +80,14 @@ bool isFunction(string rivny, int i) {
             }
         }
     }
+    if (rivny[i] == 'l') {
+        if (rivny[i + 1] == 'o') {
+            if (rivny[i + 2] == 'g') {
+                return true;
+            }
+        }
+    }
+    
 
 
     return false;
@@ -202,6 +173,10 @@ string* parser(string input) {
             if (input[i] == 'a') {
                 parse[v] = "abs";
             }
+            if (input[i] == 'l') {
+                parse[v] = "log";
+            }
+
             i = i + 2;
         }
 
@@ -354,11 +329,16 @@ double whatfun(string oper, double a) {
     if (oper == "abs") {
         return(abs(a));
     }
+    if (oper == "log") {
+        return(log10(a));
+    }
+    
 }
 
 double calculator(string* output, double x) {
     stack <string> stack;
     int outputLength = stoi(output[0]) + 1;
+
     //cout << outputLength << endl << endl;
     for (int i = 1; i < outputLength; i++) {
 

@@ -136,7 +136,20 @@ private: System::Windows::Forms::MenuStrip^ menuStrip1;
 private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
 private: System::Windows::Forms::TextBox^ textBox1;
 private: System::Windows::Forms::TextBox^ textBox2;
-private: System::Windows::Forms::Button^ button1;
+
+private: System::Windows::Forms::GroupBox^ groupBox1;
+private: System::Windows::Forms::Button^ button13;
+private: System::Windows::Forms::TextBox^ textBox3;
+private: System::Windows::Forms::Button^ button9;
+private: System::Windows::Forms::Button^ button10;
+private: System::Windows::Forms::Button^ button12;
+private: System::Windows::Forms::Button^ button6;
+private: System::Windows::Forms::Button^ button7;
+private: System::Windows::Forms::Button^ button8;
+private: System::Windows::Forms::Button^ button5;
+private: System::Windows::Forms::Button^ button3;
+private: System::Windows::Forms::Button^ button2;
+private: System::Windows::Forms::Button^ button4;
 private: System::ComponentModel::IContainer^ components;
 
 
@@ -211,7 +224,19 @@ private: System::ComponentModel::IContainer^ components;
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->button10 = (gcnew System::Windows::Forms::Button());
+			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Ne_NUD))->BeginInit();
 			this->panel3->SuspendLayout();
@@ -223,6 +248,7 @@ private: System::ComponentModel::IContainer^ components;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->axisWidth_NUD))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->gridWidth_NUD))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Draw_B
@@ -782,7 +808,7 @@ private: System::ComponentModel::IContainer^ components;
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1585, 30);
+			this->menuStrip1->Size = System::Drawing::Size(1809, 24);
 			this->menuStrip1->TabIndex = 33;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -801,6 +827,7 @@ private: System::ComponentModel::IContainer^ components;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(170, 32);
 			this->textBox1->TabIndex = 35;
+			this->textBox1->Click += gcnew System::EventHandler(this, &MyForm::textBox1_Click);
 			// 
 			// textBox2
 			// 
@@ -814,22 +841,153 @@ private: System::ComponentModel::IContainer^ components;
 			this->textBox2->Visible = false;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
 			// 
-			// button1
+			// groupBox1
 			// 
-			this->button1->Location = System::Drawing::Point(1328, 405);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(75, 23);
-			this->button1->TabIndex = 37;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->groupBox1->Controls->Add(this->button13);
+			this->groupBox1->Controls->Add(this->textBox3);
+			this->groupBox1->Controls->Add(this->button9);
+			this->groupBox1->Controls->Add(this->button10);
+			this->groupBox1->Controls->Add(this->button12);
+			this->groupBox1->Controls->Add(this->button6);
+			this->groupBox1->Controls->Add(this->button7);
+			this->groupBox1->Controls->Add(this->button8);
+			this->groupBox1->Controls->Add(this->button5);
+			this->groupBox1->Controls->Add(this->button3);
+			this->groupBox1->Controls->Add(this->button2);
+			this->groupBox1->Controls->Add(this->button4);
+			this->groupBox1->Location = System::Drawing::Point(1149, 232);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Size = System::Drawing::Size(371, 235);
+			this->groupBox1->TabIndex = 38;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Visible = false;
+			// 
+			// button13
+			// 
+			this->button13->Location = System::Drawing::Point(6, 195);
+			this->button13->Name = L"button13";
+			this->button13->Size = System::Drawing::Size(358, 32);
+			this->button13->TabIndex = 27;
+			this->button13->Text = L"Готово";
+			this->button13->UseVisualStyleBackColor = true;
+			this->button13->Click += gcnew System::EventHandler(this, &MyForm::button13_Click);
+			// 
+			// textBox3
+			// 
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->textBox3->Location = System::Drawing::Point(6, 14);
+			this->textBox3->Multiline = true;
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(358, 49);
+			this->textBox3->TabIndex = 26;
+			// 
+			// button9
+			// 
+			this->button9->Location = System::Drawing::Point(235, 155);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(85, 34);
+			this->button9->TabIndex = 25;
+			this->button9->Text = L")";
+			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);
+			// 
+			// button10
+			// 
+			this->button10->Location = System::Drawing::Point(144, 153);
+			this->button10->Name = L"button10";
+			this->button10->Size = System::Drawing::Size(85, 36);
+			this->button10->TabIndex = 24;
+			this->button10->Text = L"(";
+			this->button10->UseVisualStyleBackColor = true;
+			this->button10->Click += gcnew System::EventHandler(this, &MyForm::button10_Click);
+			// 
+			// button12
+			// 
+			this->button12->Location = System::Drawing::Point(53, 153);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(85, 34);
+			this->button12->TabIndex = 23;
+			this->button12->Text = L"|x|";
+			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(279, 113);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(85, 34);
+			this->button6->TabIndex = 22;
+			this->button6->Text = L"/";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(188, 111);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(85, 36);
+			this->button7->TabIndex = 21;
+			this->button7->Text = L"*";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
+			// 
+			// button8
+			// 
+			this->button8->Location = System::Drawing::Point(97, 111);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(85, 36);
+			this->button8->TabIndex = 20;
+			this->button8->Text = L"-";
+			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(6, 111);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(85, 34);
+			this->button5->TabIndex = 19;
+			this->button5->Text = L"+";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(235, 69);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(85, 36);
+			this->button3->TabIndex = 18;
+			this->button3->Text = L"lg(x)";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(144, 69);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(85, 36);
+			this->button2->TabIndex = 17;
+			this->button2->Text = L"cos(x)";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(53, 69);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(85, 36);
+			this->button4->TabIndex = 16;
+			this->button4->Text = L"sin(x)";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1585, 665);
-			this->Controls->Add(this->button1);
+			this->ClientSize = System::Drawing::Size(1809, 665);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label18);
@@ -869,6 +1027,8 @@ private: System::ComponentModel::IContainer^ components;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->axisWidth_NUD))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->gridWidth_NUD))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->EndInit();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1171,9 +1331,12 @@ private: System::ComponentModel::IContainer^ components;
 		//float y = Math::Round(MousePosition.Y - this->Location.Y - pictureBox->Location.Y - Zy, 2) * (float)(yMin - yMax) / (pictureBox->Height - 2 * L);
 		//MPoint.X = (float)(MousePosition.X - this->Location.X - pictureBox->Location.X - pictureBox->Width / 2) * (float)(xMax - xMin) / (pictureBox->Width - 2 * L);
 		//MPoint.Y = (float)(MousePosition.Y - this->Location.Y - pictureBox->Location.Y - pictureBox->Height / 2) * (float)(yMax - yMin) / (pictureBox->Height - 2 * L);
-		Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 = " + Math::Round(f(x, fIndex1), 1));
+		System::String^ riv = textBox1->Text;
+
+		std::string strriv = msclr::interop::marshal_as<std::string>(riv);
+		Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 = " + Math::Round(calculator(toPostfix(parser(strriv)), x), 1));
 		if (is2F)
-			Dot2Coordinates->Text = Convert::ToString("X2 = " + Math::Round(x, 1) + "; Y2 = " + Math::Round(f(x, fIndex2), 1));
+			Dot2Coordinates->Text = Convert::ToString("X2 = " + Math::Round(x, 1) + "; Y2 = " + Math::Round(f(x, fIndex1), 1));
 	}
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1194,6 +1357,45 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox1->Text = textBox3->Text;
+	groupBox1->Visible = false;
+}
+private: System::Void textBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+	groupBox1->Visible = true;
+	textBox3->Text = textBox1->Text;
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "sin(x)";
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "cos(x)";
+
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "log(x)";
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "+";
+}
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "-";
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "*";
+}
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "/";
+}
+private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "abs(x)";
+}
+private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "(";
+}
+private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + ")";
 }
 };
 }
