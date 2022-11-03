@@ -1142,7 +1142,7 @@ namespace GraphMakerForms {
 				System::String^ rivf = textBox1->Text;
 
 				std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
-
+				this->Text = fp(strrivf, 3.14, h).ToString();
 
 				TabulF(al, bl, pXe, pYe, strrivf, conect, h);
 				if (is2F)
@@ -1289,6 +1289,10 @@ namespace GraphMakerForms {
 					}
 				}
 			}
+
+			
+
+
 		}
 	private: System::Void Draw_B_Click(System::Object^ sender, System::EventArgs^ e) {
 		double al = Convert::ToDouble(al_TB->Text);
@@ -1309,7 +1313,7 @@ namespace GraphMakerForms {
 		//fIndex2 = Convert::ToInt16(f2_CB->SelectedIndex);
 		// малюємо графік, осі та гратку
 		Draw(h);
-		this->Text = h.ToString();
+		
 	}
 	private: System::Void ChangeGridColor_B_Click(System::Object^ sender, System::EventArgs^ e) {
 		grid_ColorD->ShowDialog();

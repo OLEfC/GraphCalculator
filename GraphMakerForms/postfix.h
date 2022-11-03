@@ -20,4 +20,6 @@ double calculator(string* output, double x,double h);
 double whatoperator(char oper, double a, double b, double h);
 double whatfun(string oper, double a,double h);
 
+double fp(string input,double x, double h);
+
 

@@ -377,7 +377,9 @@ double whatfun(string oper, double a, double h) {
         double k = abs(((abs(a) - (pi / 2) + pi) / (pi)));
         double c = round(abs(((abs(a) - (pi / 2) + pi) / (pi))));
         if (abs(k - c) < h) {
+
             return 99999;
+           
 
         }
         else {
@@ -453,8 +455,13 @@ double calculator(string* output, double x, double h) {
 
 
             string temp = output[i];
-            string oper = to_string(whatfun(temp, a, h));
-            stack.push(oper);
+            if (whatfun(temp, a, h) != 99999) {
+                string oper = to_string(whatfun(temp, a, h));
+                stack.push(oper);
+            }
+            else {
+                return 99999;
+            }
 
         }
 
@@ -466,4 +473,11 @@ double calculator(string* output, double x, double h) {
 
 
     return result;
+}
+
+
+
+double fp(string input,double x, double h) {
+    double y = calculator(toPostfix(parser(input)), x, h);
+        return y;
 }
