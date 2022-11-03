@@ -87,6 +87,13 @@ bool isFunction(string rivny, int i) {
             }
         }
     }
+    if (rivny[i] == 't') {
+        if (rivny[i + 1] == 'a') {
+            if (rivny[i + 2] == 'n') {
+                return true;
+            }
+        }
+    }
     
 
 
@@ -175,6 +182,9 @@ string* parser(string input) {
             }
             if (input[i] == 'l') {
                 parse[v] = "log";
+            }
+            if (input[i] == 't') {
+                parse[v] = "tan";
             }
 
             i = i + 2;
@@ -296,7 +306,7 @@ string* toPostfix(string* parse) {
 
 }
 
-double whatoperator(char oper, double a, double b) {
+double whatoperator(char oper, double a, double b, double h) {
     if (oper == '+') {
         return(a + b);
 
@@ -306,7 +316,11 @@ double whatoperator(char oper, double a, double b) {
 
     }
     if (oper == '/') {
-        return(a / b);
+        if (abs(b) < abs(h)) {
+            return 99999;
+        }
+        else { return(a / b); }
+        
 
     }
     if (oper == '*') {
@@ -319,7 +333,7 @@ double whatoperator(char oper, double a, double b) {
     }
 
 }
-double whatfun(string oper, double a) {
+double whatfun(string oper, double a,double h) {
     if (oper == "sin") {
         return(sin(a));
     }
@@ -330,12 +344,43 @@ double whatfun(string oper, double a) {
         return(abs(a));
     }
     if (oper == "log") {
-        return(log10(a));
+        if (a > 0) {
+            return(log10(a));
+        }
+        else {
+            return 99999;
+        }
+       
+    }
+    if (oper == "tan") {
+       
+        double pi = 3.141592;
+
+        double k = abs(((abs(a) - (pi / 2) + pi) / (pi)));
+        double c = round(abs(((abs(a) - (pi / 2) + pi) / (pi))));
+        if (abs(k - c) < h) {
+            return 99999;
+             
+        }
+        else { 
+            return tan(a);
+             
+        }
+       /*
+                       
+        if (abs(((abs(a) - 1.570796 + 3.141592) / 3.141592) - round(((abs(a) - 1.570796 + 3.141592) / 3.141592))) > 0.2) {
+            return(tan(a));
+        }
+       
+        else {
+            return 99999;
+        }
+        */
     }
     
 }
 
-double calculator(string* output, double x) {
+double calculator(string* output, double x,double h) {
     stack <string> stack;
     int outputLength = stoi(output[0]) + 1;
 
@@ -370,7 +415,7 @@ double calculator(string* output, double x) {
             
 
 
-            string oper = to_string(whatoperator((output[i])[0], a, b));
+            string oper = to_string(whatoperator((output[i])[0], a, b,h));
             stack.push(oper);
 
 
@@ -392,7 +437,7 @@ double calculator(string* output, double x) {
             
             
             string temp = output[i];
-            string oper = to_string(whatfun(temp, a));
+            string oper = to_string(whatfun(temp, a,h));
             stack.push(oper);
 
         }

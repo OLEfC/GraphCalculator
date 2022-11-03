@@ -16,8 +16,8 @@ string* toPostfix(string* rivny);
 
 string* parser(string input);
 int getPriority(char C);
-double calculator(string* output, double x);
-double whatoperator(char oper, double a, double b);
-double whatfun(string oper, double a);
+double calculator(string* output, double x,double h);
+double whatoperator(char oper, double a, double b, double h);
+double whatfun(string oper, double a,double h);
 
 

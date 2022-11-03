@@ -1055,22 +1055,31 @@ private: System::ComponentModel::IContainer^ components;
 			case 5: return abs(x * cos(x));
 			}
 		}
-		void TabulF(double al, double bl, double Xe[1000], double Ye[1000], string strriv)
+		void TabulF(double al, double bl, double Xe[1000], double Ye[1000], string strriv,bool conect[1000], double h)
 		{
-			double h;
+			
 			h = (bl - al) / (Ne - 1);
 			Xe[0] = al;
 			for (int i = 0; i < Ne; i++)
 			{
-				Ye[i] = calculator(toPostfix(parser(strriv)), Xe[i]);;
+				Ye[i] = calculator(toPostfix(parser(strriv)), Xe[i],h);;
 				Xe[i + 1] = Xe[i] + h;
+				if (Ye[i] == 99999) {
+					conect[i] = false;
+
+				}
+				else {
+					conect[i] = true;
+				}
+			
 			}
 		}
-		void Draw() {
+		void Draw(double h) {
 			double krx, kry, xx, yy, Gx, Gy; // для виведення осей координат та їхніх підписів
 			int xGridKrok, yGridKrok; // відступи між лініями гратки
 			int gridLinesVert, gridLinesHoriz; // кількість ліній гратки графіка
 			double Xe1[1000], Ye1[1000], Xe2[1000], Ye2[1000]; // всі значення x та y
+			bool conect[1000],conects[1000];
 
 			Pen^ gridPen = gcnew Pen(gridColor, gridWidth); // колір гратки
 			Pen^ axisPen = gcnew Pen(axisColor, axisWidth); // колір осей координат
@@ -1129,12 +1138,13 @@ private: System::ComponentModel::IContainer^ components;
 				// табулюємо функцію із записом результатів у масиви			
 				double* pXe = Xe1;
 				double* pYe = Ye1;
+				bool* con = conect;
 				System::String^ rivf = textBox1->Text;
 
 				std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
 				
 
-				TabulF(al, bl, pXe, pYe, strrivf);
+				TabulF(al, bl, pXe, pYe, strrivf,con,h);
 				if (is2F)
 				{
 					System::String^ rivs = textBox2->Text;
@@ -1142,7 +1152,8 @@ private: System::ComponentModel::IContainer^ components;
 					std::string strrivs = msclr::interop::marshal_as<std::string>(rivs);
 					pXe = Xe2;
 					pYe = Ye2;
-					TabulF(al, bl, pXe, pYe, strrivs);
+					con = conects;
+					TabulF(al, bl, pXe, pYe, strrivs,conects,h);
 				}
 			}
 			catch (FormatException^)
@@ -1171,10 +1182,14 @@ private: System::ComponentModel::IContainer^ components;
 			else {
 				for (int i = 0; i < Ne; i++)
 				{
-					if (yMax < Ye1[i]) yMax = Ye1[i];
-					if (yMin > Ye1[i]) yMin = Ye1[i];
+					if (conect[i]) {
+						if (yMax < Ye1[i]) yMax = Ye1[i];
+						if (yMin > Ye1[i]) yMin = Ye1[i];
+					}
+					
 				}
 			}
+			
 
 			// Обчислюємо коефіцієнти масштабування
 			Kx = (graphWidth - 2 * L) / (xMax - xMin); // одиниця x в пікселях
@@ -1257,8 +1272,11 @@ private: System::ComponentModel::IContainer^ components;
 
 			for (int i = 1; i < Ne; i++)
 			{
-				graph->DrawLine(graph1Pen, Math::Round(Kx * Xe1[i - 1] + Zx, 4), Math::Round(Ky * Ye1[i - 1] + Zy, 4),
-					Math::Round(Kx * Xe1[i] + Zx, 4), Convert::ToInt32(Math::Round(Ky * Ye1[i] + Zy, 4)));
+				if (conect[i - 1] == true && conect[i]==true) {
+					graph->DrawLine(graph1Pen, Math::Round(Kx * Xe1[i - 1] + Zx, 4), Math::Round(Ky * Ye1[i - 1] + Zy, 4),
+						Math::Round(Kx * Xe1[i] + Zx, 4), Convert::ToInt32(Math::Round(Ky * Ye1[i] + Zy, 4)));
+				}
+				
 			}
 			if (is2F) {
 				for (int i = 1; i < Ne; i++)
@@ -1269,6 +1287,11 @@ private: System::ComponentModel::IContainer^ components;
 			}
 		}
 	private: System::Void Draw_B_Click(System::Object^ sender, System::EventArgs^ e) {
+		double al = Convert::ToDouble(al_TB->Text);
+		double bl = Convert::ToDouble(bl_TB->Text);
+
+		double h;
+		h = (bl - al) / (Ne - 1);
 		// налаштовуэмо колір та ширину ліній
 		gridWidth = Convert::ToInt32(gridWidth_NUD->Value);
 		gridColor = grid_ColorD->Color;
@@ -1281,7 +1304,8 @@ private: System::ComponentModel::IContainer^ components;
 		//fIndex1 = Convert::ToInt16(f1_CB->SelectedIndex);
 		//fIndex2 = Convert::ToInt16(f2_CB->SelectedIndex);
 		// малюємо графік, осі та гратку
-		Draw();
+		Draw(h);
+		this->Text = h.ToString();
 	}
 	private: System::Void ChangeGridColor_B_Click(System::Object^ sender, System::EventArgs^ e) {
 		grid_ColorD->ShowDialog();
@@ -1326,6 +1350,10 @@ private: System::ComponentModel::IContainer^ components;
 		Dot2Coordinates->Visible = !Dot2Coordinates->Visible;
 	}
 	private: System::Void pictureBox_Click(System::Object^ sender, System::EventArgs^ e) {
+		double al = Convert::ToDouble(al_TB->Text);
+		double bl = Convert::ToDouble(bl_TB->Text);
+
+		double h;
 		point MPoint;
 		float x = (MousePosition.X - this->Location.X - pictureBox->Location.X - Zx) * (float)(xMax - xMin) / (pictureBox->Width - 2 * L) - 0.015 * (xMax - xMin);
 		//float y = Math::Round(MousePosition.Y - this->Location.Y - pictureBox->Location.Y - Zy, 2) * (float)(yMin - yMax) / (pictureBox->Height - 2 * L);
@@ -1334,28 +1362,12 @@ private: System::ComponentModel::IContainer^ components;
 		System::String^ riv = textBox1->Text;
 
 		std::string strriv = msclr::interop::marshal_as<std::string>(riv);
-		Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 = " + Math::Round(calculator(toPostfix(parser(strriv)), x), 1));
+		Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 = " + Math::Round(calculator(toPostfix(parser(strriv)), x,h), 1));
 		if (is2F)
 			Dot2Coordinates->Text = Convert::ToString("X2 = " + Math::Round(x, 1) + "; Y2 = " + Math::Round(f(x, fIndex1), 1));
 	}
 
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::String^ riv = textBox1->Text;
 
-	std::string strriv = msclr::interop::marshal_as<std::string>(riv);
-
-	
-	
-
-	double x = calculator(toPostfix(parser(strriv)), x);
-	string vid = to_string(x);
-	System::String^ result = msclr::interop::marshal_as<System::String^>(vid.c_str());
-	textBox2->Text = result;
-	Draw();
-	
-
-
-}
 private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
