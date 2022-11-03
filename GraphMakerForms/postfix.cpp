@@ -94,7 +94,14 @@ bool isFunction(string rivny, int i) {
             }
         }
     }
-    
+    if (rivny[i] == 'c') {
+        if (rivny[i + 1] == 't') {
+            if (rivny[i + 2] == 'g') {
+                return true;
+            }
+        }
+    }
+
 
 
     return false;
@@ -171,11 +178,20 @@ string* parser(string input) {
         }
 
         else if (isFunction(input, i)) {
+
             if (input[i] == 's') {
                 parse[v] = "sin";
             }
             if (input[i] == 'c') {
-                parse[v] = "cos";
+                if (input[i + 2] == 's') {
+                    parse[v] = "cos";
+                }
+                if (input[i + 2] == 'g') {
+                    parse[v] = "ctg";
+                }
+
+
+
             }
             if (input[i] == 'a') {
                 parse[v] = "abs";
@@ -186,7 +202,9 @@ string* parser(string input) {
             if (input[i] == 't') {
                 parse[v] = "tan";
             }
-
+            if (input[i] == 't') {
+                parse[v] = "tan";
+            }
             i = i + 2;
         }
 
@@ -320,7 +338,7 @@ double whatoperator(char oper, double a, double b, double h) {
             return 99999;
         }
         else { return(a / b); }
-        
+
 
     }
     if (oper == '*') {
@@ -333,7 +351,7 @@ double whatoperator(char oper, double a, double b, double h) {
     }
 
 }
-double whatfun(string oper, double a,double h) {
+double whatfun(string oper, double a, double h) {
     if (oper == "sin") {
         return(sin(a));
     }
@@ -350,37 +368,35 @@ double whatfun(string oper, double a,double h) {
         else {
             return 99999;
         }
-       
+
     }
     if (oper == "tan") {
-       
+
         double pi = 3.141592;
 
         double k = abs(((abs(a) - (pi / 2) + pi) / (pi)));
         double c = round(abs(((abs(a) - (pi / 2) + pi) / (pi))));
         if (abs(k - c) < h) {
             return 99999;
-             
+
         }
-        else { 
-            return tan(a);
-             
-        }
-       /*
-                       
-        if (abs(((abs(a) - 1.570796 + 3.141592) / 3.141592) - round(((abs(a) - 1.570796 + 3.141592) / 3.141592))) > 0.2) {
-            return(tan(a));
-        }
-       
         else {
+            return tan(a);
+
+        }
+
+    }
+    if (oper == "ctg") {
+        if (abs(sin(a)) < abs(h)) {
             return 99999;
         }
-        */
+        else { return(cos(a) / sin(a)); }
+
     }
-    
+
 }
 
-double calculator(string* output, double x,double h) {
+double calculator(string* output, double x, double h) {
     stack <string> stack;
     int outputLength = stoi(output[0]) + 1;
 
@@ -391,14 +407,14 @@ double calculator(string* output, double x,double h) {
             stack.push(output[i]);
         }
         else if (isOperator((output[i])[0])) {
-            double a,b;
+            double a, b;
             if (stack.top() == "x") {
                 b = x;
                 stack.pop();
 
             }
             else {
-                 b = stod(stack.top());
+                b = stod(stack.top());
                 stack.pop();
             }
             if (stack.top() == "x") {
@@ -412,10 +428,10 @@ double calculator(string* output, double x,double h) {
             }
 
 
-            
 
 
-            string oper = to_string(whatoperator((output[i])[0], a, b,h));
+
+            string oper = to_string(whatoperator((output[i])[0], a, b, h));
             stack.push(oper);
 
 
@@ -434,10 +450,10 @@ double calculator(string* output, double x,double h) {
             }
 
 
-            
-            
+
+
             string temp = output[i];
-            string oper = to_string(whatfun(temp, a,h));
+            string oper = to_string(whatfun(temp, a, h));
             stack.push(oper);
 
         }

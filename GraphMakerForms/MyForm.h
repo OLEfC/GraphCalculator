@@ -129,28 +129,28 @@ namespace GraphMakerForms {
 
 
 	private: System::Windows::Forms::Label^ label18;
-private: System::Windows::Forms::MenuStrip^ menuStrip1;
+	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 
 
 
-private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
-private: System::Windows::Forms::TextBox^ textBox1;
-private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBox2;
 
-private: System::Windows::Forms::GroupBox^ groupBox1;
-private: System::Windows::Forms::Button^ button13;
-private: System::Windows::Forms::TextBox^ textBox3;
-private: System::Windows::Forms::Button^ button9;
-private: System::Windows::Forms::Button^ button10;
-private: System::Windows::Forms::Button^ button12;
-private: System::Windows::Forms::Button^ button6;
-private: System::Windows::Forms::Button^ button7;
-private: System::Windows::Forms::Button^ button8;
-private: System::Windows::Forms::Button^ button5;
-private: System::Windows::Forms::Button^ button3;
-private: System::Windows::Forms::Button^ button2;
-private: System::Windows::Forms::Button^ button4;
-private: System::ComponentModel::IContainer^ components;
+	private: System::Windows::Forms::GroupBox^ groupBox1;
+	private: System::Windows::Forms::Button^ button13;
+	private: System::Windows::Forms::TextBox^ textBox3;
+	private: System::Windows::Forms::Button^ button9;
+	private: System::Windows::Forms::Button^ button10;
+	private: System::Windows::Forms::Button^ button12;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button8;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::ComponentModel::IContainer^ components;
 
 
 
@@ -1055,23 +1055,23 @@ private: System::ComponentModel::IContainer^ components;
 			case 5: return abs(x * cos(x));
 			}
 		}
-		void TabulF(double al, double bl, double Xe[1000], double Ye[1000], string strriv,bool conect[1000], double h)
+		void TabulF(double al, double bl, double Xe[1000], double Ye[1000], string strriv, bool conect[1000], double h)
 		{
-			
+
 			h = (bl - al) / (Ne - 1);
 			Xe[0] = al;
 			for (int i = 0; i < Ne; i++)
 			{
-				Ye[i] = calculator(toPostfix(parser(strriv)), Xe[i],h);;
+				Ye[i] = calculator(toPostfix(parser(strriv)), Xe[i], h);;
 				Xe[i + 1] = Xe[i] + h;
-				if (Ye[i] == 99999) {
+				if (abs(Ye[i]) == 99999) {
 					conect[i] = false;
 
 				}
 				else {
 					conect[i] = true;
 				}
-			
+
 			}
 		}
 		void Draw(double h) {
@@ -1079,7 +1079,7 @@ private: System::ComponentModel::IContainer^ components;
 			int xGridKrok, yGridKrok; // в≥дступи м≥ж л≥н≥€ми гратки
 			int gridLinesVert, gridLinesHoriz; // к≥льк≥сть л≥н≥й гратки граф≥ка
 			double Xe1[1000], Ye1[1000], Xe2[1000], Ye2[1000]; // вс≥ значенн€ x та y
-			bool conect[1000],conects[1000];
+			bool conect[1000], conects[1000];
 
 			Pen^ gridPen = gcnew Pen(gridColor, gridWidth); // кол≥р гратки
 			Pen^ axisPen = gcnew Pen(axisColor, axisWidth); // кол≥р осей координат
@@ -1142,9 +1142,9 @@ private: System::ComponentModel::IContainer^ components;
 				System::String^ rivf = textBox1->Text;
 
 				std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
-				
 
-				TabulF(al, bl, pXe, pYe, strrivf,con,h);
+
+				TabulF(al, bl, pXe, pYe, strrivf, conect, h);
 				if (is2F)
 				{
 					System::String^ rivs = textBox2->Text;
@@ -1152,8 +1152,8 @@ private: System::ComponentModel::IContainer^ components;
 					std::string strrivs = msclr::interop::marshal_as<std::string>(rivs);
 					pXe = Xe2;
 					pYe = Ye2;
-					con = conects;
-					TabulF(al, bl, pXe, pYe, strrivs,conects,h);
+					bool* cons = conects;
+					TabulF(al, bl, pXe, pYe, strrivs, cons, h);
 				}
 			}
 			catch (FormatException^)
@@ -1172,11 +1172,13 @@ private: System::ComponentModel::IContainer^ components;
 			if (is2F) {
 				for (int i = 0; i < Ne; i++)
 				{
-					if (yMax < Ye1[i]) yMax = Ye1[i];
-					if (yMin > Ye1[i]) yMin = Ye1[i];
+					if (conects[i]) {
+						if (yMax < Ye1[i]) yMax = Ye1[i];
+						if (yMin > Ye1[i]) yMin = Ye1[i];
 
-					if (yMax < Ye2[i]) yMax = Ye2[i];
-					if (yMin > Ye2[i]) yMin = Ye2[i];
+						if (yMax < Ye2[i]) yMax = Ye2[i];
+						if (yMin > Ye2[i]) yMin = Ye2[i];
+					}
 				}
 			}
 			else {
@@ -1186,10 +1188,10 @@ private: System::ComponentModel::IContainer^ components;
 						if (yMax < Ye1[i]) yMax = Ye1[i];
 						if (yMin > Ye1[i]) yMin = Ye1[i];
 					}
-					
+
 				}
 			}
-			
+
 
 			// ќбчислюЇмо коеф≥ц≥Їнти масштабуванн€
 			Kx = (graphWidth - 2 * L) / (xMax - xMin); // одиниц€ x в п≥ксел€х
@@ -1272,17 +1274,19 @@ private: System::ComponentModel::IContainer^ components;
 
 			for (int i = 1; i < Ne; i++)
 			{
-				if (conect[i - 1] == true && conect[i]==true) {
+				if (conect[i - 1] == true && conect[i] == true) {
 					graph->DrawLine(graph1Pen, Math::Round(Kx * Xe1[i - 1] + Zx, 4), Math::Round(Ky * Ye1[i - 1] + Zy, 4),
 						Math::Round(Kx * Xe1[i] + Zx, 4), Convert::ToInt32(Math::Round(Ky * Ye1[i] + Zy, 4)));
 				}
-				
+
 			}
 			if (is2F) {
 				for (int i = 1; i < Ne; i++)
 				{
-					graph->DrawLine(graph2Pen, Math::Round(Kx * Xe2[i - 1] + Zx, 4), Math::Round(Ky * Ye2[i - 1] + Zy, 4),
-						Math::Round(Kx * Xe2[i] + Zx, 4), Convert::ToInt32(Math::Round(Ky * Ye2[i] + Zy, 4)));
+					if (conects[i - 1] == true && conects[i] == true) {
+						graph->DrawLine(graph2Pen, Math::Round(Kx * Xe2[i - 1] + Zx, 4), Math::Round(Ky * Ye2[i - 1] + Zy, 4),
+							Math::Round(Kx * Xe2[i] + Zx, 4), Convert::ToInt32(Math::Round(Ky * Ye2[i] + Zy, 4)));
+					}
 				}
 			}
 		}
@@ -1362,52 +1366,71 @@ private: System::ComponentModel::IContainer^ components;
 		System::String^ riv = textBox1->Text;
 
 		std::string strriv = msclr::interop::marshal_as<std::string>(riv);
-		Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 = " + Math::Round(calculator(toPostfix(parser(strriv)), x,h), 1));
-		if (is2F)
-			Dot2Coordinates->Text = Convert::ToString("X2 = " + Math::Round(x, 1) + "; Y2 = " + Math::Round(f(x, fIndex1), 1));
+		if (abs(calculator(toPostfix(parser(strriv)), x, h)) == 99999) {
+			Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 =NaN ");
+		}
+		else {
+			Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 = " + Math::Round(calculator(toPostfix(parser(strriv)), x, h), 1));
+		}
+
+		if (is2F) {
+
+			System::String^ rivs = textBox2->Text;
+
+			std::string strrivs = msclr::interop::marshal_as<std::string>(rivs);
+
+			if (abs(calculator(toPostfix(parser(strrivs)), x, h)) == 99999) {
+				Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 =NaN ");
+			}
+
+
+			else { Dot2Coordinates->Text = Convert::ToString("X2 = " + Math::Round(x, 1) + "; Y2 = " + Math::Round(calculator(toPostfix(parser(strrivs)), x, h), 1)); }
+
+		}
+
 	}
 
 
-private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox1->Text = textBox3->Text;
-	groupBox1->Visible = false;
-}
-private: System::Void textBox1_Click(System::Object^ sender, System::EventArgs^ e) {
-	groupBox1->Visible = true;
-	textBox3->Text = textBox1->Text;
-}
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox3->Text = textBox3->Text + "sin(x)";
-}
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox3->Text = textBox3->Text + "cos(x)";
+	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox1->Text = textBox3->Text;
+		groupBox1->Visible = false;
+	}
+	private: System::Void textBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+		groupBox1->Visible = true;
+		textBox3->Text = textBox1->Text;
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox3->Text = textBox3->Text + "sin(x)";
+	}
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox3->Text = textBox3->Text + "cos(x)";
 
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox3->Text = textBox3->Text + "log(x)";
-}
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox3->Text = textBox3->Text + "+";
-}
-private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox3->Text = textBox3->Text + "-";
-}
-private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox3->Text = textBox3->Text + "*";
-}
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox3->Text = textBox3->Text + "/";
-}
-private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox3->Text = textBox3->Text + "abs(x)";
-}
-private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox3->Text = textBox3->Text + "(";
-}
-private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
-	textBox3->Text = textBox3->Text + ")";
-}
-};
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox3->Text = textBox3->Text + "log(x)";
+	}
+	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox3->Text = textBox3->Text + "+";
+	}
+	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox3->Text = textBox3->Text + "-";
+	}
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox3->Text = textBox3->Text + "*";
+	}
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox3->Text = textBox3->Text + "/";
+	}
+	private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox3->Text = textBox3->Text + "abs(x)";
+	}
+	private: System::Void button10_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox3->Text = textBox3->Text + "(";
+	}
+	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+		textBox3->Text = textBox3->Text + ")";
+	}
+	};
 }
