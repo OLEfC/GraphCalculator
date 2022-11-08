@@ -432,10 +432,18 @@ double calculator(string* output, double x, double h) {
 
 
 
+            string temp = output[i];
+            if (whatoperator((output[i])[0], a, b, h) != 99999) {
+                string oper = to_string(whatoperator((output[i])[0], a, b, h));
+                stack.push(oper);
+                
+            }
+            else {
+                return 99999;
+            }
 
-            string oper = to_string(whatoperator((output[i])[0], a, b, h));
-            stack.push(oper);
 
+          
 
 
         }
@@ -476,8 +484,26 @@ double calculator(string* output, double x, double h) {
 }
 
 
+double ydh(string input, double x0, double  h) {
+    
+    if ((calculator(toPostfix(parser(input)), x0, h)) == 99999) {
+        return(99999);
+    }
+    else if ((calculator(toPostfix(parser(input)), x0+h, h)) == 99999) {
+        return(99999);
+    }
+    else if ((calculator(toPostfix(parser(input)), x0-h, h)) == 99999) {
+        return(99999);
+    }
+    else { return (1 / (2 * h)) * (calculator(toPostfix(parser(input)), x0 + h, h) - calculator(toPostfix(parser(input)), x0 - h, h)); }
 
-double fp(string input,double x, double h) {
-    double y = calculator(toPostfix(parser(input)), x, h);
-        return y;
+
+   
+}
+
+double ydr(string input,double x0, double h) {
+    if (ydh(input, x0, h) == 99999) { return(99999); }
+    else if (ydh(input, x0, 2 * h) == 99999) { return(99999); }
+    else { return ydh(input, x0, h) + (ydh(input, x0, h) - ydh(input, x0, 2 * h)) / 3; }
+   
 }

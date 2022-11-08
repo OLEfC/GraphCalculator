@@ -150,6 +150,11 @@ namespace GraphMakerForms {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button4;
+private: System::Windows::Forms::DataGridView^ dataGridView1;
+private: System::Windows::Forms::TextBox^ textBox4;
+private: System::Windows::Forms::TextBox^ textBox5;
+
+
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -237,6 +242,9 @@ namespace GraphMakerForms {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Ne_NUD))->BeginInit();
 			this->panel3->SuspendLayout();
@@ -249,6 +257,7 @@ namespace GraphMakerForms {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->gridWidth_NUD))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
 			this->groupBox1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// Draw_B
@@ -808,7 +817,7 @@ namespace GraphMakerForms {
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1809, 24);
+			this->menuStrip1->Size = System::Drawing::Size(1547, 24);
 			this->menuStrip1->TabIndex = 33;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -982,11 +991,43 @@ namespace GraphMakerForms {
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(29, 690);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(1263, 150);
+			this->dataGridView1->TabIndex = 39;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(1566, 246);
+			this->textBox4->Multiline = true;
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(185, 30);
+			this->textBox4->TabIndex = 40;
+			this->textBox4->Visible = false;
+			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(825, -17);
+			this->textBox5->Multiline = true;
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(209, 198);
+			this->textBox5->TabIndex = 41;
+			this->textBox5->Visible = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1809, 665);
+			this->ClientSize = System::Drawing::Size(1547, 914);
+			this->Controls->Add(this->textBox5);
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
@@ -1029,6 +1070,7 @@ namespace GraphMakerForms {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1055,7 +1097,7 @@ namespace GraphMakerForms {
 			case 5: return abs(x * cos(x));
 			}
 		}
-		void TabulF(double al, double bl, double Xe[1000], double Ye[1000], string strriv, bool conect[1000], double h)
+		void TabulF(double al, double bl, double Xe[1000], double Ye[1000], string strriv, bool conect[1000], double h, bool nules[1000])
 		{
 
 			h = (bl - al) / (Ne - 1);
@@ -1066,10 +1108,42 @@ namespace GraphMakerForms {
 				Xe[i + 1] = Xe[i] + h;
 				if (abs(Ye[i]) == 99999) {
 					conect[i] = false;
+					
 
 				}
 				else {
+					if (abs(Ye[i]) < (h)) {
+						nules[i] = true;
+					}
 					conect[i] = true;
+				}
+
+			}
+		}
+
+		void TabulFp(double al, double bl, double Xe[1000], double Ye[1000], string strriv, bool conect[1000], bool conects[1000], double h, bool nulesec[1000])
+		{
+
+			h = (bl - al) / (Ne - 1);
+			Xe[0] = al;
+			for (int i = 0; i < Ne; i++)
+			{
+				
+				Xe[i + 1] = Xe[i] + h;
+				if (ydh(strriv, Xe[i], h)==99999) {
+					conects[i] = false;
+					Ye[i] = ydh(strriv, Xe[i], h);
+					nulesec[i] = false;
+					
+					
+
+				}
+				else {
+					if (abs(Ye[i]) < (h)) {
+						nulesec[i] = true;
+					}
+					Ye[i] = ydh(strriv, Xe[i], h);
+					conects[i] = true;
 				}
 
 			}
@@ -1080,6 +1154,7 @@ namespace GraphMakerForms {
 			int gridLinesVert, gridLinesHoriz; // к≥льк≥сть л≥н≥й гратки граф≥ка
 			double Xe1[1000], Ye1[1000], Xe2[1000], Ye2[1000]; // вс≥ значенн€ x та y
 			bool conect[1000], conects[1000];
+			bool nules[1000], nulesec[1000];
 
 			Pen^ gridPen = gcnew Pen(gridColor, gridWidth); // кол≥р гратки
 			Pen^ axisPen = gcnew Pen(axisColor, axisWidth); // кол≥р осей координат
@@ -1142,18 +1217,16 @@ namespace GraphMakerForms {
 				System::String^ rivf = textBox1->Text;
 
 				std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
-				this->Text = fp(strrivf, 3.14, h).ToString();
+				
 
-				TabulF(al, bl, pXe, pYe, strrivf, conect, h);
+				TabulF(al, bl, Xe1, Ye1, strrivf, conect, h,nules);
 				if (is2F)
 				{
-					System::String^ rivs = textBox2->Text;
-
-					std::string strrivs = msclr::interop::marshal_as<std::string>(rivs);
+					
 					pXe = Xe2;
 					pYe = Ye2;
 					bool* cons = conects;
-					TabulF(al, bl, pXe, pYe, strrivs, cons, h);
+					TabulFp(al, bl, Xe2, Ye2, strrivf, conect,cons, h,nulesec);
 				}
 			}
 			catch (FormatException^)
@@ -1172,10 +1245,16 @@ namespace GraphMakerForms {
 			if (is2F) {
 				for (int i = 0; i < Ne; i++)
 				{
-					if (conects[i]) {
+					
+					if (conect[i]) {
+
 						if (yMax < Ye1[i]) yMax = Ye1[i];
 						if (yMin > Ye1[i]) yMin = Ye1[i];
 
+							
+
+					}
+					if (conects[i]) {
 						if (yMax < Ye2[i]) yMax = Ye2[i];
 						if (yMin > Ye2[i]) yMin = Ye2[i];
 					}
@@ -1273,7 +1352,13 @@ namespace GraphMakerForms {
 			graph->DrawString(Convert::ToString(Gy), gcnew Drawing::Font("Times", 8), Brushes::Black, axisCentre.x - 6, L / 2);
 
 			for (int i = 1; i < Ne; i++)
+				
 			{
+				if (/*Math::Round(abs(Ye1[i]), 4) */ abs(Ye1[i])<(h)) {
+					textBox4->Text = textBox4->Text+"|" + Xe1[i].ToString()+ "(" + i + ")";
+				}
+
+
 				if (conect[i - 1] == true && conect[i] == true) {
 					graph->DrawLine(graph1Pen, Math::Round(Kx * Xe1[i - 1] + Zx, 4), Math::Round(Ky * Ye1[i - 1] + Zy, 4),
 						Math::Round(Kx * Xe1[i] + Zx, 4), Convert::ToInt32(Math::Round(Ky * Ye1[i] + Zy, 4)));
@@ -1283,6 +1368,9 @@ namespace GraphMakerForms {
 			if (is2F) {
 				for (int i = 1; i < Ne; i++)
 				{
+					if (/*Math::Round(abs(Ye1[i]), 4) */  abs(Ye2[i]) < (h)) {
+						//textBox5->Text = textBox5->Text + "|" + Xe2[i].ToString() + "("+i+")";
+					}
 					if (conects[i - 1] == true && conects[i] == true) {
 						graph->DrawLine(graph2Pen, Math::Round(Kx * Xe2[i - 1] + Zx, 4), Math::Round(Ky * Ye2[i - 1] + Zy, 4),
 							Math::Round(Kx * Xe2[i] + Zx, 4), Convert::ToInt32(Math::Round(Ky * Ye2[i] + Zy, 4)));
@@ -1290,10 +1378,171 @@ namespace GraphMakerForms {
 				}
 			}
 
+			if (is2F) {
+
+				int kkstpr =3;
+				dataGridView1->RowCount = 3;
+				dataGridView1->ColumnCount = kkstpr;
+
+				//dataGridView1[0][0]->Value = "ff";
+				dataGridView1->Rows[0]->Cells[0]->Value = "x";
+				dataGridView1->Rows[0]->Cells[1]->Value = Convert::ToDouble((al_TB->Text)).ToString("f2");
+
+				dataGridView1->Rows[1]->Cells[0]->Value = "fp";
+			
+
+				System::String^ rivf = textBox1->Text;
+
+				std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
+				double fph = ydh(strrivf, Convert::ToDouble((al_TB->Text)), h);
+
+				dataGridView1->Rows[1]->Cells[1]->Value = fph.ToString();
+				dataGridView1->Rows[2]->Cells[0]->Value = "f";
+				
+			int poper = 1;
+			//double kkstpr = 0;
+			double a = Convert::ToDouble((al_TB->Text));
+			double b;
+			double now;
+			double j;
+			
+			if ((Ye2[0]) < (0.001)) {
+				poper = 1;
+
+			}
+			else { poper = -1; }
+			for (int i = 1; i < Ne; i++) {
+				int temp=poper;
+
+				if ((Ye2[i]) < (h)) {
+					poper = 1;
+
+				}
+				else { 
+					poper = -1; 
+				}
+				if (temp * poper < 0) {
+					textBox5->Text = textBox5->Text+"  " + Xe2[i].ToString();
+					
+					//b = Xe2[i];
+					//dataGridView1->Rows->Add(dushky(a,2));
+					kkstpr= kkstpr+2;
+					//a = b;
+				}
+				
+				
+			}
+			
+			kkstpr++;
+			dataGridView1->ColumnCount = kkstpr;
+			dataGridView1->Rows[0]->Cells[kkstpr-1]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
+			fph = ydh(strrivf, Convert::ToDouble((bl_TB->Text)), h);
+
+			dataGridView1->Rows[1]->Cells[kkstpr - 1]->Value = fph.ToString();
+
+			
+			
+
+			this->Text = kkstpr.ToString();
+			
+			
+			int num=0;
+			double xznach=0;
+			int l=2;
+
+			for (int i = 1; i < Ne; i++) {
+				int temp = poper;
+				
+				if (abs(Ye2[i]) < (h)) {
+					num++;
+					xznach = xznach + Xe1[i];
+
+
+				}
+				else {
+					if (num != 0) {
+
+						xznach = xznach /num;
+						dataGridView1->Rows[0]->Cells[l+1]->Value = xznach.ToString("f2");
+						l=l+2;
+					}
+					num=0;
+					xznach = 0;
+
+				}
+				dataGridView1->Rows[0]->Cells[kkstpr - 1]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
+			}
+			for (int i = 2; i < kkstpr; i = i + 2) {
+				
+				//dataGridView1->Rows[0]->Cells[i]->Value = dushky(Convert::ToDouble(dataGridView1->Rows[0]->Cells[i - 1]), Convert::ToDouble(dataGridView1->Rows[0]->Cells[i + 1]));
+				double x_start= Convert::ToDouble(dataGridView1->Rows[0]->Cells[i - 1]->Value);
+				double x_end= Convert::ToDouble(dataGridView1->Rows[0]->Cells[i + 1]->Value);
+
+				dataGridView1->Rows[0]->Cells[i]->Value = dushky(x_start, x_end);
+				double c = (x_end + x_start) / 2;
+				double fph=ydh(strrivf, c, h);
+				//textBox5->Text = textBox5->Text + "|" + fph.ToString() + "(" + kkstpr + ")";
+				if (fph > 0) {
+					dataGridView1->Rows[1]->Cells[i]->Value = "+";
+					dataGridView1->Rows[2]->Cells[i]->Value = "«ростаЇ";
+
+					
+					//dataGridView1->Rows[2]->Cells[i]->Value = fph.ToString()+ x_start +"-"+ x_end+"(" + c;
+				}
+				else {
+					dataGridView1->Rows[1]->Cells[i]->Value = "-";
+					//dataGridView1->Rows[2]->Cells[i]->Value = fph.ToString() + x_start + "-" + x_end + "(" + c;
+					dataGridView1->Rows[2]->Cells[i]->Value = "—падаЇ";
+				}
+
+
+			}
+			for (int i = 1; i < kkstpr; i = i + 2) {
+				System::String^ rivf = textBox1->Text;
+
+				std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
+				double c = Convert::ToDouble(dataGridView1->Rows[0]->Cells[i]->Value);
+
+				double fph = ydh(strrivf, c, h);
+
+				dataGridView1->Rows[1]->Cells[i]->Value = fph.ToString();
+
+
+
+
+			}
+			dataGridView1->Rows[2]->Cells[0]->Value = "MAX";
+			for (int i = 3; i < kkstpr - 1; i = i + 2) {
+				if (dataGridView1->Rows[1]->Cells[i-1]->Value == "+") {
+					if (dataGridView1->Rows[1]->Cells[i + 1]->Value == "-") {
+						dataGridView1->Rows[2]->Cells[i]->Value = "MAX";
+
+
+					}
+
+				}
+				if (dataGridView1->Rows[1]->Cells[i - 1]->Value == "-") {
+					if (dataGridView1->Rows[1]->Cells[i + 1]->Value == "+") {
+						dataGridView1->Rows[2]->Cells[i]->Value = "MIN";
+
+
+					}
+
+				}
+			}
+			}
+			
+
 			
 
 
 		}
+
+		String^ dushky(double a, double b) {
+			return("(" + a.ToString("f2") + ";" + b.ToString("f2") + ")");
+		}
+		
+
 	private: System::Void Draw_B_Click(System::Object^ sender, System::EventArgs^ e) {
 		double al = Convert::ToDouble(al_TB->Text);
 		double bl = Convert::ToDouble(bl_TB->Text);
@@ -1313,6 +1562,7 @@ namespace GraphMakerForms {
 		//fIndex2 = Convert::ToInt16(f2_CB->SelectedIndex);
 		// малюЇмо граф≥к, ос≥ та гратку
 		Draw(h);
+
 		
 	}
 	private: System::Void ChangeGridColor_B_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1361,7 +1611,8 @@ namespace GraphMakerForms {
 		double al = Convert::ToDouble(al_TB->Text);
 		double bl = Convert::ToDouble(bl_TB->Text);
 
-		double h;
+		double h=(al-bl)/Ne;
+
 		point MPoint;
 		float x = (MousePosition.X - this->Location.X - pictureBox->Location.X - Zx) * (float)(xMax - xMin) / (pictureBox->Width - 2 * L) - 0.015 * (xMax - xMin);
 		//float y = Math::Round(MousePosition.Y - this->Location.Y - pictureBox->Location.Y - Zy, 2) * (float)(yMin - yMax) / (pictureBox->Height - 2 * L);
@@ -1374,21 +1625,19 @@ namespace GraphMakerForms {
 			Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 =NaN ");
 		}
 		else {
-			Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 = " + Math::Round(calculator(toPostfix(parser(strriv)), x, h), 1));
+			Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 = " + Math::Round(calculator(toPostfix(parser(strriv)), x, h), 2));
 		}
 
 		if (is2F) {
+			
 
-			System::String^ rivs = textBox2->Text;
 
-			std::string strrivs = msclr::interop::marshal_as<std::string>(rivs);
-
-			if (abs(calculator(toPostfix(parser(strrivs)), x, h)) == 99999) {
+			if (ydh(strriv, x, h) == 99999) {
 				Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 =NaN ");
 			}
 
 
-			else { Dot2Coordinates->Text = Convert::ToString("X2 = " + Math::Round(x, 1) + "; Y2 = " + Math::Round(calculator(toPostfix(parser(strrivs)), x, h), 1)); }
+			else { Dot2Coordinates->Text = Convert::ToString("X2 = " + Math::Round(x, 1) + "; Y2 = " + Math::Round(ydh(strriv,x,h), 2)); }
 
 		}
 
@@ -1436,5 +1685,7 @@ namespace GraphMakerForms {
 	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
 		textBox3->Text = textBox3->Text + ")";
 	}
-	};
+	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
