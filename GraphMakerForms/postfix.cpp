@@ -101,6 +101,13 @@ bool isFunction(string rivny, int i) {
             }
         }
     }
+    if (rivny[i] == 'i') {
+        if (rivny[i + 1] == 'n') {
+            if (rivny[i + 2] == 'v') {
+                return true;
+            }
+        }
+    }
 
 
 
@@ -204,6 +211,9 @@ string* parser(string input) {
             }
             if (input[i] == 't') {
                 parse[v] = "tan";
+            }
+            if (input[i] == 'i') {
+                parse[v] = "inv";
             }
             i = i + 2;
         }
@@ -335,7 +345,7 @@ double whatoperator(char oper, double a, double b, double h) {
     }
     if (oper == '/') {
         if (abs(b) < abs(h)) {
-            return 99999;
+            return 7878787;
         }
         else { return(a / b); }
 
@@ -366,7 +376,7 @@ double whatfun(string oper, double a, double h) {
             return(log10(a));
         }
         else {
-            return 99999;
+            return 7878787;
         }
 
     }
@@ -378,7 +388,7 @@ double whatfun(string oper, double a, double h) {
         double c = round(abs(((abs(a) - (pi / 2) + pi) / (pi))));
         if (abs(k - c) < h) {
 
-            return 99999;
+            return 7878787;
            
 
         }
@@ -390,10 +400,13 @@ double whatfun(string oper, double a, double h) {
     }
     if (oper == "ctg") {
         if (abs(sin(a)) < abs(h)) {
-            return 99999;
+            return 7878787;
         }
         else { return(cos(a) / sin(a)); }
 
+    }
+    if (oper == "inv") {
+        return(-1*a);
     }
 
 }
@@ -433,13 +446,13 @@ double calculator(string* output, double x, double h) {
 
 
             string temp = output[i];
-            if (whatoperator((output[i])[0], a, b, h) != 99999) {
+            if (whatoperator((output[i])[0], a, b, h) != 7878787) {
                 string oper = to_string(whatoperator((output[i])[0], a, b, h));
                 stack.push(oper);
                 
             }
             else {
-                return 99999;
+                return 7878787;
             }
 
 
@@ -463,12 +476,12 @@ double calculator(string* output, double x, double h) {
 
 
             string temp = output[i];
-            if (whatfun(temp, a, h) != 99999) {
+            if (whatfun(temp, a, h) != 7878787) {
                 string oper = to_string(whatfun(temp, a, h));
                 stack.push(oper);
             }
             else {
-                return 99999;
+                return 7878787;
             }
 
         }
@@ -486,14 +499,14 @@ double calculator(string* output, double x, double h) {
 
 double ydh(string input, double x0, double  h) {
     
-    if ((calculator(toPostfix(parser(input)), x0, h)) == 99999) {
-        return(99999);
+    if ((calculator(toPostfix(parser(input)), x0, h)) == 7878787) {
+        return(7878787);
     }
-    else if ((calculator(toPostfix(parser(input)), x0+h, h)) == 99999) {
-        return(99999);
+    else if ((calculator(toPostfix(parser(input)), x0+h, h)) == 7878787) {
+        return(7878787);
     }
-    else if ((calculator(toPostfix(parser(input)), x0-h, h)) == 99999) {
-        return(99999);
+    else if ((calculator(toPostfix(parser(input)), x0-h, h)) == 7878787) {
+        return(7878787);
     }
     else { return (1 / (2 * h)) * (calculator(toPostfix(parser(input)), x0 + h, h) - calculator(toPostfix(parser(input)), x0 - h, h)); }
 
@@ -502,8 +515,8 @@ double ydh(string input, double x0, double  h) {
 }
 
 double ydr(string input,double x0, double h) {
-    if (ydh(input, x0, h) == 99999) { return(99999); }
-    else if (ydh(input, x0, 2 * h) == 99999) { return(99999); }
+    if (ydh(input, x0, h) == 7878787) { return(7878787); }
+    else if (ydh(input, x0, 2 * h) == 7878787) { return(7878787); }
     else { return ydh(input, x0, h) + (ydh(input, x0, h) - ydh(input, x0, 2 * h)) / 3; }
    
 }

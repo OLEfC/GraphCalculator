@@ -156,6 +156,11 @@ private: System::Windows::Forms::TextBox^ textBox5;
 private: System::Windows::Forms::ToolStripMenuItem^ файлToolStripMenuItem;
 private: System::Windows::Forms::ToolStripMenuItem^ зберегтиToolStripMenuItem;
 private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenuItem;
+private: System::Windows::Forms::Button^ button11;
+private: System::Windows::Forms::Button^ button1;
+private: System::Windows::Forms::Button^ button14;
+private: System::Windows::Forms::Button^ button16;
+private: System::Windows::Forms::Button^ button15;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -207,11 +212,16 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->button16 = (gcnew System::Windows::Forms::Button());
+			this->button15 = (gcnew System::Windows::Forms::Button());
+			this->button14 = (gcnew System::Windows::Forms::Button());
+			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
@@ -300,7 +310,6 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			// 
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->textBox4);
-			this->panel1->Controls->Add(this->textBox5);
 			this->panel1->Controls->Add(this->label3);
 			this->panel1->Controls->Add(this->al_TB);
 			this->panel1->Controls->Add(this->bl_TB);
@@ -324,12 +333,11 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(77, 43);
+			this->textBox5->Location = System::Drawing::Point(1596, 617);
 			this->textBox5->Multiline = true;
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(36, 37);
+			this->textBox5->Size = System::Drawing::Size(214, 166);
 			this->textBox5->TabIndex = 41;
-			this->textBox5->Visible = false;
 			// 
 			// label4
 			// 
@@ -482,20 +490,25 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textBox1->Location = System::Drawing::Point(1744, 225);
+			this->textBox1->Location = System::Drawing::Point(1751, 225);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(294, 32);
+			this->textBox1->Size = System::Drawing::Size(278, 32);
 			this->textBox1->TabIndex = 35;
 			this->textBox1->Click += gcnew System::EventHandler(this, &MyForm::textBox1_Click);
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->button16);
+			this->groupBox1->Controls->Add(this->button15);
+			this->groupBox1->Controls->Add(this->button14);
+			this->groupBox1->Controls->Add(this->button11);
+			this->groupBox1->Controls->Add(this->button1);
 			this->groupBox1->Controls->Add(this->button13);
+			this->groupBox1->Controls->Add(this->button12);
 			this->groupBox1->Controls->Add(this->textBox3);
 			this->groupBox1->Controls->Add(this->button9);
 			this->groupBox1->Controls->Add(this->button10);
-			this->groupBox1->Controls->Add(this->button12);
 			this->groupBox1->Controls->Add(this->button6);
 			this->groupBox1->Controls->Add(this->button7);
 			this->groupBox1->Controls->Add(this->button8);
@@ -503,22 +516,82 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			this->groupBox1->Controls->Add(this->button3);
 			this->groupBox1->Controls->Add(this->button2);
 			this->groupBox1->Controls->Add(this->button4);
-			this->groupBox1->Location = System::Drawing::Point(1671, 219);
+			this->groupBox1->Location = System::Drawing::Point(1751, 225);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(371, 235);
+			this->groupBox1->Size = System::Drawing::Size(278, 320);
 			this->groupBox1->TabIndex = 38;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Visible = false;
 			// 
+			// button16
+			// 
+			this->button16->Location = System::Drawing::Point(188, 235);
+			this->button16->Name = L"button16";
+			this->button16->Size = System::Drawing::Size(85, 34);
+			this->button16->TabIndex = 32;
+			this->button16->Text = L"-X";
+			this->button16->UseVisualStyleBackColor = true;
+			this->button16->Click += gcnew System::EventHandler(this, &MyForm::button16_Click);
+			// 
+			// button15
+			// 
+			this->button15->Location = System::Drawing::Point(97, 235);
+			this->button15->Name = L"button15";
+			this->button15->Size = System::Drawing::Size(85, 34);
+			this->button15->TabIndex = 31;
+			this->button15->Text = L"^";
+			this->button15->UseVisualStyleBackColor = true;
+			this->button15->Click += gcnew System::EventHandler(this, &MyForm::button15_Click);
+			// 
+			// button14
+			// 
+			this->button14->Location = System::Drawing::Point(6, 69);
+			this->button14->Name = L"button14";
+			this->button14->Size = System::Drawing::Size(85, 34);
+			this->button14->TabIndex = 30;
+			this->button14->Text = L"C";
+			this->button14->UseVisualStyleBackColor = true;
+			this->button14->Click += gcnew System::EventHandler(this, &MyForm::button14_Click);
+			// 
+			// button11
+			// 
+			this->button11->Location = System::Drawing::Point(189, 109);
+			this->button11->Name = L"button11";
+			this->button11->Size = System::Drawing::Size(85, 36);
+			this->button11->TabIndex = 29;
+			this->button11->Text = L"tan(x)";
+			this->button11->UseVisualStyleBackColor = true;
+			this->button11->Click += gcnew System::EventHandler(this, &MyForm::button11_Click);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(6, 151);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(85, 36);
+			this->button1->TabIndex = 28;
+			this->button1->Text = L"ctg(x)";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
 			// button13
 			// 
-			this->button13->Location = System::Drawing::Point(6, 195);
+			this->button13->Location = System::Drawing::Point(6, 275);
 			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(358, 32);
+			this->button13->Size = System::Drawing::Size(268, 32);
 			this->button13->TabIndex = 27;
 			this->button13->Text = L"Готово";
 			this->button13->UseVisualStyleBackColor = true;
 			this->button13->Click += gcnew System::EventHandler(this, &MyForm::button13_Click);
+			// 
+			// button12
+			// 
+			this->button12->Location = System::Drawing::Point(189, 151);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(85, 34);
+			this->button12->TabIndex = 23;
+			this->button12->Text = L"|x|";
+			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
 			// 
 			// textBox3
 			// 
@@ -527,12 +600,12 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			this->textBox3->Location = System::Drawing::Point(6, 14);
 			this->textBox3->Multiline = true;
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(358, 49);
+			this->textBox3->Size = System::Drawing::Size(267, 49);
 			this->textBox3->TabIndex = 26;
 			// 
 			// button9
 			// 
-			this->button9->Location = System::Drawing::Point(235, 155);
+			this->button9->Location = System::Drawing::Point(189, 67);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(85, 34);
 			this->button9->TabIndex = 25;
@@ -542,7 +615,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			// 
 			// button10
 			// 
-			this->button10->Location = System::Drawing::Point(144, 153);
+			this->button10->Location = System::Drawing::Point(97, 67);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(85, 36);
 			this->button10->TabIndex = 24;
@@ -550,19 +623,9 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			this->button10->UseVisualStyleBackColor = true;
 			this->button10->Click += gcnew System::EventHandler(this, &MyForm::button10_Click);
 			// 
-			// button12
-			// 
-			this->button12->Location = System::Drawing::Point(53, 153);
-			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(85, 34);
-			this->button12->TabIndex = 23;
-			this->button12->Text = L"|x|";
-			this->button12->UseVisualStyleBackColor = true;
-			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
-			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(279, 113);
+			this->button6->Location = System::Drawing::Point(6, 235);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(85, 34);
 			this->button6->TabIndex = 22;
@@ -572,9 +635,9 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			// 
 			// button7
 			// 
-			this->button7->Location = System::Drawing::Point(188, 111);
+			this->button7->Location = System::Drawing::Point(189, 193);
 			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(85, 36);
+			this->button7->Size = System::Drawing::Size(85, 34);
 			this->button7->TabIndex = 21;
 			this->button7->Text = L"*";
 			this->button7->UseVisualStyleBackColor = true;
@@ -582,9 +645,9 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(97, 111);
+			this->button8->Location = System::Drawing::Point(97, 193);
 			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(85, 36);
+			this->button8->Size = System::Drawing::Size(85, 34);
 			this->button8->TabIndex = 20;
 			this->button8->Text = L"-";
 			this->button8->UseVisualStyleBackColor = true;
@@ -592,7 +655,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(6, 111);
+			this->button5->Location = System::Drawing::Point(6, 193);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(85, 34);
 			this->button5->TabIndex = 19;
@@ -602,7 +665,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(235, 69);
+			this->button3->Location = System::Drawing::Point(97, 151);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(85, 36);
 			this->button3->TabIndex = 18;
@@ -612,7 +675,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(144, 69);
+			this->button2->Location = System::Drawing::Point(97, 109);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(85, 36);
 			this->button2->TabIndex = 17;
@@ -622,7 +685,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(53, 69);
+			this->button4->Location = System::Drawing::Point(6, 109);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(85, 36);
 			this->button4->TabIndex = 16;
@@ -646,6 +709,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1902, 1033);
 			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->Dot2Coordinates);
@@ -695,7 +759,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			{
 				Ye[i] = calculator(toPostfix(parser(strriv)), Xe[i], h);;
 				Xe[i + 1] = Xe[i] + h;
-				if (abs(Ye[i]) == 99999) {
+				if (abs(Ye[i]) == 7878787) {
 					conect[i] = false;
 					
 
@@ -719,7 +783,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			{
 				
 				Xe[i + 1] = Xe[i] + h;
-				if (ydh(strriv, Xe[i], h)==99999) {
+				if (ydh(strriv, Xe[i], h)==7878787) {
 					conects[i] = false;
 					Ye[i] = ydh(strriv, Xe[i], h);
 					nulesec[i] = false;
@@ -961,10 +1025,10 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 				dataGridView1->ColumnCount = kkstpr;
 
 				//dataGridView1[0][0]->Value = "ff";
-				dataGridView1->Rows[0]->Cells[0]->Value = "x";
+				dataGridView1->Rows[0]->Cells[0]->Value = "Проміжки зростання спадання";
 				dataGridView1->Rows[0]->Cells[1]->Value = Convert::ToDouble((al_TB->Text)).ToString("f2");
 
-				dataGridView1->Rows[1]->Cells[0]->Value = "fp";
+				dataGridView1->Rows[1]->Cells[0]->Value = "Значення похідної";
 			
 
 				System::String^ rivf = textBox1->Text;
@@ -998,7 +1062,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 					poper = -1; 
 				}
 				if (temp * poper < 0) {
-					textBox5->Text = textBox5->Text+"  " + Xe2[i].ToString();
+					textBox5->Text = textBox5->Text+"  " + i.ToString();
 					
 					//b = Xe2[i];
 					//dataGridView1->Rows->Add(dushky(a,2));
@@ -1087,7 +1151,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 
 
 			}
-			dataGridView1->Rows[2]->Cells[0]->Value = "MAX";
+			//dataGridView1->Rows[2]->Cells[0]->Value = "MAX";
 			for (int i = 3; i < kkstpr - 1; i = i + 2) {
 				if (dataGridView1->Rows[1]->Cells[i-1]->Value == "+") {
 					if (dataGridView1->Rows[1]->Cells[i + 1]->Value == "-") {
@@ -1192,7 +1256,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 		System::String^ riv = textBox1->Text;
 
 		std::string strriv = msclr::interop::marshal_as<std::string>(riv);
-		if (abs(calculator(toPostfix(parser(strriv)), x, h)) == 99999) {
+		if (abs(calculator(toPostfix(parser(strriv)), x, h)) == 7878787) {
 			Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 =NaN ");
 		}
 		else {
@@ -1203,7 +1267,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenu
 			
 
 
-			if (ydh(strriv, x, h) == 99999) {
+			if (ydh(strriv, x, h) == 7878787) {
 				Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 =NaN ");
 			}
 
@@ -1276,6 +1340,23 @@ private: System::Void експортуватиPngToolStripMenuItem_Click(System::Object^ sen
 		bmp->Save(saveFileDialog1->FileName, System::Drawing::Imaging::ImageFormat::Jpeg);
 	}
 
+}
+private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "tan(x)";
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "ctg(x)";
+}
+private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text =  "";
+
+}
+private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "^";
+
+}
+private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
+	textBox3->Text = textBox3->Text + "inv(x)";
 }
 };
 }
