@@ -76,35 +76,35 @@ namespace GraphMakerForms {
 
 
 
-	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::NumericUpDown^ HorizLinesCount_NUD;
-
-	private: System::Windows::Forms::NumericUpDown^ VertLinesCount_NUD;
 
 
-	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::Button^ ChangeGridColor_B;
-	private: System::Windows::Forms::Button^ ChangeGraphColor_B;
-	private: System::Windows::Forms::Button^ ChangeAxisColor_B;
-	private: System::Windows::Forms::Panel^ panel4;
-	private: System::Windows::Forms::NumericUpDown^ graphWidth_NUD;
-
-	private: System::Windows::Forms::Label^ label11;
-	private: System::Windows::Forms::NumericUpDown^ axisWidth_NUD;
-
-	private: System::Windows::Forms::NumericUpDown^ gridWidth_NUD;
-
-	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::Label^ label13;
-	private: System::Windows::Forms::Label^ label12;
-	private: System::Windows::Forms::ComboBox^ graphStyle_CB;
 
 
-	private: System::Windows::Forms::Label^ label14;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::PictureBox^ pictureBox;
 	private: System::Windows::Forms::Button^ Clear_B;
 
@@ -112,15 +112,15 @@ namespace GraphMakerForms {
 
 	private: System::Windows::Forms::Label^ label15;
 
-	private: System::Windows::Forms::Label^ f2_L;
 
 
-	private: System::Windows::Forms::Label^ label17;
-	private: System::Windows::Forms::Label^ graph2Style_L;
-	private: System::Windows::Forms::ComboBox^ graph2Style_CB;
-	private: System::Windows::Forms::NumericUpDown^ graph2Width_NUD;
-	private: System::Windows::Forms::Label^ graph2_L;
-	private: System::Windows::Forms::Button^ ChangeGraph2Color_B;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::ColorDialog^ graph2_ColorD;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
 	private: System::Windows::Forms::Label^ label16;
@@ -135,7 +135,7 @@ namespace GraphMakerForms {
 
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+
 
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::Button^ button13;
@@ -153,6 +153,9 @@ namespace GraphMakerForms {
 private: System::Windows::Forms::DataGridView^ dataGridView1;
 private: System::Windows::Forms::TextBox^ textBox4;
 private: System::Windows::Forms::TextBox^ textBox5;
+private: System::Windows::Forms::ToolStripMenuItem^ ôàéëToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ çáåðåãòèToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenuItem;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -188,37 +191,9 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->grid_ColorD = (gcnew System::Windows::Forms::ColorDialog());
 			this->axis_ColorD = (gcnew System::Windows::Forms::ColorDialog());
 			this->graph_ColorD = (gcnew System::Windows::Forms::ColorDialog());
-			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->HorizLinesCount_NUD = (gcnew System::Windows::Forms::NumericUpDown());
-			this->VertLinesCount_NUD = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->ChangeGridColor_B = (gcnew System::Windows::Forms::Button());
-			this->ChangeGraphColor_B = (gcnew System::Windows::Forms::Button());
-			this->ChangeAxisColor_B = (gcnew System::Windows::Forms::Button());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->graph2Width_NUD = (gcnew System::Windows::Forms::NumericUpDown());
-			this->graph2_L = (gcnew System::Windows::Forms::Label());
-			this->ChangeGraph2Color_B = (gcnew System::Windows::Forms::Button());
-			this->label14 = (gcnew System::Windows::Forms::Label());
-			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->graphWidth_NUD = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label11 = (gcnew System::Windows::Forms::Label());
-			this->axisWidth_NUD = (gcnew System::Windows::Forms::NumericUpDown());
-			this->gridWidth_NUD = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label10 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->graphStyle_CB = (gcnew System::Windows::Forms::ComboBox());
 			this->pictureBox = (gcnew System::Windows::Forms::PictureBox());
 			this->Clear_B = (gcnew System::Windows::Forms::Button());
 			this->label15 = (gcnew System::Windows::Forms::Label());
-			this->f2_L = (gcnew System::Windows::Forms::Label());
-			this->label17 = (gcnew System::Windows::Forms::Label());
-			this->graph2Style_L = (gcnew System::Windows::Forms::Label());
-			this->graph2Style_CB = (gcnew System::Windows::Forms::ComboBox());
 			this->graph2_ColorD = (gcnew System::Windows::Forms::ColorDialog());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
@@ -228,7 +203,6 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->button13 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
@@ -245,17 +219,13 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->ôàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->çáåðåãòèToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->åêñïîðòóâàòèPngToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Ne_NUD))->BeginInit();
-			this->panel3->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorizLinesCount_NUD))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->VertLinesCount_NUD))->BeginInit();
-			this->panel4->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->graph2Width_NUD))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->graphWidth_NUD))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->axisWidth_NUD))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->gridWidth_NUD))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
+			this->menuStrip1->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -265,7 +235,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->Draw_B->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->Draw_B->ForeColor = System::Drawing::Color::Maroon;
-			this->Draw_B->Location = System::Drawing::Point(1224, 70);
+			this->Draw_B->Location = System::Drawing::Point(1224, 96);
 			this->Draw_B->Name = L"Draw_B";
 			this->Draw_B->Size = System::Drawing::Size(206, 42);
 			this->Draw_B->TabIndex = 0;
@@ -293,6 +263,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->al_TB->Size = System::Drawing::Size(100, 26);
 			this->al_TB->TabIndex = 4;
 			this->al_TB->Text = L"-10";
+			this->al_TB->TextChanged += gcnew System::EventHandler(this, &MyForm::al_TB_TextChanged);
 			// 
 			// label2
 			// 
@@ -325,6 +296,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->bl_TB->Size = System::Drawing::Size(100, 26);
 			this->bl_TB->TabIndex = 6;
 			this->bl_TB->Text = L"10";
+			this->bl_TB->TextChanged += gcnew System::EventHandler(this, &MyForm::bl_TB_TextChanged);
 			// 
 			// panel1
 			// 
@@ -335,7 +307,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->label4);
 			this->panel1->Controls->Add(this->Ne_NUD);
-			this->panel1->Location = System::Drawing::Point(943, 70);
+			this->panel1->Location = System::Drawing::Point(943, 96);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(270, 139);
 			this->panel1->TabIndex = 8;
@@ -376,304 +348,10 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			// 
 			this->graph_ColorD->Color = System::Drawing::Color::Blue;
 			// 
-			// panel3
-			// 
-			this->panel3->Controls->Add(this->HorizLinesCount_NUD);
-			this->panel3->Controls->Add(this->VertLinesCount_NUD);
-			this->panel3->Controls->Add(this->label5);
-			this->panel3->Controls->Add(this->label6);
-			this->panel3->Controls->Add(this->label7);
-			this->panel3->Location = System::Drawing::Point(943, 215);
-			this->panel3->Name = L"panel3";
-			this->panel3->Size = System::Drawing::Size(270, 108);
-			this->panel3->TabIndex = 9;
-			// 
-			// HorizLinesCount_NUD
-			// 
-			this->HorizLinesCount_NUD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->HorizLinesCount_NUD->Location = System::Drawing::Point(187, 75);
-			this->HorizLinesCount_NUD->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 20, 0, 0, 0 });
-			this->HorizLinesCount_NUD->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 3, 0, 0, 0 });
-			this->HorizLinesCount_NUD->Name = L"HorizLinesCount_NUD";
-			this->HorizLinesCount_NUD->Size = System::Drawing::Size(73, 26);
-			this->HorizLinesCount_NUD->TabIndex = 13;
-			this->HorizLinesCount_NUD->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 11, 0, 0, 0 });
-			// 
-			// VertLinesCount_NUD
-			// 
-			this->VertLinesCount_NUD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->VertLinesCount_NUD->Location = System::Drawing::Point(169, 44);
-			this->VertLinesCount_NUD->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 20, 0, 0, 0 });
-			this->VertLinesCount_NUD->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 3, 0, 0, 0 });
-			this->VertLinesCount_NUD->Name = L"VertLinesCount_NUD";
-			this->VertLinesCount_NUD->Size = System::Drawing::Size(91, 26);
-			this->VertLinesCount_NUD->TabIndex = 12;
-			this->VertLinesCount_NUD->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 11, 0, 0, 0 });
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label5->Location = System::Drawing::Point(3, 9);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(192, 25);
-			this->label5->TabIndex = 3;
-			this->label5->Text = L"Ù³ëüí³ñòü ãðàòêè:";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label6->Location = System::Drawing::Point(4, 77);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(143, 20);
-			this->label6->TabIndex = 7;
-			this->label6->Text = L"Ãîðèçîíòàëüíà:";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label7->Location = System::Drawing::Point(4, 46);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(125, 20);
-			this->label7->TabIndex = 5;
-			this->label7->Text = L"Âåðòèêàëüíà:";
-			// 
-			// ChangeGridColor_B
-			// 
-			this->ChangeGridColor_B->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->ChangeGridColor_B->ForeColor = System::Drawing::Color::Maroon;
-			this->ChangeGridColor_B->Location = System::Drawing::Point(206, 71);
-			this->ChangeGridColor_B->Name = L"ChangeGridColor_B";
-			this->ChangeGridColor_B->Size = System::Drawing::Size(121, 30);
-			this->ChangeGridColor_B->TabIndex = 12;
-			this->ChangeGridColor_B->Text = L"Ãðàòêà";
-			this->ChangeGridColor_B->UseVisualStyleBackColor = true;
-			this->ChangeGridColor_B->Click += gcnew System::EventHandler(this, &MyForm::ChangeGridColor_B_Click);
-			// 
-			// ChangeGraphColor_B
-			// 
-			this->ChangeGraphColor_B->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->ChangeGraphColor_B->ForeColor = System::Drawing::Color::Maroon;
-			this->ChangeGraphColor_B->Location = System::Drawing::Point(206, 144);
-			this->ChangeGraphColor_B->Name = L"ChangeGraphColor_B";
-			this->ChangeGraphColor_B->Size = System::Drawing::Size(121, 30);
-			this->ChangeGraphColor_B->TabIndex = 13;
-			this->ChangeGraphColor_B->Text = L"Ãðàô³ê 1";
-			this->ChangeGraphColor_B->UseVisualStyleBackColor = true;
-			this->ChangeGraphColor_B->Click += gcnew System::EventHandler(this, &MyForm::ChangeGraphColor_B_Click);
-			// 
-			// ChangeAxisColor_B
-			// 
-			this->ChangeAxisColor_B->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->ChangeAxisColor_B->ForeColor = System::Drawing::Color::Maroon;
-			this->ChangeAxisColor_B->Location = System::Drawing::Point(206, 107);
-			this->ChangeAxisColor_B->Name = L"ChangeAxisColor_B";
-			this->ChangeAxisColor_B->Size = System::Drawing::Size(121, 30);
-			this->ChangeAxisColor_B->TabIndex = 14;
-			this->ChangeAxisColor_B->Text = L"Îñ³";
-			this->ChangeAxisColor_B->UseVisualStyleBackColor = true;
-			this->ChangeAxisColor_B->Click += gcnew System::EventHandler(this, &MyForm::ChangeAxisColor_B_Click);
-			// 
-			// panel4
-			// 
-			this->panel4->Controls->Add(this->graph2Width_NUD);
-			this->panel4->Controls->Add(this->graph2_L);
-			this->panel4->Controls->Add(this->ChangeGraph2Color_B);
-			this->panel4->Controls->Add(this->label14);
-			this->panel4->Controls->Add(this->label13);
-			this->panel4->Controls->Add(this->graphWidth_NUD);
-			this->panel4->Controls->Add(this->label11);
-			this->panel4->Controls->Add(this->axisWidth_NUD);
-			this->panel4->Controls->Add(this->gridWidth_NUD);
-			this->panel4->Controls->Add(this->ChangeGraphColor_B);
-			this->panel4->Controls->Add(this->ChangeAxisColor_B);
-			this->panel4->Controls->Add(this->label8);
-			this->panel4->Controls->Add(this->label9);
-			this->panel4->Controls->Add(this->ChangeGridColor_B);
-			this->panel4->Controls->Add(this->label10);
-			this->panel4->Location = System::Drawing::Point(943, 329);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(342, 223);
-			this->panel4->TabIndex = 14;
-			// 
-			// graph2Width_NUD
-			// 
-			this->graph2Width_NUD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->graph2Width_NUD->Location = System::Drawing::Point(108, 183);
-			this->graph2Width_NUD->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
-			this->graph2Width_NUD->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			this->graph2Width_NUD->Name = L"graph2Width_NUD";
-			this->graph2Width_NUD->Size = System::Drawing::Size(73, 26);
-			this->graph2Width_NUD->TabIndex = 27;
-			this->graph2Width_NUD->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2, 0, 0, 0 });
-			// 
-			// graph2_L
-			// 
-			this->graph2_L->AutoSize = true;
-			this->graph2_L->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->graph2_L->Location = System::Drawing::Point(4, 185);
-			this->graph2_L->Name = L"graph2_L";
-			this->graph2_L->Size = System::Drawing::Size(87, 20);
-			this->graph2_L->TabIndex = 26;
-			this->graph2_L->Text = L"Ãðàô³ê 2:";
-			// 
-			// ChangeGraph2Color_B
-			// 
-			this->ChangeGraph2Color_B->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->ChangeGraph2Color_B->ForeColor = System::Drawing::Color::Maroon;
-			this->ChangeGraph2Color_B->Location = System::Drawing::Point(206, 180);
-			this->ChangeGraph2Color_B->Name = L"ChangeGraph2Color_B";
-			this->ChangeGraph2Color_B->Size = System::Drawing::Size(121, 30);
-			this->ChangeGraph2Color_B->TabIndex = 25;
-			this->ChangeGraph2Color_B->Text = L"Ãðàô³ê 2";
-			this->ChangeGraph2Color_B->UseVisualStyleBackColor = true;
-			this->ChangeGraph2Color_B->Click += gcnew System::EventHandler(this, &MyForm::ChangeGraph2Color_B_Click);
-			// 
-			// label14
-			// 
-			this->label14->AutoSize = true;
-			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label14->ForeColor = System::Drawing::SystemColors::Highlight;
-			this->label14->Location = System::Drawing::Point(27, 10);
-			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(265, 29);
-			this->label14->TabIndex = 24;
-			this->label14->Text = L"Íàëàøòóâàííÿ ë³í³é";
-			// 
-			// label13
-			// 
-			this->label13->AutoSize = true;
-			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label13->Location = System::Drawing::Point(182, 39);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(74, 25);
-			this->label13->TabIndex = 23;
-			this->label13->Text = L"Êîë³ð:";
-			// 
-			// graphWidth_NUD
-			// 
-			this->graphWidth_NUD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->graphWidth_NUD->Location = System::Drawing::Point(108, 147);
-			this->graphWidth_NUD->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
-			this->graphWidth_NUD->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			this->graphWidth_NUD->Name = L"graphWidth_NUD";
-			this->graphWidth_NUD->Size = System::Drawing::Size(73, 26);
-			this->graphWidth_NUD->TabIndex = 15;
-			this->graphWidth_NUD->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2, 0, 0, 0 });
-			// 
-			// label11
-			// 
-			this->label11->AutoSize = true;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label11->Location = System::Drawing::Point(4, 149);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(87, 20);
-			this->label11->TabIndex = 14;
-			this->label11->Text = L"Ãðàô³ê 1:";
-			// 
-			// axisWidth_NUD
-			// 
-			this->axisWidth_NUD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->axisWidth_NUD->Location = System::Drawing::Point(108, 109);
-			this->axisWidth_NUD->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 3, 0, 0, 0 });
-			this->axisWidth_NUD->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			this->axisWidth_NUD->Name = L"axisWidth_NUD";
-			this->axisWidth_NUD->Size = System::Drawing::Size(73, 26);
-			this->axisWidth_NUD->TabIndex = 13;
-			this->axisWidth_NUD->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			// 
-			// gridWidth_NUD
-			// 
-			this->gridWidth_NUD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->gridWidth_NUD->Location = System::Drawing::Point(108, 74);
-			this->gridWidth_NUD->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 3, 0, 0, 0 });
-			this->gridWidth_NUD->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			this->gridWidth_NUD->Name = L"gridWidth_NUD";
-			this->gridWidth_NUD->Size = System::Drawing::Size(73, 26);
-			this->gridWidth_NUD->TabIndex = 12;
-			this->gridWidth_NUD->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label8->Location = System::Drawing::Point(2, 39);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(120, 25);
-			this->label8->TabIndex = 3;
-			this->label8->Text = L"Òîâíùèíà:";
-			// 
-			// label9
-			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label9->Location = System::Drawing::Point(4, 111);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(40, 20);
-			this->label9->TabIndex = 7;
-			this->label9->Text = L"Îñ³:";
-			// 
-			// label10
-			// 
-			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label10->Location = System::Drawing::Point(3, 76);
-			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(73, 20);
-			this->label10->TabIndex = 5;
-			this->label10->Text = L"Ãðàòêà:";
-			// 
-			// label12
-			// 
-			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label12->Location = System::Drawing::Point(974, 555);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(225, 25);
-			this->label12->TabIndex = 22;
-			this->label12->Text = L"Ñòèëü ë³í³é ãðàô³ê³â:";
-			// 
-			// graphStyle_CB
-			// 
-			this->graphStyle_CB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->graphStyle_CB->FormattingEnabled = true;
-			this->graphStyle_CB->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"Ñóö³ëüíà ë³í³ÿ (Solid)", L"Øòðèõîâà ë³í³ÿ (Dash)",
-					L"Ïóíêòèðíà ë³í³ÿ (Dot)", L"Øòðèõ-ïóíêòèðíà (DashDot)", L"Øòðèõ-ïóíêòèðíà (2 êðàïêè)"
-			});
-			this->graphStyle_CB->Location = System::Drawing::Point(975, 591);
-			this->graphStyle_CB->Name = L"graphStyle_CB";
-			this->graphStyle_CB->Size = System::Drawing::Size(238, 28);
-			this->graphStyle_CB->TabIndex = 21;
-			// 
 			// pictureBox
 			// 
 			this->pictureBox->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox->Location = System::Drawing::Point(12, 12);
+			this->pictureBox->Location = System::Drawing::Point(12, 38);
 			this->pictureBox->Name = L"pictureBox";
 			this->pictureBox->Size = System::Drawing::Size(920, 646);
 			this->pictureBox->TabIndex = 1;
@@ -685,7 +363,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->Clear_B->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->Clear_B->ForeColor = System::Drawing::Color::Maroon;
-			this->Clear_B->Location = System::Drawing::Point(1224, 118);
+			this->Clear_B->Location = System::Drawing::Point(1224, 144);
 			this->Clear_B->Name = L"Clear_B";
 			this->Clear_B->Size = System::Drawing::Size(206, 42);
 			this->Clear_B->TabIndex = 15;
@@ -698,58 +376,11 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->label15->AutoSize = true;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label15->Location = System::Drawing::Point(1219, 206);
+			this->label15->Location = System::Drawing::Point(1219, 232);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(198, 24);
 			this->label15->TabIndex = 24;
 			this->label15->Text = L"Îáåð³òü ôóíêö³þ 1:";
-			// 
-			// f2_L
-			// 
-			this->f2_L->AutoSize = true;
-			this->f2_L->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->f2_L->Location = System::Drawing::Point(1219, 265);
-			this->f2_L->Name = L"f2_L";
-			this->f2_L->Size = System::Drawing::Size(198, 24);
-			this->f2_L->TabIndex = 26;
-			this->f2_L->Text = L"Îáåð³òü ôóíêö³þ 2:";
-			// 
-			// label17
-			// 
-			this->label17->AutoSize = true;
-			this->label17->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label17->Location = System::Drawing::Point(946, 594);
-			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(23, 20);
-			this->label17->TabIndex = 25;
-			this->label17->Text = L"1:";
-			// 
-			// graph2Style_L
-			// 
-			this->graph2Style_L->AutoSize = true;
-			this->graph2Style_L->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->graph2Style_L->Location = System::Drawing::Point(946, 628);
-			this->graph2Style_L->Name = L"graph2Style_L";
-			this->graph2Style_L->Size = System::Drawing::Size(23, 20);
-			this->graph2Style_L->TabIndex = 28;
-			this->graph2Style_L->Text = L"2:";
-			// 
-			// graph2Style_CB
-			// 
-			this->graph2Style_CB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->graph2Style_CB->FormattingEnabled = true;
-			this->graph2Style_CB->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"Ñóö³ëüíà ë³í³ÿ (Solid)", L"Øòðèõîâà ë³í³ÿ (Dash)",
-					L"Ïóíêòèðíà ë³í³ÿ (Dot)", L"Øòðèõ-ïóíêòèðíà (DashDot)", L"Øòðèõ-ïóíêòèðíà (2 êðàïêè)"
-			});
-			this->graph2Style_CB->Location = System::Drawing::Point(975, 625);
-			this->graph2Style_CB->Name = L"graph2Style_CB";
-			this->graph2Style_CB->Size = System::Drawing::Size(238, 28);
-			this->graph2Style_CB->TabIndex = 27;
 			// 
 			// graph2_ColorD
 			// 
@@ -761,11 +392,11 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->checkBox1->ForeColor = System::Drawing::Color::Maroon;
-			this->checkBox1->Location = System::Drawing::Point(1257, 169);
+			this->checkBox1->Location = System::Drawing::Point(1224, 198);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(137, 30);
+			this->checkBox1->Size = System::Drawing::Size(355, 30);
 			this->checkBox1->TabIndex = 29;
-			this->checkBox1->Text = L"2 ôóíêö³¿";
+			this->checkBox1->Text = L"Ïîõ³äíà ôóíêö³¿ íà ïðîì³æêó";
 			this->checkBox1->UseVisualStyleBackColor = true;
 			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox1_CheckedChanged);
 			// 
@@ -775,7 +406,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->label16->ForeColor = System::Drawing::SystemColors::Highlight;
-			this->label16->Location = System::Drawing::Point(945, 12);
+			this->label16->Location = System::Drawing::Point(945, 38);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(421, 29);
 			this->label16->TabIndex = 11;
@@ -785,7 +416,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			// 
 			this->Dot1Coordinates->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->Dot1Coordinates->Location = System::Drawing::Point(1236, 593);
+			this->Dot1Coordinates->Location = System::Drawing::Point(1236, 619);
 			this->Dot1Coordinates->Name = L"Dot1Coordinates";
 			this->Dot1Coordinates->ReadOnly = true;
 			this->Dot1Coordinates->Size = System::Drawing::Size(194, 26);
@@ -795,7 +426,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			// 
 			this->Dot2Coordinates->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->Dot2Coordinates->Location = System::Drawing::Point(1236, 627);
+			this->Dot2Coordinates->Location = System::Drawing::Point(1236, 653);
 			this->Dot2Coordinates->Name = L"Dot2Coordinates";
 			this->Dot2Coordinates->ReadOnly = true;
 			this->Dot2Coordinates->Size = System::Drawing::Size(194, 26);
@@ -806,7 +437,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->label18->AutoSize = true;
 			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label18->Location = System::Drawing::Point(1231, 555);
+			this->label18->Location = System::Drawing::Point(1231, 581);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(191, 25);
 			this->label18->TabIndex = 32;
@@ -815,9 +446,10 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			// menuStrip1
 			// 
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->ôàéëToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1547, 24);
+			this->menuStrip1->Size = System::Drawing::Size(1756, 28);
 			this->menuStrip1->TabIndex = 33;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -831,24 +463,12 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textBox1->Location = System::Drawing::Point(1233, 233);
+			this->textBox1->Location = System::Drawing::Point(1233, 259);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(170, 32);
 			this->textBox1->TabIndex = 35;
 			this->textBox1->Click += gcnew System::EventHandler(this, &MyForm::textBox1_Click);
-			// 
-			// textBox2
-			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox2->Location = System::Drawing::Point(1233, 292);
-			this->textBox2->Multiline = true;
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(170, 33);
-			this->textBox2->TabIndex = 36;
-			this->textBox2->Visible = false;
-			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
 			// 
 			// groupBox1
 			// 
@@ -864,7 +484,7 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->groupBox1->Controls->Add(this->button3);
 			this->groupBox1->Controls->Add(this->button2);
 			this->groupBox1->Controls->Add(this->button4);
-			this->groupBox1->Location = System::Drawing::Point(1149, 232);
+			this->groupBox1->Location = System::Drawing::Point(1164, 259);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(371, 235);
 			this->groupBox1->TabIndex = 38;
@@ -1013,41 +633,55 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(825, -17);
+			this->textBox5->Location = System::Drawing::Point(934, 272);
 			this->textBox5->Multiline = true;
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(209, 198);
 			this->textBox5->TabIndex = 41;
 			this->textBox5->Visible = false;
 			// 
+			// ôàéëToolStripMenuItem
+			// 
+			this->ôàéëToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->çáåðåãòèToolStripMenuItem,
+					this->åêñïîðòóâàòèPngToolStripMenuItem
+			});
+			this->ôàéëToolStripMenuItem->Name = L"ôàéëToolStripMenuItem";
+			this->ôàéëToolStripMenuItem->Size = System::Drawing::Size(59, 24);
+			this->ôàéëToolStripMenuItem->Text = L"Ôàéë";
+			// 
+			// çáåðåãòèToolStripMenuItem
+			// 
+			this->çáåðåãòèToolStripMenuItem->Name = L"çáåðåãòèToolStripMenuItem";
+			this->çáåðåãòèToolStripMenuItem->Size = System::Drawing::Size(224, 26);
+			this->çáåðåãòèToolStripMenuItem->Text = L"Çáåðåãòè";
+			// 
+			// åêñïîðòóâàòèPngToolStripMenuItem
+			// 
+			this->åêñïîðòóâàòèPngToolStripMenuItem->Name = L"åêñïîðòóâàòèPngToolStripMenuItem";
+			this->åêñïîðòóâàòèPngToolStripMenuItem->Size = System::Drawing::Size(224, 26);
+			this->åêñïîðòóâàòèPngToolStripMenuItem->Text = L"Åêñïîðòóâàòè png";
+			this->åêñïîðòóâàòèPngToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::åêñïîðòóâàòèPngToolStripMenuItem_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1547, 914);
+			this->ClientSize = System::Drawing::Size(1756, 914);
 			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->groupBox1);
-			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label18);
 			this->Controls->Add(this->Dot2Coordinates);
 			this->Controls->Add(this->Dot1Coordinates);
 			this->Controls->Add(this->label16);
 			this->Controls->Add(this->checkBox1);
-			this->Controls->Add(this->graph2Style_L);
-			this->Controls->Add(this->graph2Style_CB);
-			this->Controls->Add(this->label17);
-			this->Controls->Add(this->f2_L);
 			this->Controls->Add(this->label15);
 			this->Controls->Add(this->Clear_B);
 			this->Controls->Add(this->pictureBox);
-			this->Controls->Add(this->graphStyle_CB);
-			this->Controls->Add(this->label12);
-			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->Draw_B);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
@@ -1057,17 +691,9 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Ne_NUD))->EndInit();
-			this->panel3->ResumeLayout(false);
-			this->panel3->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->HorizLinesCount_NUD))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->VertLinesCount_NUD))->EndInit();
-			this->panel4->ResumeLayout(false);
-			this->panel4->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->graph2Width_NUD))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->graphWidth_NUD))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->axisWidth_NUD))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->gridWidth_NUD))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->EndInit();
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -1149,6 +775,11 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			}
 		}
 		void Draw(double h) {
+
+			Bitmap^ bmp = gcnew Bitmap(pictureBox->Width,pictureBox->Height);
+			Graphics^ graph = Graphics::FromImage(bmp);
+			pictureBox->Image = bmp;
+			graph->Clear(Color::White);
 			double krx, kry, xx, yy, Gx, Gy; // äëÿ âèâåäåííÿ îñåé êîîðäèíàò òà ¿õí³õ ï³äïèñ³â
 			int xGridKrok, yGridKrok; // â³äñòóïè ì³æ ë³í³ÿìè ãðàòêè
 			int gridLinesVert, gridLinesHoriz; // ê³ëüê³ñòü ë³í³é ãðàòêè ãðàô³êà
@@ -1160,28 +791,10 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			Pen^ axisPen = gcnew Pen(axisColor, axisWidth); // êîë³ð îñåé êîîðäèíàò
 			Pen^ graph1Pen = gcnew Pen(graph1Color, graph1Width); // êîë³ð ãðàô³êà 1
 			Pen^ graph2Pen = gcnew Pen(graph2Color, graph2Width); // êîë³ð ãðàô³êà 2
-			// îáèðàºìî ñòèëü ë³í³é ãðàô³êà 1
-			switch (Convert::ToInt32(graphStyle_CB->SelectedIndex))
-			{
-			case 0: graph1Pen->DashStyle = Drawing2D::DashStyle::Solid; break;
-			case 1: graph1Pen->DashStyle = Drawing2D::DashStyle::Dash; break;
-			case 2: graph1Pen->DashStyle = Drawing2D::DashStyle::Dot; break;
-			case 3: graph1Pen->DashStyle = Drawing2D::DashStyle::DashDot; break;
-			case 4: graph1Pen->DashStyle = Drawing2D::DashStyle::DashDotDot; break;
-			default: MessageBox::Show("Îáåð³òü ñòèëü!"); return;
-			}
-			// îáèðàºìî ñòèëü ë³í³é ãðàô³êà 2
-			switch (Convert::ToInt32(graph2Style_CB->SelectedIndex))
-			{
-			case 0: graph2Pen->DashStyle = Drawing2D::DashStyle::Solid; break;
-			case 1: graph2Pen->DashStyle = Drawing2D::DashStyle::Dash; break;
-			case 2: graph2Pen->DashStyle = Drawing2D::DashStyle::Dot; break;
-			case 3: graph2Pen->DashStyle = Drawing2D::DashStyle::DashDot; break;
-			case 4: graph2Pen->DashStyle = Drawing2D::DashStyle::DashDotDot; break;
-			default: MessageBox::Show("Îáåð³òü ñòèëü!"); return;
-			}
+			// îáèðàºìî ñòèëü ë³í³é ãðàô³êà 1 graph1Pen->DashStyle = Drawing2D::DashStyle::Solid; break;
+		
 
-			Graphics^ graph = pictureBox->CreateGraphics(); // ñòâîðåííÿ îá’ºêòà äëÿ ðîáîòè ç ãðàô³êîþ
+			//Graphics^ graph = pictureBox->CreateGraphics(); // ñòâîðåííÿ îá’ºêòà äëÿ ðîáîòè ç ãðàô³êîþ
 			graph->Clear(Color::White); // î÷èùåííÿ pictureBox
 			int graphHeight = pictureBox->Height;
 			int graphWidth = pictureBox->Width;
@@ -1195,8 +808,8 @@ private: System::Windows::Forms::TextBox^ textBox5;
 			// Ââîäèìî Ne, al, bl
 			try
 			{
-				gridLinesVert = Convert::ToInt32(VertLinesCount_NUD->Value);
-				gridLinesHoriz = Convert::ToInt32(HorizLinesCount_NUD->Value);
+				gridLinesVert = 11;
+				gridLinesHoriz = 11;
 
 				Ne = Convert::ToInt32(Ne_NUD->Value);
 				double al = Convert::ToDouble(al_TB->Text);
@@ -1550,13 +1163,13 @@ private: System::Windows::Forms::TextBox^ textBox5;
 		double h;
 		h = (bl - al) / (Ne - 1);
 		// íàëàøòîâóýìî êîë³ð òà øèðèíó ë³í³é
-		gridWidth = Convert::ToInt32(gridWidth_NUD->Value);
+		gridWidth = Convert::ToInt32(1);
 		gridColor = grid_ColorD->Color;
-		axisWidth = Convert::ToInt32(axisWidth_NUD->Value);
+		axisWidth = Convert::ToInt32(1);
 		axisColor = axis_ColorD->Color;
-		graph1Width = Convert::ToInt32(graphWidth_NUD->Value);
+		graph1Width = Convert::ToInt32(2);
 		graph1Color = graph_ColorD->Color;
-		graph2Width = Convert::ToInt32(graph2Width_NUD->Value);
+		graph2Width = Convert::ToInt32(2);
 		graph2Color = graph2_ColorD->Color;
 		//fIndex1 = Convert::ToInt16(f1_CB->SelectedIndex);
 		//fIndex2 = Convert::ToInt16(f2_CB->SelectedIndex);
@@ -1582,29 +1195,24 @@ private: System::Windows::Forms::TextBox^ textBox5;
 		graph->Clear(Color::White); // î÷èùåííÿ pictureBox
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		graphStyle_CB->SelectedIndex = 0;
-		graph2Style_CB->SelectedIndex = 0;
+		checkBox1->Text = "Ïîõ³äíà ôóíêö³¿ íà ïðîì³æêó (" + al_TB->Text + ";" + bl_TB->Text + ")";
+
+	
 		//f1_CB->SelectedIndex = 0;
 		//f2_CB->SelectedIndex = 0;
 		is2F = false;
 		//f2_CB->Visible = false;
-		f2_L->Visible = false;
-		graph2_L->Visible = false;
-		graph2Width_NUD->Visible = false;
-		ChangeGraph2Color_B->Visible = false;
-		graph2Style_CB->Visible = false;
-		graph2Style_L->Visible = false;
+		
+		
+
+
 		Dot2Coordinates->Visible = false;
 	}
 	private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		is2F = !is2F;
-		textBox2->Visible = !textBox2->Visible;
-		f2_L->Visible = !f2_L->Visible;
-		graph2_L->Visible = !graph2_L->Visible;
-		graph2Width_NUD->Visible = !graph2Width_NUD->Visible;
-		ChangeGraph2Color_B->Visible = !ChangeGraph2Color_B->Visible;
-		graph2Style_CB->Visible = !graph2Style_CB->Visible;
-		graph2Style_L->Visible = !graph2Style_L->Visible;
+		
+		
+		
 		Dot2Coordinates->Visible = !Dot2Coordinates->Visible;
 	}
 	private: System::Void pictureBox_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1683,9 +1291,28 @@ private: System::Windows::Forms::TextBox^ textBox5;
 		textBox3->Text = textBox3->Text + "(";
 	}
 	private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 		textBox3->Text = textBox3->Text + ")";
 	}
 	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void al_TB_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	checkBox1->Text = "Ïîõ³äíà ôóíêö³¿ íà ïðîì³æêó (" + al_TB->Text + ";" + bl_TB->Text + ")";
+}
+private: System::Void bl_TB_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	checkBox1->Text = "Ïîõ³äíà ôóíêö³¿ íà ïðîì³æêó (" + al_TB->Text + ";" + bl_TB->Text + ")";
+}
+private: System::Void åêñïîðòóâàòèPngToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
+	saveFileDialog1->Filter = "Images|*.jpeg";
+	if (saveFileDialog1->ShowDialog() == Windows::Forms::DialogResult::OK)
+	{
+
+		Bitmap^ bmp = gcnew Bitmap(pictureBox->Image);
+		saveFileDialog1->Title = "Çáåðåãòè çîáðàæåííÿ";
+		bmp->Save(saveFileDialog1->FileName, System::Drawing::Imaging::ImageFormat::Jpeg);
+	}
+
+}
 };
 }
