@@ -123,12 +123,12 @@ namespace GraphMakerForms {
 
 	private: System::Windows::Forms::ColorDialog^ graph2_ColorD;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
-	private: System::Windows::Forms::Label^ label16;
+
 	private: System::Windows::Forms::TextBox^ Dot1Coordinates;
 	private: System::Windows::Forms::TextBox^ Dot2Coordinates;
 
 
-	private: System::Windows::Forms::Label^ label18;
+
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 
 
@@ -186,6 +186,8 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->bl_TB = (gcnew System::Windows::Forms::TextBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->Ne_NUD = (gcnew System::Windows::Forms::NumericUpDown());
 			this->grid_ColorD = (gcnew System::Windows::Forms::ColorDialog());
@@ -196,11 +198,12 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->graph2_ColorD = (gcnew System::Windows::Forms::ColorDialog());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
-			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->Dot1Coordinates = (gcnew System::Windows::Forms::TextBox());
 			this->Dot2Coordinates = (gcnew System::Windows::Forms::TextBox());
-			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
+			this->ôàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->çáåðåãòèToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->åêñïîðòóâàòèPngToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
@@ -217,11 +220,6 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->ôàéëToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->çáåðåãòèToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->åêñïîðòóâàòèPngToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Ne_NUD))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
@@ -235,9 +233,9 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			this->Draw_B->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->Draw_B->ForeColor = System::Drawing::Color::Maroon;
-			this->Draw_B->Location = System::Drawing::Point(1224, 96);
+			this->Draw_B->Location = System::Drawing::Point(1844, 38);
 			this->Draw_B->Name = L"Draw_B";
-			this->Draw_B->Size = System::Drawing::Size(206, 42);
+			this->Draw_B->Size = System::Drawing::Size(206, 66);
 			this->Draw_B->TabIndex = 0;
 			this->Draw_B->Text = L"Íàìàëþâàòè";
 			this->Draw_B->UseVisualStyleBackColor = true;
@@ -301,16 +299,37 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			// panel1
 			// 
 			this->panel1->Controls->Add(this->label1);
+			this->panel1->Controls->Add(this->textBox4);
+			this->panel1->Controls->Add(this->textBox5);
 			this->panel1->Controls->Add(this->label3);
 			this->panel1->Controls->Add(this->al_TB);
 			this->panel1->Controls->Add(this->bl_TB);
 			this->panel1->Controls->Add(this->label2);
 			this->panel1->Controls->Add(this->label4);
 			this->panel1->Controls->Add(this->Ne_NUD);
-			this->panel1->Location = System::Drawing::Point(943, 96);
+			this->panel1->Location = System::Drawing::Point(1562, 38);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(270, 139);
 			this->panel1->TabIndex = 8;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(77, 98);
+			this->textBox4->Multiline = true;
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(14, 21);
+			this->textBox4->TabIndex = 40;
+			this->textBox4->Visible = false;
+			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(77, 43);
+			this->textBox5->Multiline = true;
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(36, 37);
+			this->textBox5->TabIndex = 41;
+			this->textBox5->Visible = false;
 			// 
 			// label4
 			// 
@@ -353,7 +372,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			this->pictureBox->BackColor = System::Drawing::SystemColors::ButtonFace;
 			this->pictureBox->Location = System::Drawing::Point(12, 38);
 			this->pictureBox->Name = L"pictureBox";
-			this->pictureBox->Size = System::Drawing::Size(920, 646);
+			this->pictureBox->Size = System::Drawing::Size(1544, 778);
 			this->pictureBox->TabIndex = 1;
 			this->pictureBox->TabStop = false;
 			this->pictureBox->Click += gcnew System::EventHandler(this, &MyForm::pictureBox_Click);
@@ -363,9 +382,9 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			this->Clear_B->Font = (gcnew System::Drawing::Font(L"Microsoft Tai Le", 15, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->Clear_B->ForeColor = System::Drawing::Color::Maroon;
-			this->Clear_B->Location = System::Drawing::Point(1224, 144);
+			this->Clear_B->Location = System::Drawing::Point(1844, 109);
 			this->Clear_B->Name = L"Clear_B";
-			this->Clear_B->Size = System::Drawing::Size(206, 42);
+			this->Clear_B->Size = System::Drawing::Size(206, 68);
 			this->Clear_B->TabIndex = 15;
 			this->Clear_B->Text = L"Î÷èñòèòè";
 			this->Clear_B->UseVisualStyleBackColor = true;
@@ -376,11 +395,11 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			this->label15->AutoSize = true;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label15->Location = System::Drawing::Point(1219, 232);
+			this->label15->Location = System::Drawing::Point(1566, 228);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(198, 24);
+			this->label15->Size = System::Drawing::Size(179, 24);
 			this->label15->TabIndex = 24;
-			this->label15->Text = L"Îáåð³òü ôóíêö³þ 1:";
+			this->label15->Text = L"Ââåä³òü ôóíêö³þ:";
 			// 
 			// graph2_ColorD
 			// 
@@ -392,7 +411,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->checkBox1->ForeColor = System::Drawing::Color::Maroon;
-			this->checkBox1->Location = System::Drawing::Point(1224, 198);
+			this->checkBox1->Location = System::Drawing::Point(1563, 183);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(355, 30);
 			this->checkBox1->TabIndex = 29;
@@ -400,23 +419,11 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			this->checkBox1->UseVisualStyleBackColor = true;
 			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox1_CheckedChanged);
 			// 
-			// label16
-			// 
-			this->label16->AutoSize = true;
-			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label16->ForeColor = System::Drawing::SystemColors::Highlight;
-			this->label16->Location = System::Drawing::Point(945, 38);
-			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(421, 29);
-			this->label16->TabIndex = 11;
-			this->label16->Text = L"Ïîáóäîâà ãðàô³êà íà PictureBox";
-			// 
 			// Dot1Coordinates
 			// 
 			this->Dot1Coordinates->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->Dot1Coordinates->Location = System::Drawing::Point(1236, 619);
+			this->Dot1Coordinates->Location = System::Drawing::Point(1362, 757);
 			this->Dot1Coordinates->Name = L"Dot1Coordinates";
 			this->Dot1Coordinates->ReadOnly = true;
 			this->Dot1Coordinates->Size = System::Drawing::Size(194, 26);
@@ -426,22 +433,11 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			// 
 			this->Dot2Coordinates->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->Dot2Coordinates->Location = System::Drawing::Point(1236, 653);
+			this->Dot2Coordinates->Location = System::Drawing::Point(1362, 789);
 			this->Dot2Coordinates->Name = L"Dot2Coordinates";
 			this->Dot2Coordinates->ReadOnly = true;
 			this->Dot2Coordinates->Size = System::Drawing::Size(194, 26);
 			this->Dot2Coordinates->TabIndex = 31;
-			// 
-			// label18
-			// 
-			this->label18->AutoSize = true;
-			this->label18->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label18->Location = System::Drawing::Point(1231, 581);
-			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(191, 25);
-			this->label18->TabIndex = 32;
-			this->label18->Text = L"Òî÷êà íà ãðàô³êó:";
 			// 
 			// menuStrip1
 			// 
@@ -449,9 +445,32 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->ôàéëToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1756, 28);
+			this->menuStrip1->Size = System::Drawing::Size(1902, 28);
 			this->menuStrip1->TabIndex = 33;
 			this->menuStrip1->Text = L"menuStrip1";
+			// 
+			// ôàéëToolStripMenuItem
+			// 
+			this->ôàéëToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->çáåðåãòèToolStripMenuItem,
+					this->åêñïîðòóâàòèPngToolStripMenuItem
+			});
+			this->ôàéëToolStripMenuItem->Name = L"ôàéëToolStripMenuItem";
+			this->ôàéëToolStripMenuItem->Size = System::Drawing::Size(59, 24);
+			this->ôàéëToolStripMenuItem->Text = L"Ôàéë";
+			// 
+			// çáåðåãòèToolStripMenuItem
+			// 
+			this->çáåðåãòèToolStripMenuItem->Name = L"çáåðåãòèToolStripMenuItem";
+			this->çáåðåãòèToolStripMenuItem->Size = System::Drawing::Size(215, 26);
+			this->çáåðåãòèToolStripMenuItem->Text = L"Çáåðåãòè";
+			// 
+			// åêñïîðòóâàòèPngToolStripMenuItem
+			// 
+			this->åêñïîðòóâàòèPngToolStripMenuItem->Name = L"åêñïîðòóâàòèPngToolStripMenuItem";
+			this->åêñïîðòóâàòèPngToolStripMenuItem->Size = System::Drawing::Size(215, 26);
+			this->åêñïîðòóâàòèPngToolStripMenuItem->Text = L"Åêñïîðòóâàòè png";
+			this->åêñïîðòóâàòèPngToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::åêñïîðòóâàòèPngToolStripMenuItem_Click);
 			// 
 			// contextMenuStrip1
 			// 
@@ -463,10 +482,10 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textBox1->Location = System::Drawing::Point(1233, 259);
+			this->textBox1->Location = System::Drawing::Point(1744, 225);
 			this->textBox1->Multiline = true;
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(170, 32);
+			this->textBox1->Size = System::Drawing::Size(294, 32);
 			this->textBox1->TabIndex = 35;
 			this->textBox1->Click += gcnew System::EventHandler(this, &MyForm::textBox1_Click);
 			// 
@@ -484,7 +503,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			this->groupBox1->Controls->Add(this->button3);
 			this->groupBox1->Controls->Add(this->button2);
 			this->groupBox1->Controls->Add(this->button4);
-			this->groupBox1->Location = System::Drawing::Point(1164, 259);
+			this->groupBox1->Location = System::Drawing::Point(1671, 219);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(371, 235);
 			this->groupBox1->TabIndex = 38;
@@ -614,79 +633,35 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(29, 690);
+			this->dataGridView1->Location = System::Drawing::Point(0, 822);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1263, 150);
+			this->dataGridView1->Size = System::Drawing::Size(2076, 150);
 			this->dataGridView1->TabIndex = 39;
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(1566, 246);
-			this->textBox4->Multiline = true;
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(185, 30);
-			this->textBox4->TabIndex = 40;
-			this->textBox4->Visible = false;
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(934, 272);
-			this->textBox5->Multiline = true;
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(209, 198);
-			this->textBox5->TabIndex = 41;
-			this->textBox5->Visible = false;
-			// 
-			// ôàéëToolStripMenuItem
-			// 
-			this->ôàéëToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->çáåðåãòèToolStripMenuItem,
-					this->åêñïîðòóâàòèPngToolStripMenuItem
-			});
-			this->ôàéëToolStripMenuItem->Name = L"ôàéëToolStripMenuItem";
-			this->ôàéëToolStripMenuItem->Size = System::Drawing::Size(59, 24);
-			this->ôàéëToolStripMenuItem->Text = L"Ôàéë";
-			// 
-			// çáåðåãòèToolStripMenuItem
-			// 
-			this->çáåðåãòèToolStripMenuItem->Name = L"çáåðåãòèToolStripMenuItem";
-			this->çáåðåãòèToolStripMenuItem->Size = System::Drawing::Size(224, 26);
-			this->çáåðåãòèToolStripMenuItem->Text = L"Çáåðåãòè";
-			// 
-			// åêñïîðòóâàòèPngToolStripMenuItem
-			// 
-			this->åêñïîðòóâàòèPngToolStripMenuItem->Name = L"åêñïîðòóâàòèPngToolStripMenuItem";
-			this->åêñïîðòóâàòèPngToolStripMenuItem->Size = System::Drawing::Size(224, 26);
-			this->åêñïîðòóâàòèPngToolStripMenuItem->Text = L"Åêñïîðòóâàòè png";
-			this->åêñïîðòóâàòèPngToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::åêñïîðòóâàòèPngToolStripMenuItem_Click);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1756, 914);
-			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->textBox4);
+			this->ClientSize = System::Drawing::Size(1902, 1033);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label18);
 			this->Controls->Add(this->Dot2Coordinates);
+			this->Controls->Add(this->Draw_B);
 			this->Controls->Add(this->Dot1Coordinates);
-			this->Controls->Add(this->label16);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->label15);
 			this->Controls->Add(this->Clear_B);
 			this->Controls->Add(this->pictureBox);
 			this->Controls->Add(this->panel1);
-			this->Controls->Add(this->Draw_B);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
 			this->Text = L"GraphDraw";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
@@ -710,19 +685,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ åêñïîðòóâàòèPngToolStripMenu
 		const int L = 50; // â³äñòóï â³ä êðà¿â pictureBox
 		bool is2F;
 		int Ne = 100; // ê³ëüê³ñòü òî÷îê ãðàô³êà
-		int fIndex1, fIndex2; // ³íäåêñ ôóíêö³¿
-		double f(double x, int fIndex)
-		{
-			switch (fIndex)
-			{
-			case 0: return log(x);
-			case 1: return x * cos(x);
-			case 2: return abs(sin(x));
-			case 3: return abs(cos(x));
-			case 4: return abs(x * sin(x));
-			case 5: return abs(x * cos(x));
-			}
-		}
+		
 		void TabulF(double al, double bl, double Xe[1000], double Ye[1000], string strriv, bool conect[1000], double h, bool nules[1000])
 		{
 
