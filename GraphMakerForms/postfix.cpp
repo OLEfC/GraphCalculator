@@ -547,7 +547,7 @@ double simpson(string input, double al, double bl, double a, double b, double Ne
         sumpar = sumpar + array[i];
     }
     
-    double simp = abs( (h/3)*(array[0] +(4*sumnepar)+(2*sumpar) +array[N]));
+    double simp = ( (h/3)*(array[0] +(4*sumnepar)+(2*sumpar) +array[N]));
 
     
 

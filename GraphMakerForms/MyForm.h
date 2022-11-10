@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <cmath>
 #include <Windows.h>
 #include "postfix.h"
@@ -16,7 +16,7 @@ namespace GraphMakerForms {
 		int x;
 		int y;
 	};
-	point axisCentre; // точка перетину осей координат
+	point axisCentre; // С‚РѕС‡РєР° РїРµСЂРµС‚РёРЅСѓ РѕСЃРµР№ РєРѕРѕСЂРґРёРЅР°С‚
 	struct GridLinesCount
 	{
 		int xMinus;
@@ -153,15 +153,15 @@ namespace GraphMakerForms {
 private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 
-private: System::Windows::Forms::ToolStripMenuItem^ файлToolStripMenuItem;
-private: System::Windows::Forms::ToolStripMenuItem^ зберегтиToolStripMenuItem;
-private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ С„Р°Р№Р»ToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ Р·Р±РµСЂРµРіС‚РёToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ РµРєСЃРїРѕСЂС‚СѓРІР°С‚РёPngToolStripMenuItem;
 
 
 
 
 
-private: System::Windows::Forms::ToolStripMenuItem^ вийтиToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ РІРёР№С‚РёToolStripMenuItem;
 private: System::Windows::Forms::Button^ button4;
 private: System::Windows::Forms::Button^ button2;
 private: System::Windows::Forms::Button^ button3;
@@ -180,10 +180,25 @@ private: System::Windows::Forms::Button^ button14;
 private: System::Windows::Forms::Button^ button15;
 private: System::Windows::Forms::Button^ button16;
 private: System::Windows::Forms::GroupBox^ groupBox1;
-private: System::Windows::Forms::TextBox^ textBox4;
-private: System::Windows::Forms::TextBox^ textBox5;
-private: System::Windows::Forms::TextBox^ textBox2;
+
+
+
 private: System::Windows::Forms::DataGridView^ dataGridView2;
+private: System::Windows::Forms::Label^ label5;
+private: System::Windows::Forms::Label^ aper;
+private: System::Windows::Forms::Label^ bper;
+
+
+private: System::Windows::Forms::TextBox^ textBox2;
+private: System::Windows::Forms::GroupBox^ groupBox2;
+private: System::Windows::Forms::Label^ label6;
+private: System::Windows::Forms::ColorDialog^ integral_colorD;
+
+
+
+
+
+
 
 
 
@@ -215,7 +230,6 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->bl_TB = (gcnew System::Windows::Forms::TextBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->Ne_NUD = (gcnew System::Windows::Forms::NumericUpDown());
 			this->grid_ColorD = (gcnew System::Windows::Forms::ColorDialog());
@@ -229,10 +243,10 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->Dot1Coordinates = (gcnew System::Windows::Forms::TextBox());
 			this->Dot2Coordinates = (gcnew System::Windows::Forms::TextBox());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->файлToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->зберегтиToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->експортуватиPngToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->вийтиToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->С„Р°Р№Р»ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->Р·Р±РµСЂРµРіС‚РёToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РµРєСЃРїРѕСЂС‚СѓРІР°С‚РёPngToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РІРёР№С‚РёToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -254,9 +268,14 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->button15 = (gcnew System::Windows::Forms::Button());
 			this->button16 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->aper = (gcnew System::Windows::Forms::Label());
+			this->bper = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->integral_colorD = (gcnew System::Windows::Forms::ColorDialog());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Ne_NUD))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
@@ -264,6 +283,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			this->groupBox2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Draw_B
@@ -275,7 +295,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->Draw_B->Name = L"Draw_B";
 			this->Draw_B->Size = System::Drawing::Size(206, 66);
 			this->Draw_B->TabIndex = 0;
-			this->Draw_B->Text = L"Намалювати";
+			this->Draw_B->Text = L"РќР°РјР°Р»СЋРІР°С‚Рё";
 			this->Draw_B->UseVisualStyleBackColor = true;
 			this->Draw_B->Click += gcnew System::EventHandler(this, &MyForm::Draw_B_Click);
 			// 
@@ -288,7 +308,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(225, 25);
 			this->label1->TabIndex = 3;
-			this->label1->Text = L"Межі графіка (al<bl):";
+			this->label1->Text = L"РњРµР¶С– РіСЂР°С„С–РєР° (al<bl):";
 			// 
 			// al_TB
 			// 
@@ -337,7 +357,6 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			// panel1
 			// 
 			this->panel1->Controls->Add(this->label1);
-			this->panel1->Controls->Add(this->textBox4);
 			this->panel1->Controls->Add(this->label3);
 			this->panel1->Controls->Add(this->al_TB);
 			this->panel1->Controls->Add(this->bl_TB);
@@ -348,16 +367,6 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(270, 139);
 			this->panel1->TabIndex = 8;
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(77, 98);
-			this->textBox4->Multiline = true;
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(14, 21);
-			this->textBox4->TabIndex = 40;
-			this->textBox4->Visible = false;
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
 			// 
 			// label4
 			// 
@@ -384,7 +393,6 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			// 
 			// grid_ColorD
 			// 
-			this->grid_ColorD->Color = System::Drawing::Color::Green;
 			this->grid_ColorD->FullOpen = true;
 			// 
 			// axis_ColorD
@@ -414,7 +422,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->Clear_B->Name = L"Clear_B";
 			this->Clear_B->Size = System::Drawing::Size(206, 68);
 			this->Clear_B->TabIndex = 15;
-			this->Clear_B->Text = L"Очистити";
+			this->Clear_B->Text = L"РћС‡РёСЃС‚РёС‚Рё";
 			this->Clear_B->UseVisualStyleBackColor = true;
 			this->Clear_B->Click += gcnew System::EventHandler(this, &MyForm::Clear_B_Click);
 			// 
@@ -443,7 +451,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(355, 30);
 			this->checkBox1->TabIndex = 29;
-			this->checkBox1->Text = L"Похідна функції на проміжку";
+			this->checkBox1->Text = L"РџРѕС…С–РґРЅР° С„СѓРЅРєС†С–С— РЅР° РїСЂРѕРјС–Р¶РєСѓ";
 			this->checkBox1->UseVisualStyleBackColor = true;
 			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &MyForm::checkBox1_CheckedChanged);
 			// 
@@ -470,42 +478,42 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			// menuStrip1
 			// 
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->файлToolStripMenuItem });
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->С„Р°Р№Р»ToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(1902, 28);
 			this->menuStrip1->TabIndex = 33;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
-			// файлToolStripMenuItem
+			// С„Р°Р№Р»ToolStripMenuItem
 			// 
-			this->файлToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->зберегтиToolStripMenuItem,
-					this->експортуватиPngToolStripMenuItem, this->вийтиToolStripMenuItem
+			this->С„Р°Р№Р»ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
+				this->Р·Р±РµСЂРµРіС‚РёToolStripMenuItem,
+					this->РµРєСЃРїРѕСЂС‚СѓРІР°С‚РёPngToolStripMenuItem, this->РІРёР№С‚РёToolStripMenuItem
 			});
-			this->файлToolStripMenuItem->Name = L"файлToolStripMenuItem";
-			this->файлToolStripMenuItem->Size = System::Drawing::Size(59, 24);
-			this->файлToolStripMenuItem->Text = L"Файл";
+			this->С„Р°Р№Р»ToolStripMenuItem->Name = L"С„Р°Р№Р»ToolStripMenuItem";
+			this->С„Р°Р№Р»ToolStripMenuItem->Size = System::Drawing::Size(59, 24);
+			this->С„Р°Р№Р»ToolStripMenuItem->Text = L"Р¤Р°Р№Р»";
 			// 
-			// зберегтиToolStripMenuItem
+			// Р·Р±РµСЂРµРіС‚РёToolStripMenuItem
 			// 
-			this->зберегтиToolStripMenuItem->Name = L"зберегтиToolStripMenuItem";
-			this->зберегтиToolStripMenuItem->Size = System::Drawing::Size(234, 26);
-			this->зберегтиToolStripMenuItem->Text = L"Зберегти";
+			this->Р·Р±РµСЂРµРіС‚РёToolStripMenuItem->Name = L"Р·Р±РµСЂРµРіС‚РёToolStripMenuItem";
+			this->Р·Р±РµСЂРµРіС‚РёToolStripMenuItem->Size = System::Drawing::Size(234, 26);
+			this->Р·Р±РµСЂРµРіС‚РёToolStripMenuItem->Text = L"Р—Р±РµСЂРµРіС‚Рё";
 			// 
-			// експортуватиPngToolStripMenuItem
+			// РµРєСЃРїРѕСЂС‚СѓРІР°С‚РёPngToolStripMenuItem
 			// 
-			this->експортуватиPngToolStripMenuItem->Name = L"експортуватиPngToolStripMenuItem";
-			this->експортуватиPngToolStripMenuItem->Size = System::Drawing::Size(234, 26);
-			this->експортуватиPngToolStripMenuItem->Text = L"Експортувати в .jpeg";
-			this->експортуватиPngToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::експортуватиPngToolStripMenuItem_Click);
+			this->РµРєСЃРїРѕСЂС‚СѓРІР°С‚РёPngToolStripMenuItem->Name = L"РµРєСЃРїРѕСЂС‚СѓРІР°С‚РёPngToolStripMenuItem";
+			this->РµРєСЃРїРѕСЂС‚СѓРІР°С‚РёPngToolStripMenuItem->Size = System::Drawing::Size(234, 26);
+			this->РµРєСЃРїРѕСЂС‚СѓРІР°С‚РёPngToolStripMenuItem->Text = L"Р•РєСЃРїРѕСЂС‚СѓРІР°С‚Рё РІ .jpeg";
+			this->РµРєСЃРїРѕСЂС‚СѓРІР°С‚РёPngToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РµРєСЃРїРѕСЂС‚СѓРІР°С‚РёPngToolStripMenuItem_Click);
 			// 
-			// вийтиToolStripMenuItem
+			// РІРёР№С‚РёToolStripMenuItem
 			// 
-			this->вийтиToolStripMenuItem->Name = L"вийтиToolStripMenuItem";
-			this->вийтиToolStripMenuItem->Size = System::Drawing::Size(234, 26);
-			this->вийтиToolStripMenuItem->Text = L"Вийти";
-			this->вийтиToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::вийтиToolStripMenuItem_Click);
+			this->РІРёР№С‚РёToolStripMenuItem->Name = L"РІРёР№С‚РёToolStripMenuItem";
+			this->РІРёР№С‚РёToolStripMenuItem->Size = System::Drawing::Size(234, 26);
+			this->РІРёР№С‚РёToolStripMenuItem->Text = L"Р’РёР№С‚Рё";
+			this->РІРёР№С‚РёToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РІРёР№С‚РёToolStripMenuItem_Click);
 			// 
 			// contextMenuStrip1
 			// 
@@ -653,7 +661,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->button13->Name = L"button13";
 			this->button13->Size = System::Drawing::Size(268, 32);
 			this->button13->TabIndex = 27;
-			this->button13->Text = L"Готово";
+			this->button13->Text = L"Р“РѕС‚РѕРІРѕ";
 			this->button13->UseVisualStyleBackColor = true;
 			this->button13->Click += gcnew System::EventHandler(this, &MyForm::button13_Click);
 			// 
@@ -733,21 +741,6 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Visible = false;
 			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(1594, 660);
-			this->textBox5->Multiline = true;
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(214, 166);
-			this->textBox5->TabIndex = 41;
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(1802, 632);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(100, 22);
-			this->textBox2->TabIndex = 42;
-			// 
 			// dataGridView2
 			// 
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -755,20 +748,84 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(356, 277);
+			this->dataGridView2->Size = System::Drawing::Size(356, 264);
 			this->dataGridView2->TabIndex = 43;
 			this->dataGridView2->Visible = false;
 			this->dataGridView2->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView2_CellClick);
+			// 
+			// label5
+			// 
+			this->label5->Anchor = System::Windows::Forms::AnchorStyles::None;
+			this->label5->Font = (gcnew System::Drawing::Font(L"MV Boli", 140, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label5->Location = System::Drawing::Point(158, 19);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(218, 255);
+			this->label5->TabIndex = 44;
+			this->label5->Text = L"в€«";
+			// 
+			// aper
+			// 
+			this->aper->AutoSize = true;
+			this->aper->Location = System::Drawing::Point(169, 257);
+			this->aper->Name = L"aper";
+			this->aper->Size = System::Drawing::Size(0, 17);
+			this->aper->TabIndex = 45;
+			// 
+			// bper
+			// 
+			this->bper->AutoSize = true;
+			this->bper->Location = System::Drawing::Point(276, 19);
+			this->bper->Name = L"bper";
+			this->bper->Size = System::Drawing::Size(0, 17);
+			this->bper->TabIndex = 46;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->textBox2->Location = System::Drawing::Point(294, 114);
+			this->textBox2->Multiline = true;
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(168, 47);
+			this->textBox2->TabIndex = 47;
+			this->textBox2->Text = L"f";
+			// 
+			// groupBox2
+			// 
+			this->groupBox2->Controls->Add(this->textBox2);
+			this->groupBox2->Controls->Add(this->aper);
+			this->groupBox2->Controls->Add(this->bper);
+			this->groupBox2->Controls->Add(this->label5);
+			this->groupBox2->Controls->Add(this->label6);
+			this->groupBox2->Location = System::Drawing::Point(1561, 538);
+			this->groupBox2->Name = L"groupBox2";
+			this->groupBox2->Size = System::Drawing::Size(468, 280);
+			this->groupBox2->TabIndex = 48;
+			this->groupBox2->TabStop = false;
+			// 
+			// label6
+			// 
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 70, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label6->Location = System::Drawing::Point(-22, 76);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(225, 181);
+			this->label6->TabIndex = 48;
+			this->label6->Text = L"S=";
+			// 
+			// integral_colorD
+			// 
+			this->integral_colorD->Color = System::Drawing::Color::Lime;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1902, 1033);
+			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
-			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->dataGridView1);
-			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->Dot2Coordinates);
 			this->Controls->Add(this->Draw_B);
@@ -796,19 +853,21 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			this->groupBox2->ResumeLayout(false);
+			this->groupBox2->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 
-		Color gridColor, axisColor, graph1Color, graph2Color; // колір ліній
-		float gridWidth, axisWidth, graph1Width, graph2Width; // ширина ліній
-		double xMax, yMax, xMin, yMin; // максимальні та мінімальні значиення х та y
-		double Kx, Ky, Zx, Zy; // коефiцiєнти масштабування
-		const int L = 50; // відступ від країв pictureBox
+		Color gridColor, axisColor, graph1Color, graph2Color, integral_color; // РєРѕР»С–СЂ Р»С–РЅС–Р№
+		float gridWidth, axisWidth, graph1Width, graph2Width; // С€РёСЂРёРЅР° Р»С–РЅС–Р№
+		double xMax, yMax, xMin, yMin; // РјР°РєСЃРёРјР°Р»СЊРЅС– С‚Р° РјС–РЅС–РјР°Р»СЊРЅС– Р·РЅР°С‡РёРµРЅРЅСЏ С… С‚Р° y
+		double Kx, Ky, Zx, Zy; // РєРѕРµС„iС†iС”РЅС‚Рё РјР°СЃС€С‚Р°Р±СѓРІР°РЅРЅСЏ
+		const int L = 50; // РІС–РґСЃС‚СѓРї РІС–Рґ РєСЂР°С—РІ pictureBox
 		bool is2F;
-		int Ne = 100; // кількість точок графіка
+		int Ne = 100; // РєС–Р»СЊРєС–СЃС‚СЊ С‚РѕС‡РѕРє РіСЂР°С„С–РєР°
 		
 		void TabulF(double al, double bl, double Xe[1000], double Ye[1000], string strriv, bool conect[1000], double h, bool nules[1000])
 		{
@@ -867,32 +926,35 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			Graphics^ graph = Graphics::FromImage(bmp);
 			pictureBox->Image = bmp;
 			graph->Clear(Color::White);
-			double krx, kry, xx, yy, Gx, Gy; // для виведення осей координат та їхніх підписів
-			int xGridKrok, yGridKrok; // відступи між лініями гратки
-			int gridLinesVert, gridLinesHoriz; // кількість ліній гратки графіка
-			double Xe1[1000], Ye1[1000], Xe2[1000], Ye2[1000]; // всі значення x та y
+			double krx, kry, xx, yy, Gx, Gy; // РґР»СЏ РІРёРІРµРґРµРЅРЅСЏ РѕСЃРµР№ РєРѕРѕСЂРґРёРЅР°С‚ С‚Р° С—С…РЅС–С… РїС–РґРїРёСЃС–РІ
+			int xGridKrok, yGridKrok; // РІС–РґСЃС‚СѓРїРё РјС–Р¶ Р»С–РЅС–СЏРјРё РіСЂР°С‚РєРё
+			int gridLinesVert, gridLinesHoriz; // РєС–Р»СЊРєС–СЃС‚СЊ Р»С–РЅС–Р№ РіСЂР°С‚РєРё РіСЂР°С„С–РєР°
+			double Xe1[1000], Ye1[1000], Xe2[1000], Ye2[1000]; // РІСЃС– Р·РЅР°С‡РµРЅРЅСЏ x С‚Р° y
 			bool conect[1000], conects[1000];
 			bool nules[1000], nulesec[1000];
 
-			Pen^ gridPen = gcnew Pen(gridColor, gridWidth); // колір гратки
-			Pen^ axisPen = gcnew Pen(axisColor, axisWidth); // колір осей координат
-			Pen^ graph1Pen = gcnew Pen(graph1Color, graph1Width); // колір графіка 1
-			Pen^ graph2Pen = gcnew Pen(graph2Color, graph2Width); // колір графіка 2
-			// обираємо стиль ліній графіка 1 graph1Pen->DashStyle = Drawing2D::DashStyle::Solid; break;
+			Pen^ gridPen = gcnew Pen(gridColor, gridWidth); // РєРѕР»С–СЂ РіСЂР°С‚РєРё
+			Pen^ axisPen = gcnew Pen(axisColor, axisWidth); // РєРѕР»С–СЂ РѕСЃРµР№ РєРѕРѕСЂРґРёРЅР°С‚
+			Pen^ graph1Pen = gcnew Pen(graph1Color, graph1Width); // РєРѕР»С–СЂ РіСЂР°С„С–РєР° 1
+			Pen^ graph2Pen = gcnew Pen(graph2Color, graph2Width); // РєРѕР»С–СЂ РіСЂР°С„С–РєР° 2
+
+			
+
+			// РѕР±РёСЂР°С”РјРѕ СЃС‚РёР»СЊ Р»С–РЅС–Р№ РіСЂР°С„С–РєР° 1 graph1Pen->DashStyle = Drawing2D::DashStyle::Solid; break;
 		
 
-			//Graphics^ graph = pictureBox->CreateGraphics(); // створення об’єкта для роботи з графікою
-			graph->Clear(Color::White); // очищення pictureBox
+			//Graphics^ graph = pictureBox->CreateGraphics(); // СЃС‚РІРѕСЂРµРЅРЅСЏ РѕР±вЂ™С”РєС‚Р° РґР»СЏ СЂРѕР±РѕС‚Рё Р· РіСЂР°С„С–РєРѕСЋ
+			graph->Clear(Color::White); // РѕС‡РёС‰РµРЅРЅСЏ pictureBox
 			int graphHeight = pictureBox->Height;
 			int graphWidth = pictureBox->Width;
 
-			Pen^ blackPen = gcnew Pen(Color::Black, (float)(2)); // колір графіка
+			Pen^ blackPen = gcnew Pen(Color::Black, (float)(2)); // РєРѕР»С–СЂ РіСЂР°С„С–РєР°
 			graph->DrawLine(blackPen, Point(L, L), Point(L, graphHeight - L));
 			graph->DrawLine(blackPen, Point(graphWidth - L, L), Point(graphWidth - L, graphHeight - L));
 			graph->DrawLine(blackPen, Point(L, L), Point(graphWidth - L, L));
 			graph->DrawLine(blackPen, Point(L, graphHeight - L), Point(graphWidth - L, graphHeight - L));
 
-			// Вводимо Ne, al, bl
+			// Р’РІРѕРґРёРјРѕ Ne, al, bl
 			try
 			{
 				gridLinesVert = 11;
@@ -910,7 +972,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 					al_TB->Text = Convert::ToString(al);
 					bl_TB->Text = Convert::ToString(bl);
 				}
-				// табулюємо функцію із записом результатів у масиви			
+				// С‚Р°Р±СѓР»СЋС”РјРѕ С„СѓРЅРєС†С–СЋ С–Р· Р·Р°РїРёСЃРѕРј СЂРµР·СѓР»СЊС‚Р°С‚С–РІ Сѓ РјР°СЃРёРІРё			
 				double* pXe = Xe1;
 				double* pYe = Ye1;
 				bool* con = conect;
@@ -931,15 +993,15 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			}
 			catch (FormatException^)
 			{
-				MessageBox::Show("Некоректне введення! (al/ bl/ Ne)");
+				MessageBox::Show("РќРµРєРѕСЂРµРєС‚РЅРµ РІРІРµРґРµРЅРЅСЏ! (al/ bl/ Ne)");
 				return;
 			}
 			catch (OverflowException^) {
-				MessageBox::Show("Надто велике чи мале число! (al/ bl/ Ne)");
+				MessageBox::Show("РќР°РґС‚Рѕ РІРµР»РёРєРµ С‡Рё РјР°Р»Рµ С‡РёСЃР»Рѕ! (al/ bl/ Ne)");
 				return;
 			}
 
-			// Знаходимо екстремуми x та y
+			// Р—РЅР°С…РѕРґРёРјРѕ РµРєСЃС‚СЂРµРјСѓРјРё x С‚Р° y
 			xMin = Xe1[0]; xMax = Xe1[Ne - 1];
 			yMin = 0; yMax = 0;
 			if (is2F) {
@@ -972,12 +1034,12 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			}
 
 
-			// Обчислюємо коефіцієнти масштабування
-			Kx = (graphWidth - 2 * L) / (xMax - xMin); // одиниця x в пікселях
-			Ky = (graphHeight - 2 * L) / (yMin - yMax); // одиниця y в пікселях
+			// РћР±С‡РёСЃР»СЋС”РјРѕ РєРѕРµС„С–С†С–С”РЅС‚Рё РјР°СЃС€С‚Р°Р±СѓРІР°РЅРЅСЏ
+			Kx = (graphWidth - 2 * L) / (xMax - xMin); // РѕРґРёРЅРёС†СЏ x РІ РїС–РєСЃРµР»СЏС…
+			Ky = (graphHeight - 2 * L) / (yMin - yMax); // РѕРґРёРЅРёС†СЏ y РІ РїС–РєСЃРµР»СЏС…
 			Zx = (graphWidth * xMin - L * (xMax + xMin)) / (xMin - xMax);
 			Zy = (graphHeight * yMax - L * (yMin + yMax)) / (yMax - yMin);
-			// Обчислюємо розташування плаваючих (рухомих) осей координат
+			// РћР±С‡РёСЃР»СЋС”РјРѕ СЂРѕР·С‚Р°С€СѓРІР°РЅРЅСЏ РїР»Р°РІР°СЋС‡РёС… (СЂСѓС…РѕРјРёС…) РѕСЃРµР№ РєРѕРѕСЂРґРёРЅР°С‚
 			double R = xMin * xMax;
 			if (R <= 0.0) Gx = 0.0;
 			else if (R > 0.0 && xMin < 0.0) Gx = xMax;
@@ -988,13 +1050,13 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			else if (R > 0.0 && yMin < 0.0) Gy = yMax;
 			axisCentre.x = Math::Round(Kx * Gx + Zx, 4);
 			axisCentre.y = Math::Round(Ky * Gy + Zy, 4);
-			// Обчислюємо цілочислові відстані між лініями гратки
+			// РћР±С‡РёСЃР»СЋС”РјРѕ С†С–Р»РѕС‡РёСЃР»РѕРІС– РІС–РґСЃС‚Р°РЅС– РјС–Р¶ Р»С–РЅС–СЏРјРё РіСЂР°С‚РєРё
 			xGridKrok = round((graphWidth - 2 * L) / gridLinesVert);
 			yGridKrok = round((graphHeight - 2 * L) / gridLinesHoriz);
 			//MessageBox::Show("gridKrokX " + Convert::ToString(xGridKrok / Kx));
 			//MessageBox::Show("gridKrokY " + Convert::ToString(yGridKrok / -Ky));
 
-			// обчислюємо кількість ліній гратки по кожен бік від осей
+			// РѕР±С‡РёСЃР»СЋС”РјРѕ РєС–Р»СЊРєС–СЃС‚СЊ Р»С–РЅС–Р№ РіСЂР°С‚РєРё РїРѕ РєРѕР¶РµРЅ Р±С–Рє РІС–Рґ РѕСЃРµР№
 			GridLinesCount Lines;
 			Lines.xMinus = round((gridLinesVert - 1) * abs(xMin - Gx) / (abs(xMin - Gx) + abs(xMax - Gx)));
 			Lines.xPlus = (gridLinesVert - 1) - Lines.xMinus;
@@ -1005,8 +1067,8 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 			//MessageBox::Show("yMinus " + Convert::ToString(Lines.yMinus));
 			//MessageBox::Show("yPlus " + Convert::ToString(Lines.yPlus));
 
-			// Малюємо масштабну гратку
-			// Вертикальна гратка
+			// РњР°Р»СЋС”РјРѕ РјР°СЃС€С‚Р°Р±РЅСѓ РіСЂР°С‚РєСѓ
+			// Р’РµСЂС‚РёРєР°Р»СЊРЅР° РіСЂР°С‚РєР°
 			xx = Gx;
 			krx = (xMax - xMin) / (gridLinesVert);
 			for (int i = 1; i < Lines.xMinus + 1; i++) // x<0
@@ -1024,7 +1086,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 				graph->DrawString(Convert::ToString(Math::Round(xx, 1)), gcnew Drawing::Font("Times", 8),
 					Brushes::Black, axisCentre.x + i * xGridKrok - 6, L / 2);
 			}
-			// Горизотальна гратка
+			// Р“РѕСЂРёР·РѕС‚Р°Р»СЊРЅР° РіСЂР°С‚РєР°
 			yy = Gy;
 			kry = (yMax - yMin) / (gridLinesHoriz);
 			for (int i = 1; i <= Lines.yMinus; i++) // y<0
@@ -1043,10 +1105,10 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 					Brushes::Black, L / 4, (float)(axisCentre.y - i * yGridKrok - 6));
 			}
 
-			// малюємо осі
-			// вісь x
+			// РјР°Р»СЋС”РјРѕ РѕСЃС–
+			// РІС–СЃСЊ x
 			graph->DrawLine(axisPen, L, axisCentre.y, Math::Round(graphWidth - L, 4), axisCentre.y);
-			// вісь y
+			// РІС–СЃСЊ y
 			graph->DrawLine(axisPen, axisCentre.x, L, axisCentre.x, Math::Round(graphHeight - L, 4));
 			graph->DrawString(Convert::ToString(Gx), gcnew Drawing::Font("Times", 8), Brushes::Black, L / 2, axisCentre.y - 6);
 			graph->DrawString(Convert::ToString(Gy), gcnew Drawing::Font("Times", 8), Brushes::Black, axisCentre.x - 6, L / 2);
@@ -1055,7 +1117,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 				
 			{
 				if (/*Math::Round(abs(Ye1[i]), 4) */ abs(Ye1[i])<(h)) {
-					textBox4->Text = textBox4->Text+"|" + Xe1[i].ToString()+ "(" + i + ")";
+					//textBox4->Text = textBox4->Text+"|" + Xe1[i].ToString()+ "(" + i + ")";
 				}
 
 
@@ -1108,8 +1170,8 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 
 				
 			
-				dataGridView2->Rows[0]->Cells[0]->Value = "Проміжки знакосталості";
-				dataGridView2->Rows[0]->Cells[1]->Value = "Значення функції";
+				dataGridView2->Rows[0]->Cells[0]->Value = "РџСЂРѕРјС–Р¶РєРё Р·РЅР°РєРѕСЃС‚Р°Р»РѕСЃС‚С–";
+				dataGridView2->Rows[0]->Cells[1]->Value = "Р—РЅР°С‡РµРЅРЅСЏ С„СѓРЅРєС†С–С—";
 
 				dataGridView2->Rows[1]->Cells[0]->Value = Convert::ToDouble((al_TB->Text)).ToString("f2");
 				dataGridView2->Rows[1]->Cells[1]->Value = calculator(toPostfix(parser(strrivf)), Convert::ToDouble((al_TB->Text)), h);
@@ -1195,10 +1257,10 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 				dataGridView1->ColumnCount = kkstpr;
 
 				//dataGridView1[0][0]->Value = "ff";
-				dataGridView1->Rows[0]->Cells[0]->Value = "Проміжки зростання спадання";
+				dataGridView1->Rows[0]->Cells[0]->Value = "РџСЂРѕРјС–Р¶РєРё Р·СЂРѕСЃС‚Р°РЅРЅСЏ СЃРїР°РґР°РЅРЅСЏ";
 				dataGridView1->Rows[0]->Cells[1]->Value = Convert::ToDouble((al_TB->Text)).ToString("f2");
 
-				dataGridView1->Rows[1]->Cells[0]->Value = "Значення похідної";
+				dataGridView1->Rows[1]->Cells[0]->Value = "Р—РЅР°С‡РµРЅРЅСЏ РїРѕС…С–РґРЅРѕС—";
 
 
 				System::String^ rivf = textBox1->Text;
@@ -1298,7 +1360,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 					//textBox5->Text = textBox5->Text + "|" + fph.ToString() + "(" + kkstpr + ")";
 					if (fph > 0) {
 						dataGridView1->Rows[1]->Cells[i]->Value = "+";
-						dataGridView1->Rows[2]->Cells[i]->Value = "Зростає";
+						dataGridView1->Rows[2]->Cells[i]->Value = "Р—СЂРѕСЃС‚Р°С”";
 
 
 						//dataGridView1->Rows[2]->Cells[i]->Value = fph.ToString()+ x_start +"-"+ x_end+"(" + c;
@@ -1306,7 +1368,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 					else {
 						dataGridView1->Rows[1]->Cells[i]->Value = "-";
 						//dataGridView1->Rows[2]->Cells[i]->Value = fph.ToString() + x_start + "-" + x_end + "(" + c;
-						dataGridView1->Rows[2]->Cells[i]->Value = "Спадає";
+						dataGridView1->Rows[2]->Cells[i]->Value = "РЎРїР°РґР°С”";
 					}
 
 
@@ -1356,7 +1418,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 
 		double h;
 		h = (bl - al) / (Ne - 1);
-		// налаштовуэмо колір та ширину ліній
+		// РЅР°Р»Р°С€С‚РѕРІСѓСЌРјРѕ РєРѕР»С–СЂ С‚Р° С€РёСЂРёРЅСѓ Р»С–РЅС–Р№
 		gridWidth = Convert::ToInt32(1);
 		gridColor = grid_ColorD->Color;
 		axisWidth = Convert::ToInt32(1);
@@ -1365,9 +1427,11 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 		graph1Color = graph_ColorD->Color;
 		graph2Width = Convert::ToInt32(2);
 		graph2Color = graph2_ColorD->Color;
+		
+		integral_color = integral_colorD->Color;
 		//fIndex1 = Convert::ToInt16(f1_CB->SelectedIndex);
 		//fIndex2 = Convert::ToInt16(f2_CB->SelectedIndex);
-		// малюємо графік, осі та гратку
+		// РјР°Р»СЋС”РјРѕ РіСЂР°С„С–Рє, РѕСЃС– С‚Р° РіСЂР°С‚РєСѓ
 		Draw(h);
 		System::String^ rivf = textBox1->Text;
 
@@ -1392,11 +1456,11 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Void Clear_B_Click(System::Object^ sender, System::EventArgs^ e) {
 		dataGridView1->Visible = false;
 		dataGridView2->Visible = false;
-		Graphics^ graph = pictureBox->CreateGraphics(); // створення об’єкта для роботи з графікою
-		graph->Clear(Color::White); // очищення pictureBox
+		Graphics^ graph = pictureBox->CreateGraphics(); // СЃС‚РІРѕСЂРµРЅРЅСЏ РѕР±вЂ™С”РєС‚Р° РґР»СЏ СЂРѕР±РѕС‚Рё Р· РіСЂР°С„С–РєРѕСЋ
+		graph->Clear(Color::White); // РѕС‡РёС‰РµРЅРЅСЏ pictureBox
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		checkBox1->Text = "Похідна функції на проміжку (" + al_TB->Text + ";" + bl_TB->Text + ")";
+		checkBox1->Text = "РџРѕС…С–РґРЅР° С„СѓРЅРєС†С–С— РЅР° РїСЂРѕРјС–Р¶РєСѓ (" + al_TB->Text + ";" + bl_TB->Text + ")";
 
 	
 		//f1_CB->SelectedIndex = 0;
@@ -1498,19 +1562,19 @@ private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void al_TB_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	checkBox1->Text = "Похідна функції на проміжку (" + al_TB->Text + ";" + bl_TB->Text + ")";
+	checkBox1->Text = "РџРѕС…С–РґРЅР° С„СѓРЅРєС†С–С— РЅР° РїСЂРѕРјС–Р¶РєСѓ (" + al_TB->Text + ";" + bl_TB->Text + ")";
 }
 private: System::Void bl_TB_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	checkBox1->Text = "Похідна функції на проміжку (" + al_TB->Text + ";" + bl_TB->Text + ")";
+	checkBox1->Text = "РџРѕС…С–РґРЅР° С„СѓРЅРєС†С–С— РЅР° РїСЂРѕРјС–Р¶РєСѓ (" + al_TB->Text + ";" + bl_TB->Text + ")";
 }
-private: System::Void експортуватиPngToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void РµРєСЃРїРѕСЂС‚СѓРІР°С‚РёPngToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	SaveFileDialog^ saveFileDialog1 = gcnew SaveFileDialog();
 	saveFileDialog1->Filter = "Images|*.jpeg";
 	if (saveFileDialog1->ShowDialog() == Windows::Forms::DialogResult::OK)
 	{
 
 		Bitmap^ bmp = gcnew Bitmap(pictureBox->Image);
-		saveFileDialog1->Title = "Зберегти зображення";
+		saveFileDialog1->Title = "Р—Р±РµСЂРµРіС‚Рё Р·РѕР±СЂР°Р¶РµРЅРЅСЏ";
 		bmp->Save(saveFileDialog1->FileName, System::Drawing::Imaging::ImageFormat::Jpeg);
 	}
 
@@ -1532,7 +1596,7 @@ private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
 	textBox3->Text = textBox3->Text + "inv(x)";
 }
-private: System::Void вийтиToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void РІРёР№С‚РёToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	Close();
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -1547,7 +1611,7 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	std::string coo = msclr::interop::marshal_as<std::string>(pos);
 
 	string xt, yt;
-	bool per;
+	bool per = false;
 	int x, y;
 	for (int i = 0; i < coo.length(); i++) {
 		if (coo[i] == '=') {
@@ -1587,8 +1651,13 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	String^ val = Convert::ToString(dataGridView1->Rows[y]->Cells[x]->Value);
 	if (y == 0) {
 		if (val[0] == '(') {
+			double kstart = System::Convert::ToDouble(Convert::ToString(dataGridView1->Rows[y]->Cells[x - 1]->Value));
+			double kend = System::Convert::ToDouble(Convert::ToString(dataGridView1->Rows[y]->Cells[x + 1]->Value));
 
-			textBox2->Text = simpson(strriv, al, bl, System::Convert::ToDouble(Convert::ToString(dataGridView1->Rows[y]->Cells[x-1]->Value)), System::Convert::ToDouble(Convert::ToString(dataGridView1->Rows[y]->Cells[x+1]->Value)), Ne, h).ToString("f5");
+			aper->Text = Convert::ToString(kstart);
+			bper->Text = Convert::ToString(kend);
+
+			textBox2->Text = simpson(strriv, al, bl, kstart,kend , Ne, h).ToString("f5");
 			
 			
 		}
@@ -1604,7 +1673,7 @@ private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Wi
 	std::string coo = msclr::interop::marshal_as<std::string>(pos);
 
 	string xt, yt;
-	bool per;
+	bool per=false;
 	int x, y;
 	for (int i = 0; i < coo.length(); i++) {
 		if (coo[i] == '=') {
@@ -1644,7 +1713,37 @@ private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Wi
 	String^ val = Convert::ToString(dataGridView2->Rows[y]->Cells[x]->Value);
 	if (x == 0) {
 		if (val[0] == '(') {
-			textBox2->Text = simpson(strriv, al, bl, System::Convert::ToDouble(Convert::ToString(dataGridView2->Rows[y - 1]->Cells[x]->Value)), System::Convert::ToDouble(Convert::ToString(dataGridView2->Rows[y +1]->Cells[x]->Value)), Ne, h).ToString("f5");
+			double kstart = System::Convert::ToDouble(Convert::ToString(dataGridView2->Rows[y-1]->Cells[x]->Value));
+			double kend = System::Convert::ToDouble(Convert::ToString(dataGridView2->Rows[y+1]->Cells[x]->Value));
+
+			aper->Text = Convert::ToString(kstart);
+			bper->Text = Convert::ToString(kend);
+			double simps= simpson(strriv, al, bl, kstart, kend, Ne, h);
+			bool pos;
+			if (simps >0) {
+				pos = true;
+			}
+			else {
+				pos = false;
+			}
+
+			textBox2->Text = abs(simps).ToString("f5");
+
+			Bitmap^ bmp = gcnew Bitmap(pictureBox->Width, pictureBox->Height);
+			Graphics^ graph = Graphics::FromImage(bmp);
+			pictureBox->Image = bmp;
+
+
+			Pen^ prompen = gcnew Pen(integral_color, 1); // РєРѕР»С–СЂ РіСЂР°С„С–РєР° 2
+
+
+			for (double i = kstart; i < kend + h; i = i + 200*h) {
+			
+				double y=calculator(toPostfix(parser(strriv)), i, h);
+				graph->DrawLine(prompen, Math::Round(Kx * i + Zx, 4), Math::Round(Ky * 0 + Zy, 4),
+					Math::Round(Kx *i + Zx, 4), Convert::ToInt32(Math::Round(Ky * y + Zy, 4)));
+
+			}
 
 		}
 	}
