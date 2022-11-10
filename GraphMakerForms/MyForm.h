@@ -1230,6 +1230,8 @@ private: System::Windows::Forms::TextBox^ textBox2;
 		double al = Convert::ToDouble(al_TB->Text);
 		double bl = Convert::ToDouble(bl_TB->Text);
 
+
+
 		double h;
 		h = (bl - al) / (Ne - 1);
 		// налаштовуэмо колір та ширину ліній
@@ -1245,6 +1247,11 @@ private: System::Windows::Forms::TextBox^ textBox2;
 		//fIndex2 = Convert::ToInt16(f2_CB->SelectedIndex);
 		// малюємо графік, осі та гратку
 		Draw(h);
+		System::String^ rivf = textBox1->Text;
+
+		std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
+
+		
 
 		
 	}
@@ -1410,7 +1417,59 @@ private: System::Void dataGridView1_CellContentClick(System::Object^ sender, Sys
 	
 }
 private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	this->Text = Convert::ToString(dataGridView1->CurrentCellAddress);
+	//this->Text = Convert::ToString(dataGridView1->CurrentCellAddress);
+	String^ pos = Convert::ToString(dataGridView1->CurrentCellAddress);
+
+	std::string coo = msclr::interop::marshal_as<std::string>(pos);
+
+	string xt, yt;
+	bool per;
+	int x, y;
+	for (int i = 0; i < coo.length(); i++) {
+		if (coo[i] == '=') {
+			i++;
+			if (per == false) {
+				while (coo[i] != ',') {
+					xt = xt + coo[i];
+					i++;
+				}
+				per = true;
+			}
+			else {
+				while (coo[i] != '}') {
+					yt = yt + coo[i];
+					i++;
+				}
+				per = false;
+			}
+
+			
+
+		}
+
+	}
+	double al = Convert::ToDouble(al_TB->Text);
+	double bl = Convert::ToDouble(bl_TB->Text);
+
+	double h = (al - bl) / Ne;
+
+	
+	System::String^ riv = textBox1->Text;
+
+	std::string strriv = msclr::interop::marshal_as<std::string>(riv);
+	x = std::stoi(xt);
+	y = std::stoi(yt);
+	this->Text = x.ToString()+"  "+y.ToString();
+	String^ val = Convert::ToString(dataGridView1->Rows[y]->Cells[x]->Value);
+	if (y == 0) {
+		if (val[0] == '(') {
+			textBox2->Text = simpson(strriv, al, bl, x-1, x+1, Ne, h).ToString("f5");
+			
+		}
+	}
+
+	
 }
+
 };
 }

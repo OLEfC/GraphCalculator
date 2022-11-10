@@ -522,29 +522,32 @@ double ydr(string input,double x0, double h) {
 }
 
 double simpson(string input, double al, double bl, double a, double b, double Ne, double  hharafika) {
-    double ab = abs(b) - abs(a);
-    double abl = abs(bl) - abs(al);
+    double ab = abs(b) + abs(a);
+    double abl = abs(bl) + abs(al);
 
     double Nt = ((ab * Ne) / abl)+0.5;
 
-    double N = int(Nt);
+    int N = 100;
 
-    double h = (a - b) / N;
+    double h = ( b-a) / N;
     double x = a;
     double* array = new double[N+1];
-    for (int i = 0; i < N - 1; i++) {
+
+    for (int i = 0; i < N +1; i++) {
         array[i]= calculator(toPostfix(parser(input)), x, hharafika);
         x = x + h;
     }
-    double sumpar;
-    double sumnepar;
+    double sumpar=0;
+    double sumnepar=0;
     for (int i = 1; i < N; i = i + 2) {
         sumnepar = sumnepar + array[i];
     }
+    
     for (int i = 2; i < N-1; i = i + 2) {
         sumpar = sumpar + array[i];
     }
-    double simp = (h / 3) * (array[0] +4*sumnepar+2*sumpar +array[int(N)]);
+    
+    double simp = abs( (h/3)*(array[0] +(4*sumnepar)+(2*sumpar) +array[N]));
 
     
 
