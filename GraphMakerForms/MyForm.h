@@ -151,8 +151,8 @@ namespace GraphMakerForms {
 
 
 private: System::Windows::Forms::DataGridView^ dataGridView1;
-private: System::Windows::Forms::TextBox^ textBox4;
-private: System::Windows::Forms::TextBox^ textBox5;
+
+
 private: System::Windows::Forms::ToolStripMenuItem^ Ù‡ÈÎToolStripMenuItem;
 private: System::Windows::Forms::ToolStripMenuItem^ Á·ÂÂ„ÚËToolStripMenuItem;
 private: System::Windows::Forms::ToolStripMenuItem^ ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem;
@@ -180,7 +180,11 @@ private: System::Windows::Forms::Button^ button14;
 private: System::Windows::Forms::Button^ button15;
 private: System::Windows::Forms::Button^ button16;
 private: System::Windows::Forms::GroupBox^ groupBox1;
+private: System::Windows::Forms::TextBox^ textBox4;
+private: System::Windows::Forms::TextBox^ textBox5;
 private: System::Windows::Forms::TextBox^ textBox2;
+private: System::Windows::Forms::DataGridView^ dataGridView2;
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -214,7 +218,6 @@ private: System::Windows::Forms::TextBox^ textBox2;
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->Ne_NUD = (gcnew System::Windows::Forms::NumericUpDown());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->grid_ColorD = (gcnew System::Windows::Forms::ColorDialog());
 			this->axis_ColorD = (gcnew System::Windows::Forms::ColorDialog());
 			this->graph_ColorD = (gcnew System::Windows::Forms::ColorDialog());
@@ -251,13 +254,16 @@ private: System::Windows::Forms::TextBox^ textBox2;
 			this->button15 = (gcnew System::Windows::Forms::Button());
 			this->button16 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Ne_NUD))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// Draw_B
@@ -375,14 +381,6 @@ private: System::Windows::Forms::TextBox^ textBox2;
 			this->Ne_NUD->Size = System::Drawing::Size(100, 26);
 			this->Ne_NUD->TabIndex = 10;
 			this->Ne_NUD->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
-			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(1596, 617);
-			this->textBox5->Multiline = true;
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(214, 166);
-			this->textBox5->TabIndex = 41;
 			// 
 			// grid_ColorD
 			// 
@@ -535,6 +533,7 @@ private: System::Windows::Forms::TextBox^ textBox2;
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(2076, 150);
 			this->dataGridView1->TabIndex = 39;
+			this->dataGridView1->Visible = false;
 			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellClick);
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
 			// 
@@ -734,22 +733,42 @@ private: System::Windows::Forms::TextBox^ textBox2;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Visible = false;
 			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(1594, 660);
+			this->textBox5->Multiline = true;
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(214, 166);
+			this->textBox5->TabIndex = 41;
+			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(1583, 376);
+			this->textBox2->Location = System::Drawing::Point(1802, 632);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(100, 22);
 			this->textBox2->TabIndex = 42;
+			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Location = System::Drawing::Point(1562, 268);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->RowHeadersWidth = 51;
+			this->dataGridView2->RowTemplate->Height = 24;
+			this->dataGridView2->Size = System::Drawing::Size(356, 277);
+			this->dataGridView2->TabIndex = 43;
+			this->dataGridView2->Visible = false;
+			this->dataGridView2->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView2_CellClick);
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1902, 1033);
+			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->textBox5);
-			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->Dot2Coordinates);
 			this->Controls->Add(this->Draw_B);
@@ -760,6 +779,7 @@ private: System::Windows::Forms::TextBox^ textBox2;
 			this->Controls->Add(this->pictureBox);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->menuStrip1);
+			this->Controls->Add(this->dataGridView2);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
@@ -775,6 +795,7 @@ private: System::Windows::Forms::TextBox^ textBox2;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -1055,165 +1076,12 @@ private: System::Windows::Forms::TextBox^ textBox2;
 							Math::Round(Kx * Xe2[i] + Zx, 4), Convert::ToInt32(Math::Round(Ky * Ye2[i] + Zy, 4)));
 					}
 				}
+				promishky(h, Ye2, Xe2);
 			}
-
-			if (is2F) {
-
-				int kkstpr =3;
-				dataGridView1->RowCount = 3;
-				dataGridView1->ColumnCount = kkstpr;
-
-				//dataGridView1[0][0]->Value = "ff";
-				dataGridView1->Rows[0]->Cells[0]->Value = "œÓÏ≥ÊÍË ÁÓÒÚ‡ÌÌˇ ÒÔ‡‰‡ÌÌˇ";
-				dataGridView1->Rows[0]->Cells[1]->Value = Convert::ToDouble((al_TB->Text)).ToString("f2");
-
-				dataGridView1->Rows[1]->Cells[0]->Value = "«Ì‡˜ÂÌÌˇ ÔÓı≥‰ÌÓø";
-			
-
-				System::String^ rivf = textBox1->Text;
-
-				std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
-				double fph = ydh(strrivf, Convert::ToDouble((al_TB->Text)), h);
-
-				dataGridView1->Rows[1]->Cells[1]->Value = fph.ToString();
-				dataGridView1->Rows[2]->Cells[0]->Value = "f";
-				
-			int poper = 1;
-			//double kkstpr = 0;
-			double a = Convert::ToDouble((al_TB->Text));
-			double b;
-			double now;
-			double j;
-			
-			/*if ((Ye2[0]) < (0.001)) {
-				poper = 1;
-
-			}
-			else { poper = -1; }
-			for (int i = 1; i < Ne; i++) {
-				int temp=poper;
-
-				if ((Ye2[i]) < (h)) {
-					poper = 1;
-
-				}
-				else { 
-					poper = -1; 
-				}
-				if (temp * poper < 0) {
-					textBox5->Text = textBox5->Text+"  " + i.ToString();
-					
-					//b = Xe2[i];
-					//dataGridView1->Rows->Add(dushky(a,2));
-					kkstpr= kkstpr+2;
-					//a = b;
-				}
-				
-				
-			}*/
-			
+			znakostalist(h, Ye1, Xe1);
 			
 
 			
-			
-
-			this->Text = kkstpr.ToString();
-			
-			
-			int num=0;
-			double xznach=0;
-			int l=2;
-
-			for (int i = 1; i < Ne; i++) {
-				int temp = poper;
-				
-				if (abs(Ye2[i]) < (h)) {
-					num++;
-					xznach = xznach + Xe1[i];
-
-
-				}
-				else {
-					if (num != 0) {
-						kkstpr = kkstpr + 2;
-						dataGridView1->ColumnCount = kkstpr;
-
-						xznach = xznach /num;
-						dataGridView1->Rows[0]->Cells[l+1]->Value = xznach.ToString("f2");
-						l=l+2;
-					}
-					num=0;
-					xznach = 0;
-
-				}
-				dataGridView1->Rows[0]->Cells[kkstpr - 1]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
-			}
-
-			kkstpr++;
-			dataGridView1->ColumnCount = kkstpr;
-			dataGridView1->Rows[0]->Cells[kkstpr - 1]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
-			fph = ydh(strrivf, Convert::ToDouble((bl_TB->Text)), h);
-
-			dataGridView1->Rows[1]->Cells[kkstpr - 1]->Value = fph.ToString();
-			for (int i = 2; i < kkstpr; i = i + 2) {
-				
-				//dataGridView1->Rows[0]->Cells[i]->Value = dushky(Convert::ToDouble(dataGridView1->Rows[0]->Cells[i - 1]), Convert::ToDouble(dataGridView1->Rows[0]->Cells[i + 1]));
-				double x_start= Convert::ToDouble(dataGridView1->Rows[0]->Cells[i - 1]->Value);
-				double x_end= Convert::ToDouble(dataGridView1->Rows[0]->Cells[i + 1]->Value);
-
-				dataGridView1->Rows[0]->Cells[i]->Value = dushky(x_start, x_end);
-				double c = (x_end + x_start) / 2;
-				double fph=ydh(strrivf, c, h);
-				//textBox5->Text = textBox5->Text + "|" + fph.ToString() + "(" + kkstpr + ")";
-				if (fph > 0) {
-					dataGridView1->Rows[1]->Cells[i]->Value = "+";
-					dataGridView1->Rows[2]->Cells[i]->Value = "«ÓÒÚ‡∫";
-
-					
-					//dataGridView1->Rows[2]->Cells[i]->Value = fph.ToString()+ x_start +"-"+ x_end+"(" + c;
-				}
-				else {
-					dataGridView1->Rows[1]->Cells[i]->Value = "-";
-					//dataGridView1->Rows[2]->Cells[i]->Value = fph.ToString() + x_start + "-" + x_end + "(" + c;
-					dataGridView1->Rows[2]->Cells[i]->Value = "—Ô‡‰‡∫";
-				}
-
-
-			}
-			for (int i = 1; i < kkstpr; i = i + 2) {
-				System::String^ rivf = textBox1->Text;
-
-				std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
-				double c = Convert::ToDouble(dataGridView1->Rows[0]->Cells[i]->Value);
-
-				double fph = ydh(strrivf, c, h);
-
-				dataGridView1->Rows[1]->Cells[i]->Value = fph.ToString();
-
-
-
-
-			}
-			//dataGridView1->Rows[2]->Cells[0]->Value = "MAX";
-			for (int i = 3; i < kkstpr - 1; i = i + 2) {
-				if (dataGridView1->Rows[1]->Cells[i-1]->Value == "+") {
-					if (dataGridView1->Rows[1]->Cells[i + 1]->Value == "-") {
-						dataGridView1->Rows[2]->Cells[i]->Value = "MAX";
-
-
-					}
-
-				}
-				if (dataGridView1->Rows[1]->Cells[i - 1]->Value == "-") {
-					if (dataGridView1->Rows[1]->Cells[i + 1]->Value == "+") {
-						dataGridView1->Rows[2]->Cells[i]->Value = "MIN";
-
-
-					}
-
-				}
-			}
-			}
 			
 
 			
@@ -1223,6 +1091,260 @@ private: System::Windows::Forms::TextBox^ textBox2;
 
 		String^ dushky(double a, double b) {
 			return("(" + a.ToString("f2") + ";" + b.ToString("f2") + ")");
+		}
+		String^ strdushky(String^ a, String^ b) {
+			return("(" + a + ";" + b + ")");
+		}
+		void znakostalist(double h, double Ye[1000], double Xe[1000]) {
+			dataGridView2->Visible = true;
+
+			System::String^ rivf = textBox1->Text;
+
+			std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
+
+				int kkstpr = 3;
+				dataGridView2->RowCount = kkstpr;
+				dataGridView2->ColumnCount = 2;
+
+				
+			
+				dataGridView2->Rows[0]->Cells[0]->Value = "œÓÏ≥ÊÍË ÁÌ‡ÍÓÒÚ‡ÎÓÒÚ≥";
+				dataGridView2->Rows[0]->Cells[1]->Value = "«Ì‡˜ÂÌÌˇ ÙÛÌÍˆ≥ø";
+
+				dataGridView2->Rows[1]->Cells[0]->Value = Convert::ToDouble((al_TB->Text)).ToString("f2");
+				dataGridView2->Rows[1]->Cells[1]->Value = calculator(toPostfix(parser(strrivf)), Convert::ToDouble((al_TB->Text)), h);
+
+				
+
+
+
+				int poper = 1;
+		
+				double a = Convert::ToDouble((al_TB->Text));
+				double b;
+				double now;
+				double j;
+
+		
+
+
+
+				this->Text = kkstpr.ToString();
+
+
+				int num = 0;
+				double xznach = 0;
+				int l = 2;
+
+				for (int i = 1; i < Ne; i++) {
+					int temp = poper;
+
+					if (abs(Ye[i]) < (h)) {
+						num++;
+						xznach = xznach + Xe[i];
+
+
+					}
+					else {
+						if (num != 0) {
+							kkstpr = kkstpr + 2;
+							dataGridView2->RowCount = kkstpr;
+
+							xznach = xznach / num;
+							dataGridView2->Rows[l + 1]->Cells[0]->Value = xznach.ToString("f2");
+							dataGridView2->Rows[l + 1]->Cells[1]->Value = calculator(toPostfix(parser(strrivf)), xznach, h);
+							l = l + 2;
+						}
+						num = 0;
+						xznach = 0;
+
+					}
+					dataGridView2->Rows[kkstpr - 1]->Cells[0]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
+					dataGridView2->Rows[kkstpr - 1]->Cells[1]->Value = calculator(toPostfix(parser(strrivf)), Convert::ToDouble((bl_TB->Text)), h);
+				}
+
+				kkstpr++;
+				dataGridView2->RowCount = kkstpr;
+				for (int i = 2; i < kkstpr; i = i + 2) {
+					String^ ap= Convert::ToString(dataGridView2->Rows[i - 1]->Cells[0]->Value);
+					String^ bp= Convert::ToString(dataGridView2->Rows[i + 1]->Cells[0]->Value);
+
+					dataGridView2->Rows[i]->Cells[0]->Value = strdushky(ap, bp);
+					double c = (double::Parse(ap)+ double::Parse(bp))/2;
+					if (calculator(toPostfix(parser(strrivf)),c, h) > 0) {
+						dataGridView2->Rows[i]->Cells[1]->Value = "f(x)" + ">0";
+					}
+					else {
+						dataGridView2->Rows[i]->Cells[1]->Value = "f(x)" + "<0";
+
+					}
+
+					//
+
+				}
+				
+			
+		}
+		////////////////////////////////////////////////////////////////
+		void promishky(double h, double Ye[1000], double Xe[1000]) {
+			if (is2F) {
+
+				dataGridView1->Visible = true;
+				int kkstpr = 3;
+				dataGridView1->RowCount = 3;
+				dataGridView1->ColumnCount = kkstpr;
+
+				//dataGridView1[0][0]->Value = "ff";
+				dataGridView1->Rows[0]->Cells[0]->Value = "œÓÏ≥ÊÍË ÁÓÒÚ‡ÌÌˇ ÒÔ‡‰‡ÌÌˇ";
+				dataGridView1->Rows[0]->Cells[1]->Value = Convert::ToDouble((al_TB->Text)).ToString("f2");
+
+				dataGridView1->Rows[1]->Cells[0]->Value = "«Ì‡˜ÂÌÌˇ ÔÓı≥‰ÌÓø";
+
+
+				System::String^ rivf = textBox1->Text;
+
+				std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
+				double fph = ydh(strrivf, Convert::ToDouble((al_TB->Text)), h);
+
+				dataGridView1->Rows[1]->Cells[1]->Value = fph.ToString();
+				dataGridView1->Rows[2]->Cells[0]->Value = "f";
+
+				int poper = 1;
+				//double kkstpr = 0;
+				double a = Convert::ToDouble((al_TB->Text));
+				double b;
+				double now;
+				double j;
+
+				/*if ((Ye2[0]) < (0.001)) {
+					poper = 1;
+
+				}
+				else { poper = -1; }
+				for (int i = 1; i < Ne; i++) {
+					int temp=poper;
+
+					if ((Ye2[i]) < (h)) {
+						poper = 1;
+
+					}
+					else {
+						poper = -1;
+					}
+					if (temp * poper < 0) {
+						textBox5->Text = textBox5->Text+"  " + i.ToString();
+
+						//b = Xe2[i];
+						//dataGridView1->Rows->Add(dushky(a,2));
+						kkstpr= kkstpr+2;
+						//a = b;
+					}
+
+
+				}*/
+
+
+
+
+
+
+				this->Text = kkstpr.ToString();
+
+
+				int num = 0;
+				double xznach = 0;
+				int l = 2;
+
+				for (int i = 1; i < Ne; i++) {
+					int temp = poper;
+
+					if (abs(Ye[i]) < (h)) {
+						num++;
+						xznach = xznach + Xe[i];
+
+
+					}
+					else {
+						if (num != 0) {
+							kkstpr = kkstpr + 2;
+							dataGridView1->ColumnCount = kkstpr;
+
+							xznach = xznach / num;
+							dataGridView1->Rows[0]->Cells[l + 1]->Value = xznach.ToString("f2");
+							l = l + 2;
+						}
+						num = 0;
+						xznach = 0;
+
+					}
+					dataGridView1->Rows[0]->Cells[kkstpr - 1]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
+				}
+
+				kkstpr++;
+				dataGridView1->ColumnCount = kkstpr;
+				dataGridView1->Rows[0]->Cells[kkstpr - 1]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
+				fph = ydh(strrivf, Convert::ToDouble((bl_TB->Text)), h);
+
+				dataGridView1->Rows[1]->Cells[kkstpr - 1]->Value = fph.ToString();
+				for (int i = 2; i < kkstpr; i = i + 2) {
+
+					//dataGridView1->Rows[0]->Cells[i]->Value = dushky(Convert::ToDouble(dataGridView1->Rows[0]->Cells[i - 1]), Convert::ToDouble(dataGridView1->Rows[0]->Cells[i + 1]));
+					double x_start = Convert::ToDouble(dataGridView1->Rows[0]->Cells[i - 1]->Value);
+					double x_end = Convert::ToDouble(dataGridView1->Rows[0]->Cells[i + 1]->Value);
+
+					dataGridView1->Rows[0]->Cells[i]->Value = dushky(x_start, x_end);
+					double c = (x_end + x_start) / 2;
+					double fph = ydh(strrivf, c, h);
+					//textBox5->Text = textBox5->Text + "|" + fph.ToString() + "(" + kkstpr + ")";
+					if (fph > 0) {
+						dataGridView1->Rows[1]->Cells[i]->Value = "+";
+						dataGridView1->Rows[2]->Cells[i]->Value = "«ÓÒÚ‡∫";
+
+
+						//dataGridView1->Rows[2]->Cells[i]->Value = fph.ToString()+ x_start +"-"+ x_end+"(" + c;
+					}
+					else {
+						dataGridView1->Rows[1]->Cells[i]->Value = "-";
+						//dataGridView1->Rows[2]->Cells[i]->Value = fph.ToString() + x_start + "-" + x_end + "(" + c;
+						dataGridView1->Rows[2]->Cells[i]->Value = "—Ô‡‰‡∫";
+					}
+
+
+				}
+				for (int i = 1; i < kkstpr; i = i + 2) {
+					System::String^ rivf = textBox1->Text;
+
+					std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
+					double c = Convert::ToDouble(dataGridView1->Rows[0]->Cells[i]->Value);
+
+					double fph = ydh(strrivf, c, h);
+
+					dataGridView1->Rows[1]->Cells[i]->Value = fph.ToString();
+
+
+
+
+				}
+				//dataGridView1->Rows[2]->Cells[0]->Value = "MAX";
+				for (int i = 3; i < kkstpr - 1; i = i + 2) {
+					if (dataGridView1->Rows[1]->Cells[i - 1]->Value == "+") {
+						if (dataGridView1->Rows[1]->Cells[i + 1]->Value == "-") {
+							dataGridView1->Rows[2]->Cells[i]->Value = "MAX";
+
+
+						}
+
+					}
+					if (dataGridView1->Rows[1]->Cells[i - 1]->Value == "-") {
+						if (dataGridView1->Rows[1]->Cells[i + 1]->Value == "+") {
+							dataGridView1->Rows[2]->Cells[i]->Value = "MIN";
+
+
+						}
+
+					}
+				}
+			}
 		}
 		
 
@@ -1268,6 +1390,8 @@ private: System::Windows::Forms::TextBox^ textBox2;
 		graph2_ColorD->ShowDialog();
 	}
 	private: System::Void Clear_B_Click(System::Object^ sender, System::EventArgs^ e) {
+		dataGridView1->Visible = false;
+		dataGridView2->Visible = false;
 		Graphics^ graph = pictureBox->CreateGraphics(); // ÒÚ‚ÓÂÌÌˇ Ó·í∫ÍÚ‡ ‰Îˇ Ó·ÓÚË Á „‡Ù≥ÍÓ˛
 		graph->Clear(Color::White); // Ó˜Ë˘ÂÌÌˇ pictureBox
 	}
@@ -1463,7 +1587,9 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	String^ val = Convert::ToString(dataGridView1->Rows[y]->Cells[x]->Value);
 	if (y == 0) {
 		if (val[0] == '(') {
-			textBox2->Text = simpson(strriv, al, bl, x-1, x+1, Ne, h).ToString("f5");
+
+			textBox2->Text = simpson(strriv, al, bl, System::Convert::ToDouble(Convert::ToString(dataGridView1->Rows[y]->Cells[x-1]->Value)), System::Convert::ToDouble(Convert::ToString(dataGridView1->Rows[y]->Cells[x+1]->Value)), Ne, h).ToString("f5");
+			
 			
 		}
 	}
@@ -1471,5 +1597,59 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	
 }
 
+private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	//this->Text = Convert::ToString(dataGridView2->CurrentCellAddress);
+	String^ pos = Convert::ToString(dataGridView2->CurrentCellAddress);
+
+	std::string coo = msclr::interop::marshal_as<std::string>(pos);
+
+	string xt, yt;
+	bool per;
+	int x, y;
+	for (int i = 0; i < coo.length(); i++) {
+		if (coo[i] == '=') {
+			i++;
+			if (per == false) {
+				while (coo[i] != ',') {
+					xt = xt + coo[i];
+					i++;
+				}
+				per = true;
+			}
+			else {
+				while (coo[i] != '}') {
+					yt = yt + coo[i];
+					i++;
+				}
+				per = false;
+			}
+
+
+
+		}
+
+	}
+	double al = Convert::ToDouble(al_TB->Text);
+	double bl = Convert::ToDouble(bl_TB->Text);
+
+	double h = (al - bl) / Ne;
+
+
+	System::String^ riv = textBox1->Text;
+
+	std::string strriv = msclr::interop::marshal_as<std::string>(riv);
+	x = std::stoi(xt);
+	y = std::stoi(yt);
+	this->Text = x.ToString() + "  " + y.ToString();
+	String^ val = Convert::ToString(dataGridView2->Rows[y]->Cells[x]->Value);
+	if (x == 0) {
+		if (val[0] == '(') {
+			textBox2->Text = simpson(strriv, al, bl, System::Convert::ToDouble(Convert::ToString(dataGridView2->Rows[y - 1]->Cells[x]->Value)), System::Convert::ToDouble(Convert::ToString(dataGridView2->Rows[y +1]->Cells[x]->Value)), Ne, h).ToString("f5");
+
+		}
+	}
+
+
+}
 };
 }
