@@ -137,31 +137,50 @@ namespace GraphMakerForms {
 	private: System::Windows::Forms::TextBox^ textBox1;
 
 
-	private: System::Windows::Forms::GroupBox^ groupBox1;
-	private: System::Windows::Forms::Button^ button13;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::Button^ button9;
-	private: System::Windows::Forms::Button^ button10;
-	private: System::Windows::Forms::Button^ button12;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::Button^ button8;
-	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button4;
+
+
+
+
+
+
+
+
+
+
+
+
+
 private: System::Windows::Forms::DataGridView^ dataGridView1;
 private: System::Windows::Forms::TextBox^ textBox4;
 private: System::Windows::Forms::TextBox^ textBox5;
 private: System::Windows::Forms::ToolStripMenuItem^ Ù‡ÈÎToolStripMenuItem;
 private: System::Windows::Forms::ToolStripMenuItem^ Á·ÂÂ„ÚËToolStripMenuItem;
 private: System::Windows::Forms::ToolStripMenuItem^ ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem;
-private: System::Windows::Forms::Button^ button11;
-private: System::Windows::Forms::Button^ button1;
-private: System::Windows::Forms::Button^ button14;
-private: System::Windows::Forms::Button^ button16;
-private: System::Windows::Forms::Button^ button15;
+
+
+
+
+
 private: System::Windows::Forms::ToolStripMenuItem^ ‚ËÈÚËToolStripMenuItem;
+private: System::Windows::Forms::Button^ button4;
+private: System::Windows::Forms::Button^ button2;
+private: System::Windows::Forms::Button^ button3;
+private: System::Windows::Forms::Button^ button5;
+private: System::Windows::Forms::Button^ button8;
+private: System::Windows::Forms::Button^ button7;
+private: System::Windows::Forms::Button^ button6;
+private: System::Windows::Forms::Button^ button10;
+private: System::Windows::Forms::Button^ button9;
+private: System::Windows::Forms::TextBox^ textBox3;
+private: System::Windows::Forms::Button^ button12;
+private: System::Windows::Forms::Button^ button13;
+private: System::Windows::Forms::Button^ button1;
+private: System::Windows::Forms::Button^ button11;
+private: System::Windows::Forms::Button^ button14;
+private: System::Windows::Forms::Button^ button15;
+private: System::Windows::Forms::Button^ button16;
+private: System::Windows::Forms::GroupBox^ groupBox1;
+private: System::Windows::Forms::TextBox^ textBox2;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -213,31 +232,32 @@ private: System::Windows::Forms::ToolStripMenuItem^ ‚ËÈÚËToolStripMenuItem;
 			this->‚ËÈÚËToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->button16 = (gcnew System::Windows::Forms::Button());
-			this->button15 = (gcnew System::Windows::Forms::Button());
-			this->button14 = (gcnew System::Windows::Forms::Button());
-			this->button11 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button13 = (gcnew System::Windows::Forms::Button());
-			this->button12 = (gcnew System::Windows::Forms::Button());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->button10 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button10 = (gcnew System::Windows::Forms::Button());
+			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->button14 = (gcnew System::Windows::Forms::Button());
+			this->button15 = (gcnew System::Windows::Forms::Button());
+			this->button16 = (gcnew System::Windows::Forms::Button());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Ne_NUD))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
 			this->menuStrip1->SuspendLayout();
-			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->groupBox1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Draw_B
@@ -405,11 +425,11 @@ private: System::Windows::Forms::ToolStripMenuItem^ ‚ËÈÚËToolStripMenuItem;
 			this->label15->AutoSize = true;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label15->Location = System::Drawing::Point(1566, 228);
+			this->label15->Location = System::Drawing::Point(1699, 228);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(179, 24);
+			this->label15->Size = System::Drawing::Size(52, 24);
 			this->label15->TabIndex = 24;
-			this->label15->Text = L"¬‚Â‰≥Ú¸ ÙÛÌÍˆ≥˛:";
+			this->label15->Text = L"f(x)=";
 			// 
 			// graph2_ColorD
 			// 
@@ -506,6 +526,188 @@ private: System::Windows::Forms::ToolStripMenuItem^ ‚ËÈÚËToolStripMenuItem;
 			this->textBox1->TabIndex = 35;
 			this->textBox1->Click += gcnew System::EventHandler(this, &MyForm::textBox1_Click);
 			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(0, 822);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(2076, 150);
+			this->dataGridView1->TabIndex = 39;
+			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellClick);
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyForm::dataGridView1_CellContentClick);
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(6, 109);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(85, 36);
+			this->button4->TabIndex = 16;
+			this->button4->Text = L"sin(x)";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(97, 109);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(85, 36);
+			this->button2->TabIndex = 17;
+			this->button2->Text = L"cos(x)";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(97, 151);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(85, 36);
+			this->button3->TabIndex = 18;
+			this->button3->Text = L"lg(x)";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(6, 193);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(85, 34);
+			this->button5->TabIndex = 19;
+			this->button5->Text = L"+";
+			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
+			// 
+			// button8
+			// 
+			this->button8->Location = System::Drawing::Point(97, 193);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(85, 34);
+			this->button8->TabIndex = 20;
+			this->button8->Text = L"-";
+			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(189, 193);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(85, 34);
+			this->button7->TabIndex = 21;
+			this->button7->Text = L"*";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(6, 235);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(85, 34);
+			this->button6->TabIndex = 22;
+			this->button6->Text = L"/";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
+			// 
+			// button10
+			// 
+			this->button10->Location = System::Drawing::Point(97, 67);
+			this->button10->Name = L"button10";
+			this->button10->Size = System::Drawing::Size(85, 36);
+			this->button10->TabIndex = 24;
+			this->button10->Text = L"(";
+			this->button10->UseVisualStyleBackColor = true;
+			this->button10->Click += gcnew System::EventHandler(this, &MyForm::button10_Click);
+			// 
+			// button9
+			// 
+			this->button9->Location = System::Drawing::Point(189, 67);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(85, 34);
+			this->button9->TabIndex = 25;
+			this->button9->Text = L")";
+			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);
+			// 
+			// textBox3
+			// 
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->textBox3->Location = System::Drawing::Point(6, 14);
+			this->textBox3->Multiline = true;
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(267, 49);
+			this->textBox3->TabIndex = 26;
+			// 
+			// button12
+			// 
+			this->button12->Location = System::Drawing::Point(189, 151);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(85, 34);
+			this->button12->TabIndex = 23;
+			this->button12->Text = L"|x|";
+			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
+			// 
+			// button13
+			// 
+			this->button13->Location = System::Drawing::Point(6, 275);
+			this->button13->Name = L"button13";
+			this->button13->Size = System::Drawing::Size(268, 32);
+			this->button13->TabIndex = 27;
+			this->button13->Text = L"√ÓÚÓ‚Ó";
+			this->button13->UseVisualStyleBackColor = true;
+			this->button13->Click += gcnew System::EventHandler(this, &MyForm::button13_Click);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(6, 151);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(85, 36);
+			this->button1->TabIndex = 28;
+			this->button1->Text = L"ctg(x)";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
+			// button11
+			// 
+			this->button11->Location = System::Drawing::Point(189, 109);
+			this->button11->Name = L"button11";
+			this->button11->Size = System::Drawing::Size(85, 36);
+			this->button11->TabIndex = 29;
+			this->button11->Text = L"tan(x)";
+			this->button11->UseVisualStyleBackColor = true;
+			this->button11->Click += gcnew System::EventHandler(this, &MyForm::button11_Click);
+			// 
+			// button14
+			// 
+			this->button14->Location = System::Drawing::Point(6, 69);
+			this->button14->Name = L"button14";
+			this->button14->Size = System::Drawing::Size(85, 34);
+			this->button14->TabIndex = 30;
+			this->button14->Text = L"C";
+			this->button14->UseVisualStyleBackColor = true;
+			this->button14->Click += gcnew System::EventHandler(this, &MyForm::button14_Click);
+			// 
+			// button15
+			// 
+			this->button15->Location = System::Drawing::Point(97, 235);
+			this->button15->Name = L"button15";
+			this->button15->Size = System::Drawing::Size(85, 34);
+			this->button15->TabIndex = 31;
+			this->button15->Text = L"^";
+			this->button15->UseVisualStyleBackColor = true;
+			this->button15->Click += gcnew System::EventHandler(this, &MyForm::button15_Click);
+			// 
+			// button16
+			// 
+			this->button16->Location = System::Drawing::Point(188, 235);
+			this->button16->Name = L"button16";
+			this->button16->Size = System::Drawing::Size(85, 34);
+			this->button16->TabIndex = 32;
+			this->button16->Text = L"-X";
+			this->button16->UseVisualStyleBackColor = true;
+			this->button16->Click += gcnew System::EventHandler(this, &MyForm::button16_Click);
+			// 
 			// groupBox1
 			// 
 			this->groupBox1->Controls->Add(this->button16);
@@ -532,191 +734,19 @@ private: System::Windows::Forms::ToolStripMenuItem^ ‚ËÈÚËToolStripMenuItem;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Visible = false;
 			// 
-			// button16
+			// textBox2
 			// 
-			this->button16->Location = System::Drawing::Point(188, 235);
-			this->button16->Name = L"button16";
-			this->button16->Size = System::Drawing::Size(85, 34);
-			this->button16->TabIndex = 32;
-			this->button16->Text = L"-X";
-			this->button16->UseVisualStyleBackColor = true;
-			this->button16->Click += gcnew System::EventHandler(this, &MyForm::button16_Click);
-			// 
-			// button15
-			// 
-			this->button15->Location = System::Drawing::Point(97, 235);
-			this->button15->Name = L"button15";
-			this->button15->Size = System::Drawing::Size(85, 34);
-			this->button15->TabIndex = 31;
-			this->button15->Text = L"^";
-			this->button15->UseVisualStyleBackColor = true;
-			this->button15->Click += gcnew System::EventHandler(this, &MyForm::button15_Click);
-			// 
-			// button14
-			// 
-			this->button14->Location = System::Drawing::Point(6, 69);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(85, 34);
-			this->button14->TabIndex = 30;
-			this->button14->Text = L"C";
-			this->button14->UseVisualStyleBackColor = true;
-			this->button14->Click += gcnew System::EventHandler(this, &MyForm::button14_Click);
-			// 
-			// button11
-			// 
-			this->button11->Location = System::Drawing::Point(189, 109);
-			this->button11->Name = L"button11";
-			this->button11->Size = System::Drawing::Size(85, 36);
-			this->button11->TabIndex = 29;
-			this->button11->Text = L"tan(x)";
-			this->button11->UseVisualStyleBackColor = true;
-			this->button11->Click += gcnew System::EventHandler(this, &MyForm::button11_Click);
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(6, 151);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(85, 36);
-			this->button1->TabIndex = 28;
-			this->button1->Text = L"ctg(x)";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
-			// 
-			// button13
-			// 
-			this->button13->Location = System::Drawing::Point(6, 275);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(268, 32);
-			this->button13->TabIndex = 27;
-			this->button13->Text = L"√ÓÚÓ‚Ó";
-			this->button13->UseVisualStyleBackColor = true;
-			this->button13->Click += gcnew System::EventHandler(this, &MyForm::button13_Click);
-			// 
-			// button12
-			// 
-			this->button12->Location = System::Drawing::Point(189, 151);
-			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(85, 34);
-			this->button12->TabIndex = 23;
-			this->button12->Text = L"|x|";
-			this->button12->UseVisualStyleBackColor = true;
-			this->button12->Click += gcnew System::EventHandler(this, &MyForm::button12_Click);
-			// 
-			// textBox3
-			// 
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->textBox3->Location = System::Drawing::Point(6, 14);
-			this->textBox3->Multiline = true;
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(267, 49);
-			this->textBox3->TabIndex = 26;
-			// 
-			// button9
-			// 
-			this->button9->Location = System::Drawing::Point(189, 67);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(85, 34);
-			this->button9->TabIndex = 25;
-			this->button9->Text = L")";
-			this->button9->UseVisualStyleBackColor = true;
-			this->button9->Click += gcnew System::EventHandler(this, &MyForm::button9_Click);
-			// 
-			// button10
-			// 
-			this->button10->Location = System::Drawing::Point(97, 67);
-			this->button10->Name = L"button10";
-			this->button10->Size = System::Drawing::Size(85, 36);
-			this->button10->TabIndex = 24;
-			this->button10->Text = L"(";
-			this->button10->UseVisualStyleBackColor = true;
-			this->button10->Click += gcnew System::EventHandler(this, &MyForm::button10_Click);
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(6, 235);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(85, 34);
-			this->button6->TabIndex = 22;
-			this->button6->Text = L"/";
-			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &MyForm::button6_Click);
-			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(189, 193);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(85, 34);
-			this->button7->TabIndex = 21;
-			this->button7->Text = L"*";
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &MyForm::button7_Click);
-			// 
-			// button8
-			// 
-			this->button8->Location = System::Drawing::Point(97, 193);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(85, 34);
-			this->button8->TabIndex = 20;
-			this->button8->Text = L"-";
-			this->button8->UseVisualStyleBackColor = true;
-			this->button8->Click += gcnew System::EventHandler(this, &MyForm::button8_Click);
-			// 
-			// button5
-			// 
-			this->button5->Location = System::Drawing::Point(6, 193);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(85, 34);
-			this->button5->TabIndex = 19;
-			this->button5->Text = L"+";
-			this->button5->UseVisualStyleBackColor = true;
-			this->button5->Click += gcnew System::EventHandler(this, &MyForm::button5_Click);
-			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(97, 151);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(85, 36);
-			this->button3->TabIndex = 18;
-			this->button3->Text = L"lg(x)";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(97, 109);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(85, 36);
-			this->button2->TabIndex = 17;
-			this->button2->Text = L"cos(x)";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
-			// 
-			// button4
-			// 
-			this->button4->Location = System::Drawing::Point(6, 109);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(85, 36);
-			this->button4->TabIndex = 16;
-			this->button4->Text = L"sin(x)";
-			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
-			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(0, 822);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(2076, 150);
-			this->dataGridView1->TabIndex = 39;
+			this->textBox2->Location = System::Drawing::Point(1583, 376);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(100, 22);
+			this->textBox2->TabIndex = 42;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1902, 1033);
+			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->textBox5);
 			this->Controls->Add(this->groupBox1);
@@ -742,9 +772,9 @@ private: System::Windows::Forms::ToolStripMenuItem^ ‚ËÈÚËToolStripMenuItem;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->EndInit();
 			this->menuStrip1->ResumeLayout(false);
 			this->menuStrip1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -766,7 +796,7 @@ private: System::Windows::Forms::ToolStripMenuItem^ ‚ËÈÚËToolStripMenuItem;
 			Xe[0] = al;
 			for (int i = 0; i < Ne; i++)
 			{
-				Ye[i] = calculator(toPostfix(parser(strriv)), Xe[i], h);;
+				Ye[i] = calculator(toPostfix(parser(strriv)), Xe[i], h);
 				Xe[i + 1] = Xe[i] + h;
 				if (abs(Ye[i]) == 7878787) {
 					conect[i] = false;
@@ -1373,6 +1403,14 @@ private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void ‚ËÈÚËToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	Close();
+}
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+
+	//this->Text = (dataGridView1->SelectedCells)->ToString();
+	
+}
+private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	this->Text = Convert::ToString(dataGridView1->CurrentCellAddress);
 }
 };
 }

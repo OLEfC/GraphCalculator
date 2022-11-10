@@ -22,5 +22,7 @@ double whatfun(string oper, double a,double h);
 double ydh(string input, double x0, double  h);
 double ydr(string input, double x0, double  h);
 
+double simpson(string input, double al, double bl, double a, double b, double Ne, double hharafika);
+
 
 
