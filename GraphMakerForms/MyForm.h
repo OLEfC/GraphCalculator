@@ -161,6 +161,7 @@ private: System::Windows::Forms::Button^ button1;
 private: System::Windows::Forms::Button^ button14;
 private: System::Windows::Forms::Button^ button16;
 private: System::Windows::Forms::Button^ button15;
+private: System::Windows::Forms::ToolStripMenuItem^ ‚ËÈÚËToolStripMenuItem;
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -192,9 +193,9 @@ private: System::Windows::Forms::Button^ button15;
 			this->bl_TB = (gcnew System::Windows::Forms::TextBox());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->Ne_NUD = (gcnew System::Windows::Forms::NumericUpDown());
+			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->grid_ColorD = (gcnew System::Windows::Forms::ColorDialog());
 			this->axis_ColorD = (gcnew System::Windows::Forms::ColorDialog());
 			this->graph_ColorD = (gcnew System::Windows::Forms::ColorDialog());
@@ -209,6 +210,7 @@ private: System::Windows::Forms::Button^ button15;
 			this->Ù‡ÈÎToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->Á·ÂÂ„ÚËToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->‚ËÈÚËToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
@@ -270,7 +272,7 @@ private: System::Windows::Forms::Button^ button15;
 			this->al_TB->Name = L"al_TB";
 			this->al_TB->Size = System::Drawing::Size(100, 26);
 			this->al_TB->TabIndex = 4;
-			this->al_TB->Text = L"-10";
+			this->al_TB->Text = L"-5";
 			this->al_TB->TextChanged += gcnew System::EventHandler(this, &MyForm::al_TB_TextChanged);
 			// 
 			// label2
@@ -303,7 +305,7 @@ private: System::Windows::Forms::Button^ button15;
 			this->bl_TB->Name = L"bl_TB";
 			this->bl_TB->Size = System::Drawing::Size(100, 26);
 			this->bl_TB->TabIndex = 6;
-			this->bl_TB->Text = L"10";
+			this->bl_TB->Text = L"5";
 			this->bl_TB->TextChanged += gcnew System::EventHandler(this, &MyForm::bl_TB_TextChanged);
 			// 
 			// panel1
@@ -331,14 +333,6 @@ private: System::Windows::Forms::Button^ button15;
 			this->textBox4->Visible = false;
 			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox4_TextChanged);
 			// 
-			// textBox5
-			// 
-			this->textBox5->Location = System::Drawing::Point(1596, 617);
-			this->textBox5->Multiline = true;
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(214, 166);
-			this->textBox5->TabIndex = 41;
-			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
@@ -361,6 +355,14 @@ private: System::Windows::Forms::Button^ button15;
 			this->Ne_NUD->Size = System::Drawing::Size(100, 26);
 			this->Ne_NUD->TabIndex = 10;
 			this->Ne_NUD->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
+			// 
+			// textBox5
+			// 
+			this->textBox5->Location = System::Drawing::Point(1596, 617);
+			this->textBox5->Multiline = true;
+			this->textBox5->Name = L"textBox5";
+			this->textBox5->Size = System::Drawing::Size(214, 166);
+			this->textBox5->TabIndex = 41;
 			// 
 			// grid_ColorD
 			// 
@@ -459,9 +461,9 @@ private: System::Windows::Forms::Button^ button15;
 			// 
 			// Ù‡ÈÎToolStripMenuItem
 			// 
-			this->Ù‡ÈÎToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+			this->Ù‡ÈÎToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
 				this->Á·ÂÂ„ÚËToolStripMenuItem,
-					this->ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem
+					this->ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem, this->‚ËÈÚËToolStripMenuItem
 			});
 			this->Ù‡ÈÎToolStripMenuItem->Name = L"Ù‡ÈÎToolStripMenuItem";
 			this->Ù‡ÈÎToolStripMenuItem->Size = System::Drawing::Size(59, 24);
@@ -470,15 +472,22 @@ private: System::Windows::Forms::Button^ button15;
 			// Á·ÂÂ„ÚËToolStripMenuItem
 			// 
 			this->Á·ÂÂ„ÚËToolStripMenuItem->Name = L"Á·ÂÂ„ÚËToolStripMenuItem";
-			this->Á·ÂÂ„ÚËToolStripMenuItem->Size = System::Drawing::Size(215, 26);
+			this->Á·ÂÂ„ÚËToolStripMenuItem->Size = System::Drawing::Size(234, 26);
 			this->Á·ÂÂ„ÚËToolStripMenuItem->Text = L"«·ÂÂ„ÚË";
 			// 
 			// ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem
 			// 
 			this->ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem->Name = L"ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem";
-			this->ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem->Size = System::Drawing::Size(215, 26);
-			this->ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem->Text = L"≈ÍÒÔÓÚÛ‚‡ÚË png";
+			this->ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem->Size = System::Drawing::Size(234, 26);
+			this->ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem->Text = L"≈ÍÒÔÓÚÛ‚‡ÚË ‚ .jpeg";
 			this->ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::ÂÍÒÔÓÚÛ‚‡ÚËPngToolStripMenuItem_Click);
+			// 
+			// ‚ËÈÚËToolStripMenuItem
+			// 
+			this->‚ËÈÚËToolStripMenuItem->Name = L"‚ËÈÚËToolStripMenuItem";
+			this->‚ËÈÚËToolStripMenuItem->Size = System::Drawing::Size(234, 26);
+			this->‚ËÈÚËToolStripMenuItem->Text = L"¬ËÈÚË";
+			this->‚ËÈÚËToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::‚ËÈÚËToolStripMenuItem_Click);
 			// 
 			// contextMenuStrip1
 			// 
@@ -1046,7 +1055,7 @@ private: System::Windows::Forms::Button^ button15;
 			double now;
 			double j;
 			
-			if ((Ye2[0]) < (0.001)) {
+			/*if ((Ye2[0]) < (0.001)) {
 				poper = 1;
 
 			}
@@ -1071,14 +1080,9 @@ private: System::Windows::Forms::Button^ button15;
 				}
 				
 				
-			}
+			}*/
 			
-			kkstpr++;
-			dataGridView1->ColumnCount = kkstpr;
-			dataGridView1->Rows[0]->Cells[kkstpr-1]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
-			fph = ydh(strrivf, Convert::ToDouble((bl_TB->Text)), h);
-
-			dataGridView1->Rows[1]->Cells[kkstpr - 1]->Value = fph.ToString();
+			
 
 			
 			
@@ -1101,6 +1105,8 @@ private: System::Windows::Forms::Button^ button15;
 				}
 				else {
 					if (num != 0) {
+						kkstpr = kkstpr + 2;
+						dataGridView1->ColumnCount = kkstpr;
 
 						xznach = xznach /num;
 						dataGridView1->Rows[0]->Cells[l+1]->Value = xznach.ToString("f2");
@@ -1112,6 +1118,13 @@ private: System::Windows::Forms::Button^ button15;
 				}
 				dataGridView1->Rows[0]->Cells[kkstpr - 1]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
 			}
+
+			kkstpr++;
+			dataGridView1->ColumnCount = kkstpr;
+			dataGridView1->Rows[0]->Cells[kkstpr - 1]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
+			fph = ydh(strrivf, Convert::ToDouble((bl_TB->Text)), h);
+
+			dataGridView1->Rows[1]->Cells[kkstpr - 1]->Value = fph.ToString();
 			for (int i = 2; i < kkstpr; i = i + 2) {
 				
 				//dataGridView1->Rows[0]->Cells[i]->Value = dushky(Convert::ToDouble(dataGridView1->Rows[0]->Cells[i - 1]), Convert::ToDouble(dataGridView1->Rows[0]->Cells[i + 1]));
@@ -1357,6 +1370,9 @@ private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
 	textBox3->Text = textBox3->Text + "inv(x)";
+}
+private: System::Void ‚ËÈÚËToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	Close();
 }
 };
 }
