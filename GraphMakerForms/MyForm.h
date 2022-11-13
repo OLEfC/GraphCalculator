@@ -193,6 +193,9 @@ private: System::Windows::Forms::TextBox^ textBox2;
 private: System::Windows::Forms::GroupBox^ groupBox2;
 private: System::Windows::Forms::Label^ label6;
 private: System::Windows::Forms::ColorDialog^ integral_colorD;
+private: System::Windows::Forms::PictureBox^ tempbox;
+private: System::Windows::Forms::Label^ label8;
+private: System::Windows::Forms::Label^ label7;
 
 
 
@@ -275,7 +278,10 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->integral_colorD = (gcnew System::Windows::Forms::ColorDialog());
+			this->tempbox = (gcnew System::Windows::Forms::PictureBox());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Ne_NUD))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
@@ -284,6 +290,7 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->groupBox2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tempbox))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// Draw_B
@@ -306,9 +313,9 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 				static_cast<System::Byte>(204)));
 			this->label1->Location = System::Drawing::Point(3, 9);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(225, 25);
+			this->label1->Size = System::Drawing::Size(162, 25);
 			this->label1->TabIndex = 3;
-			this->label1->Text = L"Межі графіка (al<bl):";
+			this->label1->Text = L"Межі графіка :";
 			// 
 			// al_TB
 			// 
@@ -328,9 +335,9 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 				static_cast<System::Byte>(204)));
 			this->label2->Location = System::Drawing::Point(4, 46);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(37, 20);
+			this->label2->Size = System::Drawing::Size(33, 20);
 			this->label2->TabIndex = 5;
-			this->label2->Text = L"al =";
+			this->label2->Text = L"a =";
 			// 
 			// label3
 			// 
@@ -339,9 +346,9 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 				static_cast<System::Byte>(204)));
 			this->label3->Location = System::Drawing::Point(4, 77);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(37, 20);
+			this->label3->Size = System::Drawing::Size(33, 20);
 			this->label3->TabIndex = 7;
-			this->label3->Text = L"bl =";
+			this->label3->Text = L"b =";
 			// 
 			// bl_TB
 			// 
@@ -375,14 +382,15 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 				static_cast<System::Byte>(204)));
 			this->label4->Location = System::Drawing::Point(4, 104);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(45, 20);
+			this->label4->Size = System::Drawing::Size(155, 20);
 			this->label4->TabIndex = 9;
-			this->label4->Text = L"Ne =";
+			this->label4->Text = L"Кількість точок =";
 			// 
 			// Ne_NUD
 			// 
 			this->Ne_NUD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
+			this->Ne_NUD->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
 			this->Ne_NUD->Location = System::Drawing::Point(160, 102);
 			this->Ne_NUD->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->Ne_NUD->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 3, 0, 0, 0 });
@@ -446,7 +454,7 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			this->checkBox1->AutoSize = true;
 			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->checkBox1->ForeColor = System::Drawing::Color::Maroon;
+			this->checkBox1->ForeColor = System::Drawing::Color::Black;
 			this->checkBox1->Location = System::Drawing::Point(1563, 183);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(355, 30);
@@ -464,6 +472,7 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			this->Dot1Coordinates->ReadOnly = true;
 			this->Dot1Coordinates->Size = System::Drawing::Size(194, 26);
 			this->Dot1Coordinates->TabIndex = 30;
+			this->Dot1Coordinates->Visible = false;
 			// 
 			// Dot2Coordinates
 			// 
@@ -481,7 +490,7 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->файлToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1902, 28);
+			this->menuStrip1->Size = System::Drawing::Size(1902, 30);
 			this->menuStrip1->TabIndex = 33;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -492,8 +501,9 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 					this->експортуватиPngToolStripMenuItem, this->вийтиToolStripMenuItem
 			});
 			this->файлToolStripMenuItem->Name = L"файлToolStripMenuItem";
-			this->файлToolStripMenuItem->Size = System::Drawing::Size(59, 24);
+			this->файлToolStripMenuItem->Size = System::Drawing::Size(59, 26);
 			this->файлToolStripMenuItem->Text = L"Файл";
+			this->файлToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::файлToolStripMenuItem_Click);
 			// 
 			// зберегтиToolStripMenuItem
 			// 
@@ -644,6 +654,7 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(267, 49);
 			this->textBox3->TabIndex = 26;
+			this->textBox3->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox3_TextChanged);
 			// 
 			// button12
 			// 
@@ -758,7 +769,7 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			this->label5->Anchor = System::Windows::Forms::AnchorStyles::None;
 			this->label5->Font = (gcnew System::Drawing::Font(L"MV Boli", 140, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label5->Location = System::Drawing::Point(158, 19);
+			this->label5->Location = System::Drawing::Point(89, 25);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(218, 255);
 			this->label5->TabIndex = 44;
@@ -767,7 +778,7 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			// aper
 			// 
 			this->aper->AutoSize = true;
-			this->aper->Location = System::Drawing::Point(169, 257);
+			this->aper->Location = System::Drawing::Point(103, 254);
 			this->aper->Name = L"aper";
 			this->aper->Size = System::Drawing::Size(0, 17);
 			this->aper->TabIndex = 45;
@@ -775,7 +786,7 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			// bper
 			// 
 			this->bper->AutoSize = true;
-			this->bper->Location = System::Drawing::Point(276, 19);
+			this->bper->Location = System::Drawing::Point(216, 18);
 			this->bper->Name = L"bper";
 			this->bper->Size = System::Drawing::Size(0, 17);
 			this->bper->TabIndex = 46;
@@ -784,39 +795,74 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			// 
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->textBox2->Location = System::Drawing::Point(294, 114);
+			this->textBox2->Location = System::Drawing::Point(273, 118);
 			this->textBox2->Multiline = true;
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(168, 47);
 			this->textBox2->TabIndex = 47;
-			this->textBox2->Text = L"f";
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->label6);
+			this->groupBox2->Controls->Add(this->label8);
+			this->groupBox2->Controls->Add(this->label7);
 			this->groupBox2->Controls->Add(this->textBox2);
 			this->groupBox2->Controls->Add(this->aper);
 			this->groupBox2->Controls->Add(this->bper);
 			this->groupBox2->Controls->Add(this->label5);
-			this->groupBox2->Controls->Add(this->label6);
-			this->groupBox2->Location = System::Drawing::Point(1561, 538);
+			this->groupBox2->Location = System::Drawing::Point(1563, 538);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Size = System::Drawing::Size(468, 280);
 			this->groupBox2->TabIndex = 48;
 			this->groupBox2->TabStop = false;
+			this->groupBox2->Visible = false;
 			// 
 			// label6
 			// 
+			this->label6->BackColor = System::Drawing::Color::Transparent;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 70, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label6->Location = System::Drawing::Point(-22, 76);
+			this->label6->Location = System::Drawing::Point(-22, 67);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(225, 181);
+			this->label6->Size = System::Drawing::Size(122, 124);
 			this->label6->TabIndex = 48;
-			this->label6->Text = L"S=";
+			this->label6->Text = L"S";
+			// 
+			// label8
+			// 
+			this->label8->BackColor = System::Drawing::Color::Transparent;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 60, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label8->Location = System::Drawing::Point(76, 83);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(68, 105);
+			this->label8->TabIndex = 50;
+			this->label8->Text = L"=";
+			// 
+			// label7
+			// 
+			this->label7->BackColor = System::Drawing::Color::Transparent;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 60, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label7->Location = System::Drawing::Point(185, 83);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(68, 105);
+			this->label7->TabIndex = 49;
+			this->label7->Text = L"=";
 			// 
 			// integral_colorD
 			// 
 			this->integral_colorD->Color = System::Drawing::Color::Lime;
+			// 
+			// tempbox
+			// 
+			this->tempbox->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->tempbox->Location = System::Drawing::Point(13, 38);
+			this->tempbox->Name = L"tempbox";
+			this->tempbox->Size = System::Drawing::Size(1544, 778);
+			this->tempbox->TabIndex = 49;
+			this->tempbox->TabStop = false;
+			this->tempbox->Visible = false;
 			// 
 			// MyForm
 			// 
@@ -837,6 +883,7 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->dataGridView2);
+			this->Controls->Add(this->tempbox);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
@@ -855,12 +902,13 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tempbox))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-
+		System::Drawing::Image^ Temporary;
 		Color gridColor, axisColor, graph1Color, graph2Color, integral_color; // колір ліній
 		float gridWidth, axisWidth, graph1Width, graph2Width; // ширина ліній
 		double xMax, yMax, xMin, yMin; // максимальні та мінімальні значиення х та y
@@ -1159,49 +1207,32 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 		}
 		void znakostalist(double h, double Ye[1000], double Xe[1000]) {
 			dataGridView2->Visible = true;
-
 			System::String^ rivf = textBox1->Text;
-
 			std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
-
-				int kkstpr = 3;
-				dataGridView2->RowCount = kkstpr;
-				dataGridView2->ColumnCount = 2;
-
-				
-			
-				dataGridView2->Rows[0]->Cells[0]->Value = "Проміжки знакосталості";
-				dataGridView2->Rows[0]->Cells[1]->Value = "Значення функції";
-
+			int kkstpr = 3;
+			dataGridView2->RowCount = kkstpr;
+			dataGridView2->ColumnCount = 2;
+			int l;				
+			if (calculator(toPostfix(parser(strrivf)), Convert::ToDouble((al_TB->Text)), h) != 7878787) {
 				dataGridView2->Rows[1]->Cells[0]->Value = Convert::ToDouble((al_TB->Text)).ToString("f2");
 				dataGridView2->Rows[1]->Cells[1]->Value = calculator(toPostfix(parser(strrivf)), Convert::ToDouble((al_TB->Text)), h);
+				l = 2;
+			}
+			else { 
+				l = 0; 
+				kkstpr = kkstpr - 2;
+				dataGridView2->RowCount = kkstpr;
+			}
 
-				
+			//int poper = 1;
+			this->Text = kkstpr.ToString();
 
-
-
-				int poper = 1;
-		
-				double a = Convert::ToDouble((al_TB->Text));
-				double b;
-				double now;
-				double j;
-
-		
-
-
-
-				this->Text = kkstpr.ToString();
-
-
-				int num = 0;
-				double xznach = 0;
-				int l = 2;
-
-				for (int i = 1; i < Ne; i++) {
-					int temp = poper;
-
-					if (abs(Ye[i]) < (h)) {
+			int num = 0;
+			double xznach = 0;
+			for (int i = 1; i < Ne; i++) {
+				//int temp = poper;
+					
+					if (abs(Ye[i]) < (h)|| (Ye[i] == 7878787)) {
 						num++;
 						xznach = xznach + Xe[i];
 
@@ -1221,29 +1252,36 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 						xznach = 0;
 
 					}
-					dataGridView2->Rows[kkstpr - 1]->Cells[0]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
-					dataGridView2->Rows[kkstpr - 1]->Cells[1]->Value = calculator(toPostfix(parser(strrivf)), Convert::ToDouble((bl_TB->Text)), h);
+					
+
+					
+			}
+
+			dataGridView2->Rows[kkstpr - 1]->Cells[0]->Value = Convert::ToDouble((bl_TB->Text)).ToString("f2");
+			dataGridView2->Rows[kkstpr - 1]->Cells[1]->Value = calculator(toPostfix(parser(strrivf)), Convert::ToDouble((bl_TB->Text)), h);
+			dataGridView2->Rows[0]->Cells[0]->Value = "Проміжки знакосталості";
+			dataGridView2->Rows[0]->Cells[1]->Value = "Значення функції";
+				
+
+			kkstpr++;
+			dataGridView2->RowCount = kkstpr;
+			for (int i = 2; i < kkstpr; i = i + 2) {
+				String^ ap= Convert::ToString(dataGridView2->Rows[i - 1]->Cells[0]->Value);
+				String^ bp= Convert::ToString(dataGridView2->Rows[i + 1]->Cells[0]->Value);
+
+				dataGridView2->Rows[i]->Cells[0]->Value = strdushky(ap, bp);
+				double c = (double::Parse(ap)+ double::Parse(bp))/2;
+				if (calculator(toPostfix(parser(strrivf)),c, h) > 0) {
+					dataGridView2->Rows[i]->Cells[1]->Value = "f(x)" + ">0";
+				}
+				else {
+					dataGridView2->Rows[i]->Cells[1]->Value = "f(x)" + "<0";
+
 				}
 
-				kkstpr++;
-				dataGridView2->RowCount = kkstpr;
-				for (int i = 2; i < kkstpr; i = i + 2) {
-					String^ ap= Convert::ToString(dataGridView2->Rows[i - 1]->Cells[0]->Value);
-					String^ bp= Convert::ToString(dataGridView2->Rows[i + 1]->Cells[0]->Value);
+				//
 
-					dataGridView2->Rows[i]->Cells[0]->Value = strdushky(ap, bp);
-					double c = (double::Parse(ap)+ double::Parse(bp))/2;
-					if (calculator(toPostfix(parser(strrivf)),c, h) > 0) {
-						dataGridView2->Rows[i]->Cells[1]->Value = "f(x)" + ">0";
-					}
-					else {
-						dataGridView2->Rows[i]->Cells[1]->Value = "f(x)" + "<0";
-
-					}
-
-					//
-
-				}
+			}
 				
 			
 		}
@@ -1436,6 +1474,10 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 		System::String^ rivf = textBox1->Text;
 
 		std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
+		Temporary= pictureBox->Image;
+		tempbox->Image = pictureBox->Image;
+		Dot1Coordinates->Visible = true;
+		
 
 		
 
@@ -1522,9 +1564,11 @@ private: System::Windows::Forms::ColorDialog^ integral_colorD;
 	private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
 		textBox1->Text = textBox3->Text;
 		groupBox1->Visible = false;
+		Draw_B->Enabled = true;
 	}
 	private: System::Void textBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 		groupBox1->Visible = true;
+		Draw_B->Enabled = false;
 		textBox3->Text = textBox1->Text;
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1639,7 +1683,7 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	double al = Convert::ToDouble(al_TB->Text);
 	double bl = Convert::ToDouble(bl_TB->Text);
 
-	double h = (al - bl) / Ne;
+	double h = (bl - al) / Ne;
 
 	
 	System::String^ riv = textBox1->Text;
@@ -1647,23 +1691,42 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 	std::string strriv = msclr::interop::marshal_as<std::string>(riv);
 	x = std::stoi(xt);
 	y = std::stoi(yt);
-	this->Text = x.ToString()+"  "+y.ToString();
+	this->Text = x.ToString() + "  " + y.ToString();
 	String^ val = Convert::ToString(dataGridView1->Rows[y]->Cells[x]->Value);
 	if (y == 0) {
 		if (val[0] == '(') {
-			double kstart = System::Convert::ToDouble(Convert::ToString(dataGridView1->Rows[y]->Cells[x - 1]->Value));
-			double kend = System::Convert::ToDouble(Convert::ToString(dataGridView1->Rows[y]->Cells[x + 1]->Value));
+			double kstart = System::Convert::ToDouble(Convert::ToString(dataGridView1->Rows[y]->Cells[x-1]->Value));
+			double kend = System::Convert::ToDouble(Convert::ToString(dataGridView1->Rows[y]->Cells[x+1]->Value));
 
 			aper->Text = Convert::ToString(kstart);
 			bper->Text = Convert::ToString(kend);
+			double simps = simpson(strriv, al, bl, kstart, kend, Ne, h);
 
-			textBox2->Text = simpson(strriv, al, bl, kstart,kend , Ne, h).ToString("f5");
+			textBox2->Text = abs(simps).ToString("f5");
+			pictureBox->Image = tempbox->Image;
+
+			System::Drawing::Image^ photo = tempbox->Image;
+
+			//Bitmap^ photo = gcnew Bitmap(pictureBox->Image);
+			Graphics^ graph = Graphics::FromImage(photo);
+
+			Pen^ prompen = gcnew Pen(integral_color, 1); // колір графіка 2
+
+
+			for (double i = kstart; i < kend + h; i = i + 0.25) {
+
+				double y = calculator(toPostfix(parser(strriv)), i, h);
+				graph->DrawLine(prompen, Math::Round(Kx * i + Zx, 4), Math::Round(Ky * 0 + Zy, 4),
+					Math::Round(Kx * i + Zx, 4), Convert::ToInt32(Math::Round(Ky * y + Zy, 4)));
+
+			}
 			
-			
+			//pictureBox->Image=tempbox->Image;
+
 		}
 	}
 
-	
+
 }
 
 private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
@@ -1700,12 +1763,8 @@ private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Wi
 	}
 	double al = Convert::ToDouble(al_TB->Text);
 	double bl = Convert::ToDouble(bl_TB->Text);
-
-	double h = (al - bl) / Ne;
-
-
+	double h = (bl - al) / Ne;
 	System::String^ riv = textBox1->Text;
-
 	std::string strriv = msclr::interop::marshal_as<std::string>(riv);
 	x = std::stoi(xt);
 	y = std::stoi(yt);
@@ -1718,37 +1777,37 @@ private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Wi
 
 			aper->Text = Convert::ToString(kstart);
 			bper->Text = Convert::ToString(kend);
-			double simps= simpson(strriv, al, bl, kstart, kend, Ne, h);
-			bool pos;
-			if (simps >0) {
-				pos = true;
-			}
-			else {
-				pos = false;
-			}
+			double simps= simpson(strriv, al, bl, kstart+h, kend-h, Ne, h);
 
 			textBox2->Text = abs(simps).ToString("f5");
+			pictureBox->Image = tempbox->Image;
 
-			Bitmap^ bmp = gcnew Bitmap(pictureBox->Width, pictureBox->Height);
-			Graphics^ graph = Graphics::FromImage(bmp);
-			pictureBox->Image = bmp;
+			System::Drawing::Image^ photo = tempbox->Image;
 
+			//Bitmap^ photo = gcnew Bitmap(pictureBox->Image);
+			Graphics^ graph = Graphics::FromImage(photo);
 
 			Pen^ prompen = gcnew Pen(integral_color, 1); // колір графіка 2
-
-
-			for (double i = kstart; i < kend + h; i = i + 200*h) {
+			
+			for (double i = kstart+h; i < kend -h; i =i+0.25) {
 			
 				double y=calculator(toPostfix(parser(strriv)), i, h);
 				graph->DrawLine(prompen, Math::Round(Kx * i + Zx, 4), Math::Round(Ky * 0 + Zy, 4),
 					Math::Round(Kx *i + Zx, 4), Convert::ToInt32(Math::Round(Ky * y + Zy, 4)));
 
 			}
+			 //pictureBox->Image=tempbox->Image;
+			
+			groupBox2->Visible = true;
 
 		}
 	}
 
 
+}
+private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void файлToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
