@@ -1,9 +1,9 @@
 #pragma once
 #include <stack>
 #include <string>
-#include <iostream>
+
 #include <math.h>
-#include <vector>
+
 #include <msclr\marshal_cppstd.h>
 using namespace std;
 

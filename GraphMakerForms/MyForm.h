@@ -129,7 +129,7 @@ namespace GraphMakerForms {
 
 
 
-	private: System::Windows::Forms::MenuStrip^ menuStrip1;
+
 
 
 
@@ -153,15 +153,15 @@ namespace GraphMakerForms {
 private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 
-private: System::Windows::Forms::ToolStripMenuItem^ файлToolStripMenuItem;
-private: System::Windows::Forms::ToolStripMenuItem^ зберегтиToolStripMenuItem;
-private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenuItem;
 
 
 
 
 
-private: System::Windows::Forms::ToolStripMenuItem^ вийтиToolStripMenuItem;
+
+
+
+
 private: System::Windows::Forms::Button^ button4;
 private: System::Windows::Forms::Button^ button2;
 private: System::Windows::Forms::Button^ button3;
@@ -193,10 +193,14 @@ private: System::Windows::Forms::TextBox^ textBox2;
 private: System::Windows::Forms::GroupBox^ groupBox2;
 
 private: System::Windows::Forms::ColorDialog^ integral_colorD;
-private: System::Windows::Forms::PictureBox^ tempbox;
+
 private: System::Windows::Forms::Label^ label8;
 private: System::Windows::Forms::Label^ label7;
 private: System::Windows::Forms::Label^ label6;
+private: System::Windows::Forms::ToolStripMenuItem^ файлToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ експортуватиPngToolStripMenuItem;
+private: System::Windows::Forms::ToolStripMenuItem^ вийтиToolStripMenuItem;
+private: System::Windows::Forms::MenuStrip^ menuStrip1;
 
 
 
@@ -246,11 +250,6 @@ private: System::Windows::Forms::Label^ label6;
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->Dot1Coordinates = (gcnew System::Windows::Forms::TextBox());
 			this->Dot2Coordinates = (gcnew System::Windows::Forms::TextBox());
-			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
-			this->файлToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->зберегтиToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->експортуватиPngToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->вийтиToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -278,20 +277,22 @@ private: System::Windows::Forms::Label^ label6;
 			this->bper = (gcnew System::Windows::Forms::Label());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->integral_colorD = (gcnew System::Windows::Forms::ColorDialog());
-			this->tempbox = (gcnew System::Windows::Forms::PictureBox());
-			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->файлToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->експортуватиPngToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->вийтиToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->panel1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Ne_NUD))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->BeginInit();
-			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->groupBox2->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tempbox))->BeginInit();
+			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Draw_B
@@ -396,7 +397,7 @@ private: System::Windows::Forms::Label^ label6;
 				static_cast<System::Byte>(204)));
 			this->Ne_NUD->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50, 0, 0, 0 });
 			this->Ne_NUD->Location = System::Drawing::Point(160, 102);
-			this->Ne_NUD->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
+			this->Ne_NUD->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5000, 0, 0, 0 });
 			this->Ne_NUD->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 3, 0, 0, 0 });
 			this->Ne_NUD->Name = L"Ne_NUD";
 			this->Ne_NUD->Size = System::Drawing::Size(100, 26);
@@ -418,7 +419,7 @@ private: System::Windows::Forms::Label^ label6;
 			// pictureBox
 			// 
 			this->pictureBox->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->pictureBox->Location = System::Drawing::Point(12, 38);
+			this->pictureBox->Location = System::Drawing::Point(12, 31);
 			this->pictureBox->Name = L"pictureBox";
 			this->pictureBox->Size = System::Drawing::Size(1544, 778);
 			this->pictureBox->TabIndex = 1;
@@ -477,7 +478,7 @@ private: System::Windows::Forms::Label^ label6;
 				static_cast<System::Byte>(204)));
 			this->Dot1Coordinates->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
 				static_cast<System::Int32>(static_cast<System::Byte>(11)));
-			this->Dot1Coordinates->Location = System::Drawing::Point(1362, 757);
+			this->Dot1Coordinates->Location = System::Drawing::Point(1363, 751);
 			this->Dot1Coordinates->Name = L"Dot1Coordinates";
 			this->Dot1Coordinates->ReadOnly = true;
 			this->Dot1Coordinates->Size = System::Drawing::Size(194, 26);
@@ -490,54 +491,11 @@ private: System::Windows::Forms::Label^ label6;
 				static_cast<System::Byte>(204)));
 			this->Dot2Coordinates->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(81)), static_cast<System::Int32>(static_cast<System::Byte>(65)),
 				static_cast<System::Int32>(static_cast<System::Byte>(11)));
-			this->Dot2Coordinates->Location = System::Drawing::Point(1362, 789);
+			this->Dot2Coordinates->Location = System::Drawing::Point(1363, 783);
 			this->Dot2Coordinates->Name = L"Dot2Coordinates";
 			this->Dot2Coordinates->ReadOnly = true;
 			this->Dot2Coordinates->Size = System::Drawing::Size(194, 26);
 			this->Dot2Coordinates->TabIndex = 31;
-			// 
-			// menuStrip1
-			// 
-			this->menuStrip1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(250)), static_cast<System::Int32>(static_cast<System::Byte>(243)),
-				static_cast<System::Int32>(static_cast<System::Byte>(221)));
-			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->файлToolStripMenuItem });
-			this->menuStrip1->Location = System::Drawing::Point(0, 0);
-			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(1902, 28);
-			this->menuStrip1->TabIndex = 33;
-			this->menuStrip1->Text = L"menuStrip1";
-			// 
-			// файлToolStripMenuItem
-			// 
-			this->файлToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(3) {
-				this->зберегтиToolStripMenuItem,
-					this->експортуватиPngToolStripMenuItem, this->вийтиToolStripMenuItem
-			});
-			this->файлToolStripMenuItem->Name = L"файлToolStripMenuItem";
-			this->файлToolStripMenuItem->Size = System::Drawing::Size(59, 24);
-			this->файлToolStripMenuItem->Text = L"Файл";
-			this->файлToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::файлToolStripMenuItem_Click);
-			// 
-			// зберегтиToolStripMenuItem
-			// 
-			this->зберегтиToolStripMenuItem->Name = L"зберегтиToolStripMenuItem";
-			this->зберегтиToolStripMenuItem->Size = System::Drawing::Size(234, 26);
-			this->зберегтиToolStripMenuItem->Text = L"Зберегти";
-			// 
-			// експортуватиPngToolStripMenuItem
-			// 
-			this->експортуватиPngToolStripMenuItem->Name = L"експортуватиPngToolStripMenuItem";
-			this->експортуватиPngToolStripMenuItem->Size = System::Drawing::Size(234, 26);
-			this->експортуватиPngToolStripMenuItem->Text = L"Експортувати в .jpeg";
-			this->експортуватиPngToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::експортуватиPngToolStripMenuItem_Click);
-			// 
-			// вийтиToolStripMenuItem
-			// 
-			this->вийтиToolStripMenuItem->Name = L"вийтиToolStripMenuItem";
-			this->вийтиToolStripMenuItem->Size = System::Drawing::Size(234, 26);
-			this->вийтиToolStripMenuItem->Text = L"Вийти";
-			this->вийтиToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::вийтиToolStripMenuItem_Click);
 			// 
 			// contextMenuStrip1
 			// 
@@ -891,6 +849,17 @@ private: System::Windows::Forms::Label^ label6;
 			this->groupBox2->Visible = false;
 			this->groupBox2->Enter += gcnew System::EventHandler(this, &MyForm::groupBox2_Enter);
 			// 
+			// label6
+			// 
+			this->label6->BackColor = System::Drawing::Color::Transparent;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 70, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label6->Location = System::Drawing::Point(-22, 67);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(122, 124);
+			this->label6->TabIndex = 48;
+			this->label6->Text = L"S";
+			// 
 			// label8
 			// 
 			this->label8->BackColor = System::Drawing::Color::Transparent;
@@ -917,26 +886,42 @@ private: System::Windows::Forms::Label^ label6;
 			// 
 			this->integral_colorD->Color = System::Drawing::Color::Lime;
 			// 
-			// tempbox
+			// файлToolStripMenuItem
 			// 
-			this->tempbox->BackColor = System::Drawing::SystemColors::ButtonFace;
-			this->tempbox->Location = System::Drawing::Point(13, 38);
-			this->tempbox->Name = L"tempbox";
-			this->tempbox->Size = System::Drawing::Size(1544, 778);
-			this->tempbox->TabIndex = 49;
-			this->tempbox->TabStop = false;
-			this->tempbox->Visible = false;
+			this->файлToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
+				this->експортуватиPngToolStripMenuItem,
+					this->вийтиToolStripMenuItem
+			});
+			this->файлToolStripMenuItem->Name = L"файлToolStripMenuItem";
+			this->файлToolStripMenuItem->Size = System::Drawing::Size(59, 24);
+			this->файлToolStripMenuItem->Text = L"Файл";
+			this->файлToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::файлToolStripMenuItem_Click);
 			// 
-			// label6
+			// експортуватиPngToolStripMenuItem
 			// 
-			this->label6->BackColor = System::Drawing::Color::Transparent;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 70, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label6->Location = System::Drawing::Point(-22, 67);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(122, 124);
-			this->label6->TabIndex = 48;
-			this->label6->Text = L"S";
+			this->експортуватиPngToolStripMenuItem->Name = L"експортуватиPngToolStripMenuItem";
+			this->експортуватиPngToolStripMenuItem->Size = System::Drawing::Size(242, 26);
+			this->експортуватиPngToolStripMenuItem->Text = L"Експортувати як фото";
+			this->експортуватиPngToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::експортуватиPngToolStripMenuItem_Click);
+			// 
+			// вийтиToolStripMenuItem
+			// 
+			this->вийтиToolStripMenuItem->Name = L"вийтиToolStripMenuItem";
+			this->вийтиToolStripMenuItem->Size = System::Drawing::Size(242, 26);
+			this->вийтиToolStripMenuItem->Text = L"Вийти";
+			this->вийтиToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::вийтиToolStripMenuItem_Click);
+			// 
+			// menuStrip1
+			// 
+			this->menuStrip1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(250)), static_cast<System::Int32>(static_cast<System::Byte>(243)),
+				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->файлToolStripMenuItem });
+			this->menuStrip1->Location = System::Drawing::Point(0, 0);
+			this->menuStrip1->Name = L"menuStrip1";
+			this->menuStrip1->Size = System::Drawing::Size(1902, 28);
+			this->menuStrip1->TabIndex = 33;
+			this->menuStrip1->Text = L"menuStrip1";
 			// 
 			// MyForm
 			// 
@@ -959,7 +944,6 @@ private: System::Windows::Forms::Label^ label6;
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->menuStrip1);
 			this->Controls->Add(this->dataGridView2);
-			this->Controls->Add(this->tempbox);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::Manual;
@@ -970,15 +954,14 @@ private: System::Windows::Forms::Label^ label6;
 			this->panel1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Ne_NUD))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox))->EndInit();
-			this->menuStrip1->ResumeLayout(false);
-			this->menuStrip1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->tempbox))->EndInit();
+			this->menuStrip1->ResumeLayout(false);
+			this->menuStrip1->PerformLayout();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -993,7 +976,7 @@ private: System::Windows::Forms::Label^ label6;
 		bool is2F;
 		int Ne = 100; // кількість точок графіка
 		
-		void TabulF(double al, double bl, double Xe[1000], double Ye[1000], string strriv, bool conect[1000], double h, bool nules[1000])
+		void TabulF(double al, double bl, double Xe[5000], double Ye[5000], string strriv, bool conect[5000], double h, bool nules[5000])
 		{
 
 			h = (bl - al) / (Ne - 1);
@@ -1017,7 +1000,7 @@ private: System::Windows::Forms::Label^ label6;
 			}
 		}
 
-		void TabulFp(double al, double bl, double Xe[1000], double Ye[1000], string strriv, bool conect[1000], bool conects[1000], double h, bool nulesec[1000])
+		void TabulFp(double al, double bl, double Xe[5000], double Ye[5000], string strriv, bool conect[5000], bool conects[5000], double h, bool nulesec[5000])
 		{
 
 			h = (bl - al) / (Ne - 1);
@@ -1053,9 +1036,9 @@ private: System::Windows::Forms::Label^ label6;
 			double krx, kry, xx, yy, Gx, Gy; // для виведення осей координат та їхніх підписів
 			int xGridKrok, yGridKrok; // відступи між лініями гратки
 			int gridLinesVert, gridLinesHoriz; // кількість ліній гратки графіка
-			double Xe1[1000], Ye1[1000], Xe2[1000], Ye2[1000]; // всі значення x та y
-			bool conect[1000], conects[1000];
-			bool nules[1000], nulesec[1000];
+			double Xe1[5000], Ye1[5000], Xe2[5000], Ye2[5000]; // всі значення x та y
+			bool conect[5000], conects[5000];
+			bool nules[5000], nulesec[5000];
 
 			Pen^ gridPen = gcnew Pen(gridColor, gridWidth); // колір гратки
 			Pen^ axisPen = gcnew Pen(axisColor, axisWidth); // колір осей координат
@@ -1081,8 +1064,8 @@ private: System::Windows::Forms::Label^ label6;
 			// Вводимо Ne, al, bl
 			try
 			{
-				gridLinesVert = 11;
-				gridLinesHoriz = 11;
+				gridLinesVert = 10;
+				gridLinesHoriz = 10;
 
 				Ne = Convert::ToInt32(Ne_NUD->Value);
 				double al = Convert::ToDouble(al_TB->Text);
@@ -1281,7 +1264,7 @@ private: System::Windows::Forms::Label^ label6;
 		String^ strdushky(String^ a, String^ b) {
 			return("(" + a + ";" + b + ")");
 		}
-		void znakostalist(double h, double Ye[1000], double Xe[1000]) {
+		void znakostalist(double h, double Ye[5000], double Xe[5000]) {
 			dataGridView2->Visible = true;
 			System::String^ rivf = textBox1->Text;
 			std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
@@ -1306,9 +1289,10 @@ private: System::Windows::Forms::Label^ label6;
 			int num = 0;
 			double xznach = 0;
 			for (int i = 1; i < Ne; i++) {
-				//int temp = poper;
-					
-					if (abs(Ye[i]) < (h)|| (Ye[i] == 7878787)) {
+				if (Ye[i] != 7878787) {
+					//int temp = poper;
+
+					if (abs(Ye[i]) < (h) || (Ye[i] == 7878787)) {
 						num++;
 						xznach = xznach + Xe[i];
 
@@ -1328,7 +1312,18 @@ private: System::Windows::Forms::Label^ label6;
 						xznach = 0;
 
 					}
+				}
+				else {
+					dataGridView1->Visible = false;
+					dataGridView2->Visible = false;
+					bool ch =checkBox1->Checked ;
 					
+					
+						
+						MessageBox::Show("На заданому проміжку функція має точки розриву, або неіснує");
+						return;
+					
+				}
 
 					
 			}
@@ -1362,7 +1357,7 @@ private: System::Windows::Forms::Label^ label6;
 			
 		}
 		////////////////////////////////////////////////////////////////
-		void promishky(double h, double Ye[1000], double Xe[1000]) {
+		void promishky(double h, double Ye[5000], double Xe[5000]) {
 			if (is2F) {
 
 				dataGridView1->Visible = true;
@@ -1392,32 +1387,7 @@ private: System::Windows::Forms::Label^ label6;
 				double now;
 				double j;
 
-				/*if ((Ye2[0]) < (0.001)) {
-					poper = 1;
-
-				}
-				else { poper = -1; }
-				for (int i = 1; i < Ne; i++) {
-					int temp=poper;
-
-					if ((Ye2[i]) < (h)) {
-						poper = 1;
-
-					}
-					else {
-						poper = -1;
-					}
-					if (temp * poper < 0) {
-						textBox5->Text = textBox5->Text+"  " + i.ToString();
-
-						//b = Xe2[i];
-						//dataGridView1->Rows->Add(dushky(a,2));
-						kkstpr= kkstpr+2;
-						//a = b;
-					}
-
-
-				}*/
+				
 
 
 
@@ -1525,13 +1495,9 @@ private: System::Windows::Forms::Label^ label6;
 		
 
 	private: System::Void Draw_B_Click(System::Object^ sender, System::EventArgs^ e) {
-		double al = Convert::ToDouble(al_TB->Text);
-		double bl = Convert::ToDouble(bl_TB->Text);
-
-
-
+	
 		double h;
-		h = (bl - al) / (Ne - 1);
+		h = (Convert::ToDouble(bl_TB->Text) - Convert::ToDouble(al_TB->Text)) / (Ne - 1);
 		// налаштовуэмо колір та ширину ліній
 		gridWidth = Convert::ToInt32(1);
 		gridColor = grid_ColorD->Color;
@@ -1541,23 +1507,10 @@ private: System::Windows::Forms::Label^ label6;
 		graph1Color = graph_ColorD->Color;
 		graph2Width = Convert::ToInt32(2);
 		graph2Color = graph2_ColorD->Color;
-		
 		integral_color = integral_colorD->Color;
-		//fIndex1 = Convert::ToInt16(f1_CB->SelectedIndex);
-		//fIndex2 = Convert::ToInt16(f2_CB->SelectedIndex);
-		// малюємо графік, осі та гратку
 		Draw(h);
-		System::String^ rivf = textBox1->Text;
-
-		std::string strrivf = msclr::interop::marshal_as<std::string>(rivf);
-		Temporary= pictureBox->Image;
-		tempbox->Image = pictureBox->Image;
 		Dot1Coordinates->Visible = true;
-		
 
-		
-
-		
 	}
 	private: System::Void ChangeGridColor_B_Click(System::Object^ sender, System::EventArgs^ e) {
 		grid_ColorD->ShowDialog();
@@ -1599,39 +1552,40 @@ private: System::Windows::Forms::Label^ label6;
 		Dot2Coordinates->Visible = !Dot2Coordinates->Visible;
 	}
 	private: System::Void pictureBox_Click(System::Object^ sender, System::EventArgs^ e) {
-		double al = Convert::ToDouble(al_TB->Text);
-		double bl = Convert::ToDouble(bl_TB->Text);
+		if (pictureBox->Image != nullptr) {
+			double al = Convert::ToDouble(al_TB->Text);
+			double bl = Convert::ToDouble(bl_TB->Text);
 
-		double h=(al-bl)/Ne;
+			double h = (al - bl) / Ne;
 
-		point MPoint;
-		float x = (MousePosition.X - this->Location.X - pictureBox->Location.X - Zx) * (float)(xMax - xMin) / (pictureBox->Width - 2 * L) - 0.015 * (xMax - xMin);
-		//float y = Math::Round(MousePosition.Y - this->Location.Y - pictureBox->Location.Y - Zy, 2) * (float)(yMin - yMax) / (pictureBox->Height - 2 * L);
-		//MPoint.X = (float)(MousePosition.X - this->Location.X - pictureBox->Location.X - pictureBox->Width / 2) * (float)(xMax - xMin) / (pictureBox->Width - 2 * L);
-		//MPoint.Y = (float)(MousePosition.Y - this->Location.Y - pictureBox->Location.Y - pictureBox->Height / 2) * (float)(yMax - yMin) / (pictureBox->Height - 2 * L);
-		System::String^ riv = textBox1->Text;
+			point MPoint;
+			float x = (MousePosition.X - this->Location.X - pictureBox->Location.X - Zx) * (float)(xMax - xMin) / (pictureBox->Width - 2 * L) - 0.015 * (xMax - xMin);
+			//float y = Math::Round(MousePosition.Y - this->Location.Y - pictureBox->Location.Y - Zy, 2) * (float)(yMin - yMax) / (pictureBox->Height - 2 * L);
+			//MPoint.X = (float)(MousePosition.X - this->Location.X - pictureBox->Location.X - pictureBox->Width / 2) * (float)(xMax - xMin) / (pictureBox->Width - 2 * L);
+			//MPoint.Y = (float)(MousePosition.Y - this->Location.Y - pictureBox->Location.Y - pictureBox->Height / 2) * (float)(yMax - yMin) / (pictureBox->Height - 2 * L);
+			System::String^ riv = textBox1->Text;
 
-		std::string strriv = msclr::interop::marshal_as<std::string>(riv);
-		if (abs(calculator(toPostfix(parser(strriv)), x, h)) == 7878787) {
-			Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 =NaN ");
-		}
-		else {
-			Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 = " + Math::Round(calculator(toPostfix(parser(strriv)), x, h), 2));
-		}
-
-		if (is2F) {
-			
-
-
-			if (ydh(strriv, x, h) == 7878787) {
+			std::string strriv = msclr::interop::marshal_as<std::string>(riv);
+			if (abs(calculator(toPostfix(parser(strriv)), x, h)) == 7878787) {
 				Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 =NaN ");
 			}
+			else {
+				Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 = " + Math::Round(calculator(toPostfix(parser(strriv)), x, h), 2));
+			}
+
+			if (is2F) {
 
 
-			else { Dot2Coordinates->Text = Convert::ToString("X2 = " + Math::Round(x, 1) + "; Y2 = " + Math::Round(ydh(strriv,x,h), 2)); }
 
+				if (ydh(strriv, x, h) == 7878787) {
+					Dot1Coordinates->Text = Convert::ToString("X1 = " + Math::Round(x, 1) + "; Y1 =NaN ");
+				}
+
+
+				else { Dot2Coordinates->Text = Convert::ToString("X2 = " + Math::Round(x, 1) + "; Y2 = " + Math::Round(ydh(strriv, x, h), 2)); }
+
+			}
 		}
-
 	}
 
 
@@ -1779,23 +1733,23 @@ private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Wi
 			double simps = simpson(strriv, al, bl, kstart, kend, Ne, h);
 
 			textBox2->Text = abs(simps).ToString("f5");
-			pictureBox->Image = tempbox->Image;
+		
 
-			System::Drawing::Image^ photo = tempbox->Image;
+			System::Drawing::Image^ photo = pictureBox->Image;
 
-			//Bitmap^ photo = gcnew Bitmap(pictureBox->Image);
+			
 			Graphics^ graph = Graphics::FromImage(photo);
 
 			Pen^ prompen = gcnew Pen(integral_color, 1); // колір графіка 2
 
-
+/*
 			for (double i = kstart; i < kend + h; i = i + 0.25) {
 
 				double y = calculator(toPostfix(parser(strriv)), i, h);
 				graph->DrawLine(prompen, Math::Round(Kx * i + Zx, 4), Math::Round(Ky * 0 + Zy, 4),
 					Math::Round(Kx * i + Zx, 4), Convert::ToInt32(Math::Round(Ky * y + Zy, 4)));
 
-			}
+			}*/
 			
 			//pictureBox->Image=tempbox->Image;
 
@@ -1856,11 +1810,11 @@ private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Wi
 			double simps= simpson(strriv, al, bl, kstart+h, kend-h, Ne, h);
 
 			textBox2->Text = abs(simps).ToString("f5");
-			pictureBox->Image = tempbox->Image;
+			
 
-			System::Drawing::Image^ photo = tempbox->Image;
+			System::Drawing::Image^ photo = pictureBox->Image;
 
-			//Bitmap^ photo = gcnew Bitmap(pictureBox->Image);
+		
 			Graphics^ graph = Graphics::FromImage(photo);
 
 			Pen^ prompen = gcnew Pen(integral_color, 1); // колір графіка 2
