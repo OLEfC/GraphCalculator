@@ -23,22 +23,37 @@ jobs:
       - name: Build C++/CLI solution with MSBuild
         run: msbuild GraphMakerForms.sln /p:Configuration=Release /m
 
-      - name: Copy ALL output files to unified release folder
+      - name: Copy all build files to release folder
         shell: pwsh
         run: |
-          $outputDir = "release"
-          mkdir $outputDir
+          # Створюємо теку release, якщо її нема
+          if (Test-Path release) {
+            Remove-Item release -Recurse -Force
+          }
+          mkdir release
 
-          # Знайдемо всі вихідні файли з усіх bin\Release папок
-          $outputFiles = Get-ChildItem -Path . -Recurse -Include *.exe,*.dll,*.pdb,*.config -Filter * -File |
-                         Where-Object { $_.FullName -match '\\bin\\Release\\' }
+          # Знаходимо папку з Release білдом
+          $releaseFolders = Get-ChildItem -Path . -Recurse -Directory -Filter "Release" | 
+                           Where-Object { $_.FullName -like "*GraphMakerForms*" }
 
-          foreach ($file in $outputFiles) {
-            Copy-Item $file.FullName -Destination $outputDir -Force
+          if ($releaseFolders.Count -eq 0) {
+            Write-Error "НЕМАЄ папки Release для GraphMakerForms"
+            exit 1
           }
 
-      - name: Upload release artifact
+          # Копіюємо всі файли з першої знайденої Release папки
+          $releaseFolder = $releaseFolders | Select-Object -First 1
+          Write-Host "Копіюємо файли з: $($releaseFolder.FullName)"
+          
+          Copy-Item -Path "$($releaseFolder.FullName)\*" -Destination release\ -Recurse -Force
+          
+          # Виводимо список файлів що були скопійовані
+          Write-Host "Файли в release папці:"
+          Get-ChildItem -Path release -Recurse | ForEach-Object { Write-Host $_.FullName }
+
+      - name: Upload Release artifact
         uses: actions/upload-artifact@v4
         with:
-          name: GraphCalculator-Release-Files
+          name: GraphCalculator-Release
           path: release/
+          
