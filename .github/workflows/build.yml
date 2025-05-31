@@ -18,12 +18,10 @@ jobs:
           vs-version: 'latest'
 
       - name: NuGet Restore for C++/CLI solution
-        # прямо вказуємо шлях до .sln від кореня репо
-        run: nuget restore GraphMakerForms/GraphMakerForms.sln
+        run: nuget restore GraphMakerForms.sln
 
       - name: Build C++/CLI solution with MSBuild
-        # збираємо теж за відносним шляхом
-        run: msbuild GraphMakerForms/GraphMakerForms.sln /p:Configuration=Release /m
+        run: msbuild GraphMakerForms.sln /p:Configuration=Release /m
 
       - name: Copy EXE to artifact folder
         run: |
