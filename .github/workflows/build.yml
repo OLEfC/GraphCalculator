@@ -7,21 +7,34 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '6.0.x'
+      # Налаштовуємо MSBuild (Visual Studio Build Tools)
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-version: 'latest'
 
-    - name: Restore dependencies
-      run: dotnet restore
+      # (Опційно) Відновлюємо NuGet-пакети, якщо є залежності
+      - name: NuGet Restore
+        run: nuget restore GraphCalculator.sln
 
-    - name: Build and publish
-      run: dotnet publish -c Release -r win-x64 --self-contained true -o publish
+      # Збираємо рішення через MSBuild у Release-конфігурації
+      - name: Build solution with MSBuild
+        run: msbuild GraphCalculator.sln /p:Configuration=Release /m
 
-    - name: Upload exe artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: GraphCalculator
+      # Створюємо теку для артефактів та копіюємо туди готовий .exe
+      - name: Copy EXE to artifact folder
+        run: |
+          mkdir publish
+          copy GraphMakerForms\Release\GraphMakerForms.exe publish\
+
+      # Завантажуємо теку publish як GitHub Artifact
+      - name: Upload EXE artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: GraphCalculator‐Exe
+          path: publish/
