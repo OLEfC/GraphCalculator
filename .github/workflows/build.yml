@@ -22,28 +22,26 @@ jobs:
 
       - name: Build C++/CLI solution with MSBuild
         run: msbuild GraphMakerForms.sln /p:Configuration=Release /m
+        - name: Find all Release folders and copy all files to publish
+  shell: pwsh
+  run: |
+    # Створюємо теку publish (якщо ще не існує)
+    if (-not (Test-Path "publish")) { mkdir publish }
 
-      - name: Find output folder and copy all files to publish
-        shell: pwsh
-        run: |
-          # Створюємо теку publish
-          mkdir publish
+    # Знаходимо всі Release-папки (будь-якого рівня вкладеності)
+    $releaseDirs = Get-ChildItem -Path GraphMakerForms -Recurse -Directory | Where-Object { $_.Name -eq "Release" }
 
-          # Знаходимо перший GraphMakerForms.exe (незалежно від шляху)
-          $exe = Get-ChildItem -Path GraphMakerForms -Recurse -Filter GraphMakerForms.exe | Select-Object -First 1
+    if ($releaseDirs.Count -eq 0) {
+      Write-Error "Не знайдено жодної папки Release."
+      exit 1
+    }
 
-          if (-not $exe) {
-            Write-Error "НЕМАЄ збудованого GraphMakerForms.exe у жодній теці"
-            exit 1
-          }
+    foreach ($dir in $releaseDirs) {
+      Write-Host "Копіюємо з: $($dir.FullName)"
+      Copy-Item "$($dir.FullName)\*" publish\ -Recurse -Force
+    }
 
-          # Батьківська тека, де лежить exe (Release, x64\Release, Win32\Release тощо)
-          $outDir = Split-Path $exe.FullName -Parent
-
-          # Копіюємо ВСІ файли з цієї теки в publish (рекурсивно)
-          Copy-Item "$outDir\*" publish\ -Recurse
-
-      - name: Upload EXE artifact
+      
         uses: actions/upload-artifact@v4
         with:
           name: GraphCalculator-Exe
