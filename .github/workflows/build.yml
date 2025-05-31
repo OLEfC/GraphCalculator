@@ -1,28 +1,7 @@
-name: Build EXE
+- name: Build C++/CLI solution with MSBuild
+  run: msbuild GraphMakerForms.sln /p:Configuration=Release /m
 
-on:
-  push:
-  workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: windows-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup MSBuild (Visual Studio Build Tools)
-        uses: microsoft/setup-msbuild@v1.1
-        with:
-          vs-version: 'latest'
-
-      - name: NuGet Restore for C++/CLI solution
-        run: nuget restore GraphMakerForms.sln
-
-      - name: Build C++/CLI solution with MSBuild
-        run: msbuild GraphMakerForms.sln /p:Configuration=Release /m
-        - name: Find all Release folders and copy all files to publish
+- name: Find all Release folders and copy all files to publish
   shell: pwsh
   run: |
     # Створюємо теку publish (якщо ще не існує)
@@ -41,8 +20,8 @@ jobs:
       Copy-Item "$($dir.FullName)\*" publish\ -Recurse -Force
     }
 
-      
-        uses: actions/upload-artifact@v4
-        with:
-          name: GraphCalculator-Exe
-          path: publish/
+- name: Upload artifact
+  uses: actions/upload-artifact@v4
+  with:
+    name: GraphCalculator-Exe
+    path: publish/
