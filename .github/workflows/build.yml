@@ -23,10 +23,24 @@ jobs:
       - name: Build C++/CLI solution with MSBuild
         run: msbuild GraphMakerForms.sln /p:Configuration=Release /m
 
-      - name: Copy EXE to artifact folder
+      - name: Find and copy EXE to artifact folder
+        shell: pwsh
         run: |
+          # Створюємо теку для артефактів
           mkdir publish
-          copy GraphMakerForms\Release\GraphMakerForms.exe publish\
+
+          # Рекурсивно шукаємо GraphMakerForms.exe у будь-якій теці "Release" під GraphMakerForms
+          $exe = Get-ChildItem -Path GraphMakerForms -Recurse -Filter GraphMakerForms.exe `
+                 | Where-Object { $_.DirectoryName -match '\\Release($|\\)' } `
+                 | Select-Object -First 1
+
+          if (-not $exe) {
+            Write-Error "НЕМАЄ збудованого GraphMakerForms.exe у жодній теці Release"
+            exit 1
+          }
+
+          # Копіюємо знайдений .exe у теку publish
+          Copy-Item $exe.FullName publish\
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
