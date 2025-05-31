@@ -26,20 +26,19 @@ jobs:
       - name: Find and copy EXE to artifact folder
         shell: pwsh
         run: |
-          # Створюємо теку для артефактів
+          # Створюємо теку publish, якщо її нема
           mkdir publish
 
-          # Рекурсивно шукаємо GraphMakerForms.exe у будь-якій теці "Release" під GraphMakerForms
-          $exe = Get-ChildItem -Path GraphMakerForms -Recurse -Filter GraphMakerForms.exe `
-                 | Where-Object { $_.DirectoryName -match '\\Release($|\\)' } `
-                 | Select-Object -First 1
+          # Знаходимо перший GraphMakerForms.exe під GraphMakerForms
+          $exe = Get-ChildItem -Path GraphMakerForms -Recurse -Filter GraphMakerForms.exe |
+                 Select-Object -First 1
 
           if (-not $exe) {
-            Write-Error "НЕМАЄ збудованого GraphMakerForms.exe у жодній теці Release"
+            Write-Error "НЕМАЄ збудованого GraphMakerForms.exe у жодній теці"
             exit 1
           }
 
-          # Копіюємо знайдений .exe у теку publish
+          # Копіюємо знайдений .exe у папку publish
           Copy-Item $exe.FullName publish\
 
       - name: Upload EXE artifact
