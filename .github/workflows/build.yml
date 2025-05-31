@@ -12,29 +12,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Налаштовуємо MSBuild (Visual Studio Build Tools)
-      - name: Setup MSBuild
+      - name: Setup MSBuild (Visual Studio Build Tools)
         uses: microsoft/setup-msbuild@v1.1
         with:
           vs-version: 'latest'
 
-      # (Опційно) Відновлюємо NuGet-пакети, якщо є залежності
-      - name: NuGet Restore
-        run: nuget restore GraphCalculator.sln
+      - name: NuGet Restore for C++/CLI solution
+        working-directory: GraphMakerForms
+        run: nuget restore GraphMakerForms.sln
 
-      # Збираємо рішення через MSBuild у Release-конфігурації
-      - name: Build solution with MSBuild
-        run: msbuild GraphCalculator.sln /p:Configuration=Release /m
+      - name: Build C++/CLI solution with MSBuild
+        working-directory: GraphMakerForms
+        run: msbuild GraphMakerForms.sln /p:Configuration=Release /m
 
-      # Створюємо теку для артефактів та копіюємо туди готовий .exe
       - name: Copy EXE to artifact folder
         run: |
           mkdir publish
           copy GraphMakerForms\Release\GraphMakerForms.exe publish\
 
-      # Завантажуємо теку publish як GitHub Artifact
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
         with:
-          name: GraphCalculator‐Exe
+          name: GraphCalculator-Exe
           path: publish/
