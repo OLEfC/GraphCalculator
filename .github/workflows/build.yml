@@ -23,46 +23,24 @@ jobs:
       - name: Build C++/CLI solution with MSBuild
         run: msbuild GraphMakerForms.sln /p:Configuration=Release /m
 
-      - name: Debug: Show directory tree under GraphMakerForms
-        # цей крок виведе ВСІ файли й папки рекурсивно під GraphMakerForms
-        shell: pwsh
-        run: |
-          Write-Host "=== TREE OF GraphMakerForms AFTER BUILD ==="
-          Get-ChildItem -Path GraphMakerForms -Recurse -Force `
-            | ForEach-Object {
-                $indent = ' ' * (($_.FullName.Split([System.IO.Path]::DirectorySeparatorChar)).Count - 2)
-                Write-Host ("{0}{1}" -f $indent, $_.Name)
-              }
-
       - name: Find output folder and copy all files to publish
         shell: pwsh
         run: |
           # Створюємо теку publish
           mkdir publish
 
-          # Шукаємо першу директорію, що містить усі файли зібраного проекту.
-          # З огляду на стандартні налаштування C++/CLI-проєкту, він міг зібратися в:
-          #   GraphMakerForms\Release\...
-          #   GraphMakerForms\Win32\Release\...
-          #   GraphMakerForms\x64\Release\...
-          #
-          # Тому тут віднайдемо будь-яку папку, в якій є хоча б один .exe (або .dll, .pdb тощо).
-          $candidates = Get-ChildItem -Path GraphMakerForms -Recurse -Directory |
-                        Where-Object {
-                          (Get-ChildItem -Path $_.FullName -Filter "*.exe" -ErrorAction SilentlyContinue).Count -gt 0 -or
-                          (Get-ChildItem -Path $_.FullName -Filter "*.dll" -ErrorAction SilentlyContinue).Count -gt 0
-                        }
+          # Знаходимо перший GraphMakerForms.exe (незалежно від шляху)
+          $exe = Get-ChildItem -Path GraphMakerForms -Recurse -Filter GraphMakerForms.exe | Select-Object -First 1
 
-          if ($candidates.Count -eq 0) {
-            Write-Error "Не знайдено жодної папки із зібраними файлами (.exe чи .dll)."
+          if (-not $exe) {
+            Write-Error "НЕМАЄ збудованого GraphMakerForms.exe у жодній теці"
             exit 1
           }
 
-          # Виберемо перший знайдений варіант (зазвичай це Release\…)
-          $outDir = $candidates[0].FullName
-          Write-Host "Copying from: $outDir"
+          # Батьківська тека, де лежить exe (Release, x64\Release, Win32\Release тощо)
+          $outDir = Split-Path $exe.FullName -Parent
 
-          # Копіюємо ВСІ файли з цього каталогу й підкаталогів у publish
+          # Копіюємо ВСІ файли з цієї теки в publish (рекурсивно)
           Copy-Item "$outDir\*" publish\ -Recurse
 
       - name: Upload EXE artifact
